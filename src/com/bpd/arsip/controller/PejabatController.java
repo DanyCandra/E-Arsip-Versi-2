@@ -235,6 +235,7 @@ public class PejabatController {
         initInputButton(view, true);
         inputText(view, true);
         loadTablePejabat(view);
+        view.setInput(false);
     }
 
 }

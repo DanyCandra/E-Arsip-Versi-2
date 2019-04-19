@@ -45,6 +45,7 @@ public class MainFrame extends Frame {
         panelCard = new dany.swing.lib.panel.PanelImageAlpha();
         panelPengaturanQuota = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
         panelPejabat = new com.bpd.arsip.view.panel.PanelPejabat();
+        panelInstansi = new com.bpd.arsip.view.panel.PanelInstansi();
         labelHalaman = new dany.swing.lib.label.LabelWhite();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -52,7 +53,7 @@ public class MainFrame extends Frame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
         menuPejabat = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuInstansi = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -105,6 +106,7 @@ public class MainFrame extends Frame {
         panelCard.setLayout(new java.awt.CardLayout());
         panelCard.add(panelPengaturanQuota, "panelPengaturanQuota");
         panelCard.add(panelPejabat, "panelPejabat");
+        panelCard.add(panelInstansi, "panelInstansi");
 
         labelHalaman.setText("Halaman");
         labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -161,8 +163,13 @@ public class MainFrame extends Frame {
         });
         jMenu1.add(menuPejabat);
 
-        jMenuItem4.setText("Daftar Instansi");
-        jMenu1.add(jMenuItem4);
+        menuInstansi.setText("Daftar Instansi");
+        menuInstansi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuInstansiActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuInstansi);
 
         jMenuItem5.setText("Daftar User");
         jMenu1.add(jMenuItem5);
@@ -197,6 +204,12 @@ public class MainFrame extends Frame {
         showPanel(panelPejabat, "panelPejabat", "Pengaturan Data Pejabat");
         panelPejabat.load();
     }//GEN-LAST:event_menuPejabatActionPerformed
+
+    private void menuInstansiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInstansiActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelInstansi, "panelInstansi", "Pengaturan Data Instansi");
+        panelInstansi.load();
+    }//GEN-LAST:event_menuInstansiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,7 +253,6 @@ public class MainFrame extends Frame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JProgressBar jProgressBar;
@@ -250,11 +262,13 @@ public class MainFrame extends Frame {
     private dany.swing.lib.label.LabelWhite labelHalaman;
     private dany.swing.lib.label.LabelWhite labelTitle;
     private dany.swing.lib.label.LabelWhite labelUsername;
+    private javax.swing.JMenuItem menuInstansi;
     private javax.swing.JMenuItem menuPejabat;
     private javax.swing.JMenuItem menuPengaturanQuota;
     private dany.swing.lib.panel.PanelImageAlpha panelCard;
     private dany.swing.lib.panel.PanelGradient panelFooter;
     private dany.swing.lib.panel.PanelGradient panelGradient1;
+    private com.bpd.arsip.view.panel.PanelInstansi panelInstansi;
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
     private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
     private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota;
@@ -289,6 +303,7 @@ public class MainFrame extends Frame {
     public void initPanel(){
         panelPejabat.setMainFrame(this);
         panelPengaturanQuota.setMainFrame(this);
+        panelInstansi.setMainFrame(this);
     }
 
 }

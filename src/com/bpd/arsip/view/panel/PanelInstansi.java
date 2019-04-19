@@ -1,7 +1,7 @@
 package com.bpd.arsip.view.panel;
 
-import com.bpd.arsip.controller.PejabatController;
-import com.bpd.arsip.model.PejabatModel;
+import com.bpd.arsip.controller.InstansiController;
+import com.bpd.arsip.model.InstansiModel;
 import com.bpd.arsip.view.MainFrame;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
@@ -12,24 +12,24 @@ import javax.swing.JTextField;
  *
  * @author Dany Candra
  */
-public class PanelPejabat extends javax.swing.JPanel {
+public class PanelInstansi extends javax.swing.JPanel {
     
-    private final PejabatModel pejabatModel;
-    private final PejabatController pejabatController;
-    private final DynamicTableModel<PejabatModel> tableModelPejabat;
+    private final InstansiModel instansiModel;
+    private final InstansiController instansiController;
+    private final DynamicTableModel<InstansiModel> tableModelInstansi;
     private MainFrame mainFrame;
     private boolean input;
 
     /**
      * Creates new form PanelPejabat
      */
-    public PanelPejabat() {
-        pejabatModel = new PejabatModel();
-        pejabatController = new PejabatController();
-        pejabatController.setPejabatModel(pejabatModel);
+    public PanelInstansi() {
+        instansiModel = new InstansiModel();
+        instansiController = new InstansiController();
+        instansiController.setInstansiModel(instansiModel);
         initComponents();
-        tableModelPejabat = new DynamicTableModel<>(PejabatModel.class);
-        tablePejabat.setDynamicModel(tableModelPejabat);
+        tableModelInstansi = new DynamicTableModel<>(InstansiModel.class);
+        tableInstansi.setDynamicModel(tableModelInstansi);
         
     }
     
@@ -64,21 +64,25 @@ public class PanelPejabat extends javax.swing.JPanel {
     public JButton getButtonUbah() {
         return buttonUbah;
     }
-    
-    public JTextField getTextJabatan() {
-        return textJabatan;
+
+    public DynamicTableModel<InstansiModel> getTableModelInstansi() {
+        return tableModelInstansi;
     }
-    
-    public JTextField getTextNama() {
-        return textNama;
+
+    public JDynamicTable getTableInstansi() {
+        return tableInstansi;
     }
-    
-    public JDynamicTable getTablePejabat() {
-        return tablePejabat;
+
+    public JTextField getTextAlamat() {
+        return textAlamat;
     }
-    
-    public DynamicTableModel<PejabatModel> getTableModelPejabat() {
-        return tableModelPejabat;
+
+    public JTextField getTextNamaInstansi() {
+        return textNamaInstansi;
+    }
+
+    public JTextField getTextNoTelepon() {
+        return textNoTelepon;
     }
     
     public MainFrame getMainFrame() {
@@ -99,44 +103,46 @@ public class PanelPejabat extends javax.swing.JPanel {
     private void initComponents() {
 
         viewPortTransparan1 = new com.bpd.arsip.component.ViewPortTransparan();
-        tablePejabat = new com.stripbandunk.jwidget.JDynamicTable();
+        tableInstansi = new com.stripbandunk.jwidget.JDynamicTable();
         jPanel1 = new javax.swing.JPanel();
         labelWhite1 = new dany.swing.lib.label.LabelWhite();
         labelWhite2 = new dany.swing.lib.label.LabelWhite();
-        textNama = new javax.swing.JTextField();
-        textJabatan = new javax.swing.JTextField();
+        textNamaInstansi = new javax.swing.JTextField();
+        textAlamat = new javax.swing.JTextField();
         buttonBatal = new javax.swing.JButton();
         buttonHapus = new javax.swing.JButton();
         buttonUbah = new javax.swing.JButton();
         buttonTambah = new javax.swing.JButton();
         buttonSimpan = new javax.swing.JButton();
+        labelWhite3 = new dany.swing.lib.label.LabelWhite();
+        textNoTelepon = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textCari = new javax.swing.JTextField();
         buttonCari = new javax.swing.JButton();
 
-        viewPortTransparan1.setView(tablePejabat);
+        viewPortTransparan1.setView(tableInstansi);
 
-        tablePejabat.setForeground(new java.awt.Color(255, 255, 255));
-        tablePejabat.setOpaque(false);
+        tableInstansi.setForeground(new java.awt.Color(255, 255, 255));
+        tableInstansi.setOpaque(false);
 
         setBackground(new java.awt.Color(0, 0, 153));
         setOpaque(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Pejabat", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Instansi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setOpaque(false);
 
         labelWhite1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        labelWhite1.setText("Nama :");
+        labelWhite1.setText("Nama Instansi:");
 
         labelWhite2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        labelWhite2.setText("Jabatan :");
+        labelWhite2.setText("Alamat :");
 
-        textNama.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        textNama.setEnabled(false);
+        textNamaInstansi.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        textNamaInstansi.setEnabled(false);
 
-        textJabatan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        textJabatan.setEnabled(false);
+        textAlamat.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        textAlamat.setEnabled(false);
 
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
@@ -175,6 +181,12 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        labelWhite3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelWhite3.setText("No Telepon");
+
+        textNoTelepon.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        textNoTelepon.setEnabled(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,15 +195,17 @@ public class PanelPejabat extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelWhite2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textNama)
-                            .addComponent(textJabatan)))
+                            .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textAlamat, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textNamaInstansi, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textNoTelepon)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 225, Short.MAX_VALUE)
                         .addComponent(buttonTambah)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,12 +223,16 @@ public class PanelPejabat extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textNama)
+                    .addComponent(textNamaInstansi)
                     .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textJabatan)
+                    .addComponent(textAlamat)
                     .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textNoTelepon)
+                    .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonBatal)
@@ -225,7 +243,7 @@ public class PanelPejabat extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daftar Pejabat", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daftar Instansi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setOpaque(false);
 
         jScrollPane1.setViewport(viewPortTransparan1);
@@ -290,38 +308,38 @@ public class PanelPejabat extends javax.swing.JPanel {
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
         // TODO add your handling code here:
-        pejabatController.tambah(this);
+        instansiController.tambah(this);
     }//GEN-LAST:event_buttonTambahActionPerformed
 
     private void buttonUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUbahActionPerformed
         // TODO add your handling code here:
-        pejabatController.ubah(this);
+        instansiController.ubah(this);
     }//GEN-LAST:event_buttonUbahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
         // TODO add your handling code here:
-        pejabatController.hapus(this);
+        instansiController.hapus(this);
     }//GEN-LAST:event_buttonHapusActionPerformed
 
     private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
         // TODO add your handling code here:
-        pejabatController.simpan(this);
+        instansiController.simpan(this);
     }//GEN-LAST:event_buttonSimpanActionPerformed
 
     private void buttonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBatalActionPerformed
         // TODO add your handling code here:
-        pejabatController.batal(this);
+        instansiController.batal(this);
     }//GEN-LAST:event_buttonBatalActionPerformed
 
     private void buttonCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCariActionPerformed
         // TODO add your handling code here:
-        pejabatController.cari(this);
+        instansiController.cari(this);
     }//GEN-LAST:event_buttonCariActionPerformed
 
     private void textCariKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textCariKeyReleased
         // TODO add your handling code here:
         if (evt.getKeyCode() == 10) {
-            pejabatController.cari(this);
+            instansiController.cari(this);
         }
     }//GEN-LAST:event_textCariKeyReleased
 
@@ -338,15 +356,17 @@ public class PanelPejabat extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private dany.swing.lib.label.LabelWhite labelWhite1;
     private dany.swing.lib.label.LabelWhite labelWhite2;
-    private com.stripbandunk.jwidget.JDynamicTable tablePejabat;
+    private dany.swing.lib.label.LabelWhite labelWhite3;
+    private com.stripbandunk.jwidget.JDynamicTable tableInstansi;
+    private javax.swing.JTextField textAlamat;
     private javax.swing.JTextField textCari;
-    private javax.swing.JTextField textJabatan;
-    private javax.swing.JTextField textNama;
+    private javax.swing.JTextField textNamaInstansi;
+    private javax.swing.JTextField textNoTelepon;
     private com.bpd.arsip.component.ViewPortTransparan viewPortTransparan1;
     // End of variables declaration//GEN-END:variables
 
     public void load() {
-        pejabatController.loadTablePejabat(this);
+        instansiController.loadTableInstansi(this);
     }
     
 }

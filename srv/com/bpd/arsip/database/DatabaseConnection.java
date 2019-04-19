@@ -1,7 +1,9 @@
 package com.bpd.arsip.database;
 
+import com.bpd.arsip.dao.InstansiDao;
 import com.bpd.arsip.dao.PejabatDao;
 import com.bpd.arsip.dao.QuotaDao;
+import com.bpd.arsip.dao.impl.InstansiDaoImpl;
 import com.bpd.arsip.dao.impl.PejabatDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -24,6 +26,15 @@ public class DatabaseConnection {
     private static QuotaDao quotaDao;
 
     private static PejabatDao pejabatDao;
+
+    private static InstansiDao instansiDao;
+
+    public static InstansiDao getInstansiDao() {
+        if (instansiDao == null) {
+            instansiDao = new InstansiDaoImpl(getConnection());
+        }
+        return instansiDao;
+    }
 
     public static PejabatDao getPejabatDao() {
         if (pejabatDao == null) {
