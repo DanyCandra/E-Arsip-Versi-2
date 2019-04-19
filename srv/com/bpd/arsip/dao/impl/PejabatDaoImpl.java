@@ -243,20 +243,20 @@ public class PejabatDaoImpl implements PejabatDao {
     }
 
     @Override
-    public Pejabat getPejabatByName(String namaPejabat) throws ArsipException {
+    public List<Pejabat> getPejabatByName(String namaPejabat) throws ArsipException {
         final String SELECT = "SELECT * FROM PEJABAT WHERE NAMA_PEJABAT LIKE ?";
-        Pejabat pejabat = null;
-
+        List<Pejabat> list = new ArrayList<>();
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(SELECT);
             statement.setString(1, "%"+namaPejabat+"%");
             ResultSet set = statement.executeQuery();
-            if (set.next()) {
-                pejabat = new Pejabat();
+            while (set.next()) {
+                Pejabat pejabat = new Pejabat();
                 pejabat.setIdPejabat(set.getString("ID_PEJABAT"));
                 pejabat.setNamaPejabat(set.getString("NAMA_PEJABAT"));
                 pejabat.setJabatan(set.getString("JABATAN"));
+                list.add(pejabat);
             }
         } catch (SQLException ex) {
             throw new ArsipException(ex.getMessage());
@@ -269,8 +269,7 @@ public class PejabatDaoImpl implements PejabatDao {
                 }
             }
         }
-
-        return pejabat;
+        return list;
     }
 
 }

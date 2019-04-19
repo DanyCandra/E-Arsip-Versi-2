@@ -1,6 +1,8 @@
 package com.bpd.arsip.database;
 
+import com.bpd.arsip.dao.PejabatDao;
 import com.bpd.arsip.dao.QuotaDao;
+import com.bpd.arsip.dao.impl.PejabatDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.io.FileInputStream;
@@ -20,6 +22,15 @@ public class DatabaseConnection {
     private static Connection connection;
 
     private static QuotaDao quotaDao;
+
+    private static PejabatDao pejabatDao;
+
+    public static PejabatDao getPejabatDao() {
+        if (pejabatDao == null) {
+            pejabatDao = new PejabatDaoImpl(getConnection());
+        }
+        return pejabatDao;
+    }
 
     public static QuotaDao getQuotaDao() {
         if (quotaDao == null) {
@@ -48,7 +59,7 @@ public class DatabaseConnection {
                 Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
                 try {
-                    if (inputStream!=null) {
+                    if (inputStream != null) {
                         inputStream.close();
                     }
                 } catch (IOException ex) {

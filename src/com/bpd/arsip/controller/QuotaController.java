@@ -11,10 +11,10 @@ import com.bpd.arsip.validator.ValidatorNotNull;
 import com.bpd.arsip.validator.ValidatorNumber;
 import com.bpd.arsip.validator.ValidatorTextLimit;
 import com.bpd.arsip.view.panel.PanelPengaturanQuota;
+import java.awt.EventQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.SwingWorker;
 
 /**
  *
@@ -30,28 +30,26 @@ public class QuotaController {
 
     public void loadDataQuota(PanelPengaturanQuota quota) {
 
-        try {
-            quotaModel.loadQuota();
-            quota.getTextDus().setText(quotaModel.getIsiDus() + "");
-            quota.getTextRak().setText(quotaModel.getIsiRak() + "");
-        } catch (ArsipException ex) {
-            Logger.getLogger(QuotaController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                quota.getMainFrame().startLoading(true);
+                EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            quotaModel.loadQuota();
+                        } catch (ArsipException ex) {
+                            Logger.getLogger(QuotaController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        quota.getTextDus().setText(quotaModel.getIsiDus() + "");
+                        quota.getTextRak().setText(quotaModel.getIsiRak() + "");
+                        quota.getMainFrame().startLoading(false);
+                    }
+                });
+            }
+        }).start();
 
-    public void simpan(PanelPengaturanQuota quota) {
-        if (quota.getButtonSimpan().getText().equals("ATUR")) {
-            enableInput(true, quota);
-            quota.getButtonSimpan().setText("SIMPAN");
-        } else if (quota.getButtonSimpan().getText().equals("SIMPAN")) {
-            settingQuota(quota);
-            batal(quota);
-        }
-    }
-
-    public void batal(PanelPengaturanQuota quota) {
-        enableInput(false, quota);
-        quota.getButtonSimpan().setText("ATUR");
     }
 
     private void enableInput(boolean value, PanelPengaturanQuota quota) {
@@ -81,4 +79,20 @@ public class QuotaController {
         }
 
     }
+
+    public void simpan(PanelPengaturanQuota quota) {
+        if (quota.getButtonSimpan().getText().equals("ATUR")) {
+            enableInput(true, quota);
+            quota.getButtonSimpan().setText("SIMPAN");
+        } else if (quota.getButtonSimpan().getText().equals("SIMPAN")) {
+            settingQuota(quota);
+            batal(quota);
+        }
+    }
+
+    public void batal(PanelPengaturanQuota quota) {
+        enableInput(false, quota);
+        quota.getButtonSimpan().setText("ATUR");
+    }
+
 }

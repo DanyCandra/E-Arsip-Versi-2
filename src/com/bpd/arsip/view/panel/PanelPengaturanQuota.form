@@ -28,18 +28,18 @@
                   <Group type="102" attributes="0">
                       <Component id="labelWhite1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="textRak" max="32767" attributes="0"/>
+                      <Component id="textRak" pref="359" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="labelWhite2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="textDus" pref="332" max="32767" attributes="0"/>
+                      <Component id="textDus" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="buttonBatal" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="buttonBatal" linkSize="2" min="-2" pref="85" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonSimpan" min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="buttonSimpan" linkSize="2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -94,16 +94,22 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="dany.swing.lib.button.ButtonOvalGlass" name="buttonSimpan">
+    <Component class="javax.swing.JButton" name="buttonSimpan">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Atur"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSimpanActionPerformed"/>
       </Events>
     </Component>
-    <Component class="dany.swing.lib.button.ButtonOvalGlass" name="buttonBatal">
+    <Component class="javax.swing.JButton" name="buttonBatal">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Batal"/>
       </Properties>
       <Events>

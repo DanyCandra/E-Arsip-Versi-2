@@ -1,6 +1,6 @@
 package com.bpd.arsip.view;
 
-import com.bpd.arsip.componet.Frame;
+import com.bpd.arsip.component.Frame;
 import com.stripbandunk.jglasspane.component.DialogBackgroundColor;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -20,6 +20,7 @@ public class MainFrame extends Frame {
     public MainFrame() {
         initComponents();
         initGlassPane();
+        initPanel();
         setLocationRelativeTo(null);
     }
 
@@ -43,21 +44,22 @@ public class MainFrame extends Frame {
         labelTitle = new dany.swing.lib.label.LabelWhite();
         panelCard = new dany.swing.lib.panel.PanelImageAlpha();
         panelPengaturanQuota = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
+        panelPejabat = new com.bpd.arsip.view.panel.PanelPejabat();
         labelHalaman = new dany.swing.lib.label.LabelWhite();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuPengaturanQuota = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        menuPejabat = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        setAnimationHide(com.bpd.arsip.componet.Animation.HIDE_TO_RIGHT);
-        setAnimationShow(com.bpd.arsip.componet.Animation.SHOW_FROM_LEFT);
+        setAnimationHide(com.bpd.arsip.component.Animation.HIDE_TO_RIGHT);
+        setAnimationShow(com.bpd.arsip.component.Animation.SHOW_FROM_LEFT);
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -102,6 +104,7 @@ public class MainFrame extends Frame {
         panelCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         panelCard.setLayout(new java.awt.CardLayout());
         panelCard.add(panelPengaturanQuota, "panelPengaturanQuota");
+        panelCard.add(panelPejabat, "panelPejabat");
 
         labelHalaman.setText("Halaman");
         labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -150,8 +153,13 @@ public class MainFrame extends Frame {
         jMenuItem2.setText("Daftar Rak & Dus");
         jMenu1.add(jMenuItem2);
 
-        jMenuItem3.setText("Daftar Pejabat Bank");
-        jMenu1.add(jMenuItem3);
+        menuPejabat.setText("Daftar Pejabat Bank");
+        menuPejabat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPejabatActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuPejabat);
 
         jMenuItem4.setText("Daftar Instansi");
         jMenu1.add(jMenuItem4);
@@ -180,9 +188,15 @@ public class MainFrame extends Frame {
 
     private void menuPengaturanQuotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPengaturanQuotaActionPerformed
         // TODO add your handling code here:
-        showPanel(panelCard, "panelPengaturanQuota", "Pengaturan Quota Rak & Dus");
+        showPanel(panelPengaturanQuota, "panelPengaturanQuota", "Pengaturan Quota Rak & Dus");
         panelPengaturanQuota.initFrame();
     }//GEN-LAST:event_menuPengaturanQuotaActionPerformed
+
+    private void menuPejabatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPejabatActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelPejabat, "panelPejabat", "Pengaturan Data Pejabat");
+        panelPejabat.load();
+    }//GEN-LAST:event_menuPejabatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,7 +240,6 @@ public class MainFrame extends Frame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
@@ -237,11 +250,13 @@ public class MainFrame extends Frame {
     private dany.swing.lib.label.LabelWhite labelHalaman;
     private dany.swing.lib.label.LabelWhite labelTitle;
     private dany.swing.lib.label.LabelWhite labelUsername;
+    private javax.swing.JMenuItem menuPejabat;
     private javax.swing.JMenuItem menuPengaturanQuota;
     private dany.swing.lib.panel.PanelImageAlpha panelCard;
     private dany.swing.lib.panel.PanelGradient panelFooter;
     private dany.swing.lib.panel.PanelGradient panelGradient1;
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
+    private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
     private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota;
     // End of variables declaration//GEN-END:variables
 
@@ -269,6 +284,11 @@ public class MainFrame extends Frame {
         }
         CardLayout layout = (CardLayout) panelCard.getLayout();
         layout.show(panelCard, card);
+    }
+    
+    public void initPanel(){
+        panelPejabat.setMainFrame(this);
+        panelPengaturanQuota.setMainFrame(this);
     }
 
 }

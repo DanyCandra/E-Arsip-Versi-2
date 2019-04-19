@@ -25,7 +25,7 @@ public interface PejabatDao {
 
     public Pejabat getPejabat(String id) throws ArsipException;
 
-    public Pejabat getPejabatByName(String namaPejabat) throws ArsipException;
+    public List<Pejabat> getPejabatByName(String namaPejabat) throws ArsipException;
 
     public boolean isCanDelete(String idPejabat) throws ArsipException;
 

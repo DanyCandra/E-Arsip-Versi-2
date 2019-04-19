@@ -1,4 +1,4 @@
-package com.bpd.arsip.componet;
+package com.bpd.arsip.component;
 
 
 public enum Animation {

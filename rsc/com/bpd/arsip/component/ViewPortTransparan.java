@@ -2,7 +2,7 @@
  * danydongkrak.wordpres.com
  * @DanyCandra
  */
-package com.bpd.arsip.componet;
+package com.bpd.arsip.component;
 
 import javax.swing.JViewport;
 

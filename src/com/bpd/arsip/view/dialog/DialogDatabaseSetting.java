@@ -6,7 +6,7 @@
 package com.bpd.arsip.view.dialog;
 
 
-import com.bpd.arsip.componet.CenterFrame;
+import com.bpd.arsip.component.CenterFrame;
 import com.bpd.arsip.controller.DatabaseController;
 import com.bpd.arsip.model.DatabaseModel;
 import javax.swing.JPasswordField;

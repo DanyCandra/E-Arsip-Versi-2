@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bpd.arsip.componet;
+package com.bpd.arsip.component;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;

@@ -1,4 +1,4 @@
-package com.bpd.arsip.componet;
+package com.bpd.arsip.component;
 
 import java.awt.Dimension;
 import java.awt.Image;

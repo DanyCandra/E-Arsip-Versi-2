@@ -3,7 +3,7 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.QuotaController;
 import com.bpd.arsip.model.QuotaModel;
 import com.bpd.arsip.view.MainFrame;
-import dany.swing.lib.button.ButtonOvalGlass;
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
@@ -24,7 +24,11 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
         controller = new QuotaController();
         controller.setQuotaModel(model);
         initComponents();
-        
+
+    }
+
+    public void setMainFrame(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
     }
 
     public JTextField getTextDus() {
@@ -35,11 +39,11 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
         return textRak;
     }
 
-    public ButtonOvalGlass getButtonBatal() {
+    public JButton getButtonBatal() {
         return buttonBatal;
     }
 
-    public ButtonOvalGlass getButtonSimpan() {
+    public JButton getButtonSimpan() {
         return buttonSimpan;
     }
 
@@ -60,8 +64,8 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
         textRak = new javax.swing.JTextField();
         labelWhite2 = new dany.swing.lib.label.LabelWhite();
         textDus = new javax.swing.JTextField();
-        buttonSimpan = new dany.swing.lib.button.ButtonOvalGlass();
-        buttonBatal = new dany.swing.lib.button.ButtonOvalGlass();
+        buttonSimpan = new javax.swing.JButton();
+        buttonBatal = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 51, 153));
         setOpaque(false);
@@ -74,6 +78,7 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
 
         textDus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
+        buttonSimpan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonSimpan.setText("Atur");
         buttonSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +86,7 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
             }
         });
 
+        buttonBatal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonBatal.setText("Batal");
         buttonBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,18 +104,21 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textRak))
+                        .addComponent(textRak, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textDus, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                        .addComponent(textDus))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonSimpan)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonBatal, buttonSimpan});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -123,33 +132,33 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
                     .addComponent(textDus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonSimpan)
+                    .addComponent(buttonBatal))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
-        // TODO add your handling code here:
-        controller.simpan(this);
-    }//GEN-LAST:event_buttonSimpanActionPerformed
 
     private void buttonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBatalActionPerformed
         // TODO add your handling code here:
         controller.batal(this);
     }//GEN-LAST:event_buttonBatalActionPerformed
 
+    private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
+        // TODO add your handling code here:
+        controller.simpan(this);
+    }//GEN-LAST:event_buttonSimpanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private dany.swing.lib.button.ButtonOvalGlass buttonBatal;
-    private dany.swing.lib.button.ButtonOvalGlass buttonSimpan;
+    private javax.swing.JButton buttonBatal;
+    private javax.swing.JButton buttonSimpan;
     private dany.swing.lib.label.LabelWhite labelWhite1;
     private dany.swing.lib.label.LabelWhite labelWhite2;
     private javax.swing.JTextField textDus;
     private javax.swing.JTextField textRak;
     // End of variables declaration//GEN-END:variables
-    
-    public void initFrame(){
+
+    public void initFrame() {
         controller.batal(this);
         controller.loadDataQuota(this);
     }
