@@ -2,6 +2,11 @@ package com.bpd.arsip.view;
 
 import com.bpd.arsip.component.Frame;
 import com.stripbandunk.jglasspane.component.DialogBackgroundColor;
+import com.stripbandunk.jglasspane.helper.GraphicHelper;
+import com.stripbandunk.jglasspane.transition.WipeLeftTransition;
+import com.stripbandunk.jglasspane.transition.image.FadeImageTransition;
+import com.stripbandunk.jglasspane.transition.image.WipeRightImageTransition;
+import com.stripbandunk.jglasspane.transition.image.creator.ComponentImageCreator;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -34,6 +39,7 @@ public class MainFrame extends Frame {
         jGlassPane = new com.stripbandunk.jglasspane.JGlassPane();
         dialogComponent = new com.stripbandunk.jglasspane.component.DialogComponent();
         panelLoading = new com.bpd.arsip.view.dialog.PanelLoading();
+        imageTransitionComponent = new com.stripbandunk.jglasspane.component.ImageTransitionComponent();
         panelGradient1 = new dany.swing.lib.panel.PanelGradient();
         panelFooter = new dany.swing.lib.panel.PanelGradient();
         jProgressBar = new javax.swing.JProgressBar();
@@ -57,6 +63,17 @@ public class MainFrame extends Frame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+
+        javax.swing.GroupLayout imageTransitionComponentLayout = new javax.swing.GroupLayout(imageTransitionComponent);
+        imageTransitionComponent.setLayout(imageTransitionComponentLayout);
+        imageTransitionComponentLayout.setHorizontalGroup(
+            imageTransitionComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        imageTransitionComponentLayout.setVerticalGroup(
+            imageTransitionComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setAnimationHide(com.bpd.arsip.component.Animation.HIDE_TO_RIGHT);
         setAnimationShow(com.bpd.arsip.component.Animation.SHOW_FROM_LEFT);
@@ -259,6 +276,7 @@ public class MainFrame extends Frame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.stripbandunk.jglasspane.component.DialogComponent dialogComponent;
+    private com.stripbandunk.jglasspane.component.ImageTransitionComponent imageTransitionComponent;
     private com.stripbandunk.jglasspane.JGlassPane jGlassPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -290,6 +308,9 @@ public class MainFrame extends Frame {
         setGlassPane(jGlassPane);
         getGlassPane().setVisible(true);
         jGlassPane.addGlassPaneComponent(dialogComponent);
+        jGlassPane.addGlassPaneComponent(imageTransitionComponent);
+        
+        imageTransitionComponent.setImageCreator(new ComponentImageCreator(panelCard));
         dialogComponent.setDialogBackground(new DialogBackgroundColor(Color.GRAY));
     }
 
@@ -304,6 +325,11 @@ public class MainFrame extends Frame {
     }
 
     void showPanel(Component panel, String card, String header) {
+        WipeRightImageTransition transition=new WipeRightImageTransition();
+        transition.setCoordinate(GraphicHelper.getLocation(panelCard, jGlassPane));
+        
+        imageTransitionComponent.setTransition(transition);
+        imageTransitionComponent.start();
         labelHalaman.setText(header);
         if (panel.isVisible()) {
             return;
