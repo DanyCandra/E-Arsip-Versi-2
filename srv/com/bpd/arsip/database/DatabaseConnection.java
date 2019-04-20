@@ -3,9 +3,11 @@ package com.bpd.arsip.database;
 import com.bpd.arsip.dao.InstansiDao;
 import com.bpd.arsip.dao.PejabatDao;
 import com.bpd.arsip.dao.QuotaDao;
+import com.bpd.arsip.dao.UserDao;
 import com.bpd.arsip.dao.impl.InstansiDaoImpl;
 import com.bpd.arsip.dao.impl.PejabatDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
+import com.bpd.arsip.dao.impl.UserDaoImpl;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,6 +30,15 @@ public class DatabaseConnection {
     private static PejabatDao pejabatDao;
 
     private static InstansiDao instansiDao;
+
+    private static UserDao userDao;
+
+    public static UserDao getUserDao() {
+        if (userDao == null) {
+            userDao = new UserDaoImpl(getConnection());
+        }
+        return userDao;
+    }
 
     public static InstansiDao getInstansiDao() {
         if (instansiDao == null) {

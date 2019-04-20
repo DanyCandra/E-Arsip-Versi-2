@@ -232,10 +232,6 @@ public class PejabatController {
         } else if (view.isInput() == false) {
             updatePejabat(view);
         }
-        initInputButton(view, true);
-        inputText(view, true);
-        loadTablePejabat(view);
-        view.setInput(false);
     }
 
 }

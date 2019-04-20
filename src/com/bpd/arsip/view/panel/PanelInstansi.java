@@ -367,6 +367,7 @@ public class PanelInstansi extends javax.swing.JPanel {
 
     public void load() {
         instansiController.loadTableInstansi(this);
+        instansiController.batal(this);
     }
     
 }

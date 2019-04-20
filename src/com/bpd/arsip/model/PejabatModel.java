@@ -61,30 +61,34 @@ public class PejabatModel {
     }
 
     public List<PejabatModel> getAllPejabatModel() throws ArsipException {
-        List<PejabatModel> list = new ArrayList<PejabatModel>();
+        List<PejabatModel> list = new ArrayList<>();
         PejabatDao dao = DatabaseConnection.getPejabatDao();
         List<Pejabat> pejabatList = dao.getPejabat();
-        for (Pejabat pejabat : pejabatList) {
+        pejabatList.stream().map((pejabat) -> {
             PejabatModel model = new PejabatModel();
             model.setIdPejabat(pejabat.getIdPejabat());
             model.setJabatan(pejabat.getJabatan());
             model.setNamaPejabat(pejabat.getNamaPejabat());
+            return model;
+        }).forEachOrdered((model) -> {
             list.add(model);
-        }
+        });
         return list;
     }
 
     public List<PejabatModel> getAllPejabatByName(String namaPejabat) throws ArsipException {
-        List<PejabatModel> list = new ArrayList<PejabatModel>();
+        List<PejabatModel> list = new ArrayList<>();
         PejabatDao dao = DatabaseConnection.getPejabatDao();
         List<Pejabat> pejabatList = dao.getPejabatByName(namaPejabat);
-        for (Pejabat pejabat : pejabatList) {
+        pejabatList.stream().map((pejabat) -> {
             PejabatModel model = new PejabatModel();
             model.setIdPejabat(pejabat.getIdPejabat());
             model.setJabatan(pejabat.getJabatan());
             model.setNamaPejabat(pejabat.getNamaPejabat());
+            return model;
+        }).forEachOrdered((model) -> {
             list.add(model);
-        }
+        });
         return list;
     }
 

@@ -5,8 +5,6 @@ import com.stripbandunk.jglasspane.component.DialogBackgroundColor;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -46,6 +44,7 @@ public class MainFrame extends Frame {
         panelPengaturanQuota = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
         panelPejabat = new com.bpd.arsip.view.panel.PanelPejabat();
         panelInstansi = new com.bpd.arsip.view.panel.PanelInstansi();
+        panelUser = new com.bpd.arsip.view.panel.PanelUser();
         labelHalaman = new dany.swing.lib.label.LabelWhite();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -54,7 +53,7 @@ public class MainFrame extends Frame {
         jMenuItem2 = new javax.swing.JMenuItem();
         menuPejabat = new javax.swing.JMenuItem();
         menuInstansi = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        menuUser = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -107,6 +106,7 @@ public class MainFrame extends Frame {
         panelCard.add(panelPengaturanQuota, "panelPengaturanQuota");
         panelCard.add(panelPejabat, "panelPejabat");
         panelCard.add(panelInstansi, "panelInstansi");
+        panelCard.add(panelUser, "panelUser");
 
         labelHalaman.setText("Halaman");
         labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -171,8 +171,13 @@ public class MainFrame extends Frame {
         });
         jMenu1.add(menuInstansi);
 
-        jMenuItem5.setText("Daftar User");
-        jMenu1.add(jMenuItem5);
+        menuUser.setText("Daftar User");
+        menuUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuUserActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuUser);
         jMenu1.add(jSeparator2);
 
         jMenuItem6.setText("Keluar");
@@ -210,6 +215,12 @@ public class MainFrame extends Frame {
         showPanel(panelInstansi, "panelInstansi", "Pengaturan Data Instansi");
         panelInstansi.load();
     }//GEN-LAST:event_menuInstansiActionPerformed
+
+    private void menuUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUserActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelUser, "panelUser", "Pengaturan Daftar User");
+        panelUser.load();
+    }//GEN-LAST:event_menuUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,7 +264,6 @@ public class MainFrame extends Frame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JProgressBar jProgressBar;
     private javax.swing.JPopupMenu.Separator jSeparator1;
@@ -265,6 +275,7 @@ public class MainFrame extends Frame {
     private javax.swing.JMenuItem menuInstansi;
     private javax.swing.JMenuItem menuPejabat;
     private javax.swing.JMenuItem menuPengaturanQuota;
+    private javax.swing.JMenuItem menuUser;
     private dany.swing.lib.panel.PanelImageAlpha panelCard;
     private dany.swing.lib.panel.PanelGradient panelFooter;
     private dany.swing.lib.panel.PanelGradient panelGradient1;
@@ -272,6 +283,7 @@ public class MainFrame extends Frame {
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
     private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
     private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota;
+    private com.bpd.arsip.view.panel.PanelUser panelUser;
     // End of variables declaration//GEN-END:variables
 
     public void initGlassPane() {
@@ -304,6 +316,7 @@ public class MainFrame extends Frame {
         panelPejabat.setMainFrame(this);
         panelPengaturanQuota.setMainFrame(this);
         panelInstansi.setMainFrame(this);
+        panelUser.setMainFrame(this);
     }
 
 }
