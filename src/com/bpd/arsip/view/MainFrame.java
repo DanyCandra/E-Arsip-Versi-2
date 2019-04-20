@@ -40,18 +40,20 @@ public class MainFrame extends Frame {
         dialogComponent = new com.stripbandunk.jglasspane.component.DialogComponent();
         panelLoading = new com.bpd.arsip.view.dialog.PanelLoading();
         imageTransitionComponent = new com.stripbandunk.jglasspane.component.ImageTransitionComponent();
+        viewPortTransparan1 = new com.bpd.arsip.component.ViewPortTransparan();
         panelGradient1 = new dany.swing.lib.panel.PanelGradient();
         panelFooter = new dany.swing.lib.panel.PanelGradient();
         jProgressBar = new javax.swing.JProgressBar();
         labelDate1 = new dany.swing.lib.label.LabelDate();
         labelUsername = new dany.swing.lib.label.LabelWhite();
         labelTitle = new dany.swing.lib.label.LabelWhite();
+        labelHalaman = new dany.swing.lib.label.LabelWhite();
         panelCard = new dany.swing.lib.panel.PanelImageAlpha();
         panelPengaturanQuota = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
         panelPejabat = new com.bpd.arsip.view.panel.PanelPejabat();
         panelInstansi = new com.bpd.arsip.view.panel.PanelInstansi();
         panelUser = new com.bpd.arsip.view.panel.PanelUser();
-        labelHalaman = new dany.swing.lib.label.LabelWhite();
+        panelPenyimpanan1 = new com.bpd.arsip.view.panel.PanelPenyimpanan();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuPengaturanQuota = new javax.swing.JMenuItem();
@@ -118,15 +120,16 @@ public class MainFrame extends Frame {
         labelTitle.setText("e - Arsip | Bank Jateng");
         labelTitle.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
 
+        labelHalaman.setText("Halaman");
+        labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+
         panelCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         panelCard.setLayout(new java.awt.CardLayout());
         panelCard.add(panelPengaturanQuota, "panelPengaturanQuota");
         panelCard.add(panelPejabat, "panelPejabat");
         panelCard.add(panelInstansi, "panelInstansi");
         panelCard.add(panelUser, "panelUser");
-
-        labelHalaman.setText("Halaman");
-        labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        panelCard.add(panelPenyimpanan1, "card6");
 
         javax.swing.GroupLayout panelGradient1Layout = new javax.swing.GroupLayout(panelGradient1);
         panelGradient1.setLayout(panelGradient1Layout);
@@ -135,13 +138,15 @@ public class MainFrame extends Frame {
             .addComponent(panelFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelGradient1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelCard, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradient1Layout.createSequentialGroup()
-                        .addComponent(labelHalaman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(labelHalaman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 741, Short.MAX_VALUE)
+                .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGradient1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelCard, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         panelGradient1Layout.setVerticalGroup(
             panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,10 +155,13 @@ public class MainFrame extends Frame {
                 .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelHalaman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelCard, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 485, Short.MAX_VALUE)
                 .addComponent(panelFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradient1Layout.createSequentialGroup()
+                    .addGap(53, 53, 53)
+                    .addComponent(panelCard, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                    .addGap(37, 37, 37)))
         );
 
         getContentPane().add(panelGradient1, java.awt.BorderLayout.CENTER);
@@ -301,7 +309,9 @@ public class MainFrame extends Frame {
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
     private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
     private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota;
+    private com.bpd.arsip.view.panel.PanelPenyimpanan panelPenyimpanan1;
     private com.bpd.arsip.view.panel.PanelUser panelUser;
+    private com.bpd.arsip.component.ViewPortTransparan viewPortTransparan1;
     // End of variables declaration//GEN-END:variables
 
     public void initGlassPane() {
