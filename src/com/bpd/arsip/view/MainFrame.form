@@ -51,10 +51,13 @@
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="menuPenyimpanan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Daftar Rak &amp; Dus"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPenyimpananActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuPejabat">
               <Properties>
@@ -289,10 +292,10 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="com.bpd.arsip.view.panel.PanelPenyimpanan" name="panelPenyimpanan1">
+            <Component class="com.bpd.arsip.view.panel.PanelPenyimpanan" name="panelPenyimpanan">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card6"/>
+                  <CardConstraints cardName="panelPenyimpanan"/>
                 </Constraint>
               </Constraints>
             </Component>

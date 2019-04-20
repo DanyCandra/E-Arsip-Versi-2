@@ -1,16 +1,28 @@
 package com.bpd.arsip.view.panel;
 
+import com.bpd.arsip.view.MainFrame;
+
 /**
  *
  * @author Dany Candra
  */
 public class PanelPenyimpanan extends javax.swing.JPanel {
-
+    
+    private MainFrame mainFrame;
     /**
      * Creates new form PanelPenyimpanan
      */
     public PanelPenyimpanan() {
         initComponents();
+        initPanel();
+    }
+
+    public MainFrame getMainFrame() {
+        return mainFrame;
+    }
+
+    public void setMainFrame(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
     }
 
     /**
@@ -80,4 +92,13 @@ public class PanelPenyimpanan extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private com.bpd.arsip.view.panel.PanelPenyimpananLantai panelPenyimpananLantai1;
     // End of variables declaration//GEN-END:variables
+
+    public void initPanel(){
+        panelPenyimpananLantai1.setMainFrame(getMainFrame());
+       
+    }
+    
+    public void loadAllTab(){
+        panelPenyimpananLantai1.load();
+    }
 }

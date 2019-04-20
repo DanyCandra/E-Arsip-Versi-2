@@ -5,6 +5,8 @@ import com.bpd.arsip.dao.PejabatDao;
 import com.bpd.arsip.dao.QuotaDao;
 import com.bpd.arsip.dao.UserDao;
 import com.bpd.arsip.dao.impl.InstansiDaoImpl;
+import com.bpd.arsip.dao.LantaiDao;
+import com.bpd.arsip.dao.impl.LantaiDaoImpl;
 import com.bpd.arsip.dao.impl.PejabatDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
 import com.bpd.arsip.dao.impl.UserDaoImpl;
@@ -32,6 +34,15 @@ public class DatabaseConnection {
     private static InstansiDao instansiDao;
 
     private static UserDao userDao;
+
+    private static LantaiDao lantaiDao;
+
+    public static LantaiDao getLantaiDao() {
+        if (lantaiDao == null) {
+            lantaiDao = new LantaiDaoImpl(getConnection());
+        }
+        return lantaiDao;
+    }
 
     public static UserDao getUserDao() {
         if (userDao == null) {
