@@ -15,11 +15,13 @@ import java.util.List;
  * @author Dany Candra
  */
 public class LantaiModel {
- 
+
     private String idLantai;
 
-    @TableColumn(name = "Lantai", number = 1, size = 110, renderer = TableRenderDefault.class)
+    @TableColumn(name = "Tempat Penyimpanan", number = 2, size = 110, renderer = TableLantaiRender.class)
     private String namaLantai;
+    @TableColumn(name = "Kode Lokasi", number = 1, size = 40, renderer = TableRenderDefault.class)
+    private String kodeLantai;
 
     public LantaiModel() {
     }
@@ -45,18 +47,37 @@ public class LantaiModel {
         this.namaLantai = namaLantai;
     }
 
+    public String getKodeLantai() {
+        return kodeLantai;
+    }
+
+    public void setKodeLantai(String kodeLantai) {
+        this.kodeLantai = kodeLantai;
+    }
+
     public List<LantaiModel> load() throws ArsipException {
-        List<LantaiModel> list = new ArrayList<LantaiModel>();
+        List<LantaiModel> list = new ArrayList<>();
 
         LantaiDao dao = DatabaseConnection.getLantaiDao();
         List<Lantai> listTmp = dao.getAllLantai();
-        for (Lantai lantai : listTmp) {
+        listTmp.stream().map((lantai) -> {
             LantaiModel model = new LantaiModel();
             model.setIdLantai(lantai.getIdLantai());
-            model.setNamaLantai(lantai.getNamaLantai());
+            model.setNamaLantai(createKodeLantai(lantai.getNamaLantai()));
+            model.setKodeLantai("   "+createKodeLantai(lantai.getNamaLantai()));
+            return model;
+        }).forEach((model) -> {
             list.add(model);
-        }
+        });
         return list;
+    }
+
+    public String createKodeLantai(String inputNamaLantai) {
+        String kode = "";
+        int y = Integer.valueOf(inputNamaLantai);
+        kode = String.valueOf(y);
+        return kode;
+
     }
 
     public void insert() throws ArsipException {
@@ -82,7 +103,7 @@ public class LantaiModel {
         boolean result = dao.isCanDelete(idLantai);
         return result;
     }
-    
+
     public boolean isCanInsert() throws ArsipException {
         LantaiDao dao = DatabaseConnection.getLantaiDao();
         boolean result = dao.isCanDelete(namaLantai);

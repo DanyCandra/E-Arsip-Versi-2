@@ -1,86 +1,111 @@
 package com.bpd.arsip.view.panel;
 
-import com.bpd.arsip.controller.LantaiController;
+import com.bpd.arsip.controller.DusController;
+import com.bpd.arsip.helper.list.LokasiListCellRender;
+import com.bpd.arsip.model.DusModel;
 import com.bpd.arsip.model.LantaiModel;
 import com.bpd.arsip.view.MainFrame;
 import com.stripbandunk.jwidget.JDynamicTable;
+import com.stripbandunk.jwidget.JPagination;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
  *
  * @author Dany Candra
  */
-public class PanelPenyimpananLantai extends javax.swing.JPanel {
-    
+public class PanelPenyimpananDus extends javax.swing.JPanel {
+
+    private final DefaultComboBoxModel<LantaiModel> comboBoxModel;
+    private final DynamicTableModel<DusModel> tableModelDus;
+
+    private final DusController dusController;
     private final LantaiModel lantaiModel;
-    private final LantaiController lantaiController;
-    private final DynamicTableModel<LantaiModel> tableModelLantai;
+    private final DusModel dusModel;
     private MainFrame mainFrame;
     private boolean input;
+
+    private final int PAGE_SIZE = 25;
 
     /**
      * Creates new form PanelLantai
      */
-    public PanelPenyimpananLantai() {
+    public PanelPenyimpananDus() {
         lantaiModel = new LantaiModel();
-        lantaiController = new LantaiController();
-        lantaiController.setLantaiModel(lantaiModel);
+        dusModel = new DusModel();
+        dusController = new DusController();
+        dusController.setDusModel(dusModel);
+        dusController.setLantaiModel(lantaiModel);
         initComponents();
-        tableModelLantai = new DynamicTableModel<>(LantaiModel.class);
-        tableLantai.setDynamicModel(tableModelLantai);
         
+        tableModelDus = new DynamicTableModel<>(DusModel.class);
+        tableDus.setDynamicModel(tableModelDus);
+        
+        comboBoxModel = new DefaultComboBoxModel<>();
+        comboLokasi.setModel(comboBoxModel);
+        comboLokasi.setRenderer(new LokasiListCellRender());
+
     }
+
     
     public boolean isInput() {
         return input;
     }
-    
+
     public void setInput(boolean input) {
         this.input = input;
     }
-    
+
     public void setMainFrame(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
     }
-    
+
     public JButton getButtonBatal() {
         return buttonBatal;
     }
-    
+
     public JButton getButtonHapus() {
         return buttonHapus;
     }
-    
+
     public JButton getButtonSimpan() {
         return buttonSimpan;
     }
-    
+
     public JButton getButtonTambah() {
         return buttonTambah;
     }
-    
-    public JButton getButtonUbah() {
-        return buttonUbah;
-    }
-    
-    public JTextField getTextNama() {
-        return textNama;
-    }
-    
+
     public JDynamicTable getTableLantai() {
-        return tableLantai;
+        return tableDus;
     }
-    
-    public DynamicTableModel<LantaiModel> getTableModelLantai() {
-        return tableModelLantai;
+
+    public DynamicTableModel<DusModel> getTableModelDus() {
+        return tableModelDus;
     }
-    
+
     public MainFrame getMainFrame() {
         return mainFrame;
     }
-    
+
+    public JPagination getjPagination() {
+        return jPagination;
+    }
+
+    public JComboBox getComboLokasi() {
+        return comboLokasi;
+    }
+
+    public JTextField getTextJumlahDus() {
+        return textJumlahDus;
+    }
+
+    public DefaultComboBoxModel<LantaiModel> getComboBoxModel() {
+        return comboBoxModel;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,22 +117,32 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
     private void initComponents() {
 
         viewPortTransparan1 = new com.bpd.arsip.component.ViewPortTransparan();
-        tableLantai = new com.stripbandunk.jwidget.JDynamicTable();
+        tableDus = new com.stripbandunk.jwidget.JDynamicTable();
         jPanel1 = new javax.swing.JPanel();
         labelWhite1 = new dany.swing.lib.label.LabelWhite();
-        textNama = new javax.swing.JTextField();
         buttonBatal = new javax.swing.JButton();
         buttonHapus = new javax.swing.JButton();
-        buttonUbah = new javax.swing.JButton();
         buttonTambah = new javax.swing.JButton();
         buttonSimpan = new javax.swing.JButton();
+        labelWhite2 = new dany.swing.lib.label.LabelWhite();
+        textJumlahDus = new javax.swing.JTextField();
+        comboLokasi = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
+        jPagination = new com.stripbandunk.jwidget.JPagination();
 
-        viewPortTransparan1.setView(tableLantai);
+        viewPortTransparan1.setView(tableDus);
 
-        tableLantai.setForeground(new java.awt.Color(255, 255, 255));
-        tableLantai.setOpaque(false);
+        tableDus.setForeground(new java.awt.Color(255, 255, 255));
+        tableDus.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tableDus.setOpaque(false);
 
         setBackground(new java.awt.Color(0, 0, 153));
         setOpaque(false);
@@ -117,9 +152,6 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
 
         labelWhite1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelWhite1.setText("Kode Tempat :");
-
-        textNama.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        textNama.setEnabled(false);
 
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
@@ -133,13 +165,6 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonHapusActionPerformed(evt);
-            }
-        });
-
-        buttonUbah.setText("Ubah");
-        buttonUbah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonUbahActionPerformed(evt);
             }
         });
 
@@ -158,6 +183,16 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             }
         });
 
+        labelWhite2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelWhite2.setText("Jumlah Dus :");
+
+        textJumlahDus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        textJumlahDus.setEnabled(false);
+
+        comboLokasi.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        comboLokasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboLokasi.setEnabled(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -168,33 +203,42 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textNama))
+                        .addComponent(comboLokasi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(buttonTambah)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonSimpan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonBatal))))
+                        .addComponent(buttonBatal))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textJumlahDus))))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonBatal, buttonHapus, buttonTambah, buttonUbah});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonBatal, buttonHapus, buttonTambah});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textNama)
-                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(comboLokasi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textJumlahDus)
+                    .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonBatal)
                     .addComponent(buttonHapus)
-                    .addComponent(buttonUbah)
                     .addComponent(buttonTambah)
                     .addComponent(buttonSimpan))
                 .addContainerGap())
@@ -213,8 +257,15 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
         );
+
+        jPagination.setOpaque(false);
+        jPagination.addPaginationListener(new com.stripbandunk.jwidget.listener.PaginationListener() {
+            public void onPageChange(com.stripbandunk.jwidget.event.PaginationEvent evt) {
+                jPaginationOnPageChange(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -224,7 +275,8 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPagination, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -234,34 +286,40 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPagination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
         // TODO add your handling code here:
-        lantaiController.tambah(this);
+        dusController.tambah(this);
     }//GEN-LAST:event_buttonTambahActionPerformed
-
-    private void buttonUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUbahActionPerformed
-        // TODO add your handling code here:
-        lantaiController.ubah(this);
-    }//GEN-LAST:event_buttonUbahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
         // TODO add your handling code here:
-        lantaiController.hapus(this);
+        dusController.hapus(this);
     }//GEN-LAST:event_buttonHapusActionPerformed
 
     private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
         // TODO add your handling code here:
-        lantaiController.simpan(this);
+        dusController.simpan(this);
+        load();
     }//GEN-LAST:event_buttonSimpanActionPerformed
 
     private void buttonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBatalActionPerformed
         // TODO add your handling code here:
-        lantaiController.batal(this);
+        dusController.batal(this);
     }//GEN-LAST:event_buttonBatalActionPerformed
+
+    private void jPaginationOnPageChange(com.stripbandunk.jwidget.event.PaginationEvent evt) {//GEN-FIRST:event_jPaginationOnPageChange
+        // TODO add your handling code here:
+        final int skip = (evt.getCurrentPage() - 1) * evt.getPageSize();
+        final int max = evt.getPageSize();
+        dusController.onPageChange(skip, max, this);
+        dusController.batal(this);
+    }//GEN-LAST:event_jPaginationOnPageChange
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -269,19 +327,22 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
     private javax.swing.JButton buttonHapus;
     private javax.swing.JButton buttonSimpan;
     private javax.swing.JButton buttonTambah;
-    private javax.swing.JButton buttonUbah;
+    private javax.swing.JComboBox comboLokasi;
+    private com.stripbandunk.jwidget.JPagination jPagination;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private dany.swing.lib.label.LabelWhite labelWhite1;
-    private com.stripbandunk.jwidget.JDynamicTable tableLantai;
-    private javax.swing.JTextField textNama;
+    private dany.swing.lib.label.LabelWhite labelWhite2;
+    private com.stripbandunk.jwidget.JDynamicTable tableDus;
+    private javax.swing.JTextField textJumlahDus;
     private com.bpd.arsip.component.ViewPortTransparan viewPortTransparan1;
     // End of variables declaration//GEN-END:variables
 
     public void load() {
-        lantaiController.loadTableLantai(this);
-        lantaiController.batal(this);
+        dusController.loadTableLantai(this, PAGE_SIZE);
+        dusController.batal(this);
+        dusController.loadComboBox(this);
     }
-    
+
 }

@@ -2,9 +2,6 @@ package com.bpd.arsip.view;
 
 import com.bpd.arsip.component.Frame;
 import com.stripbandunk.jglasspane.component.DialogBackgroundColor;
-import com.stripbandunk.jglasspane.helper.GraphicHelper;
-import com.stripbandunk.jglasspane.transition.image.WipeRightImageTransition;
-import com.stripbandunk.jglasspane.transition.image.creator.ComponentImageCreator;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -13,7 +10,7 @@ import java.awt.Component;
  *
  * @author Dany Candra
  */
-public class MainFrame extends Frame {
+public final class MainFrame extends Frame {
 
     /**
      * Creates new form MainFrame
@@ -37,7 +34,6 @@ public class MainFrame extends Frame {
         jGlassPane = new com.stripbandunk.jglasspane.JGlassPane();
         dialogComponent = new com.stripbandunk.jglasspane.component.DialogComponent();
         panelLoading = new com.bpd.arsip.view.dialog.PanelLoading();
-        imageTransitionComponent = new com.stripbandunk.jglasspane.component.ImageTransitionComponent();
         viewPortTransparan1 = new com.bpd.arsip.component.ViewPortTransparan();
         panelGradient1 = new dany.swing.lib.panel.PanelGradient();
         panelFooter = new dany.swing.lib.panel.PanelGradient();
@@ -47,15 +43,12 @@ public class MainFrame extends Frame {
         labelTitle = new dany.swing.lib.label.LabelWhite();
         labelHalaman = new dany.swing.lib.label.LabelWhite();
         panelCard = new dany.swing.lib.panel.PanelImageAlpha();
-        panelPengaturanQuota = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
         panelPejabat = new com.bpd.arsip.view.panel.PanelPejabat();
         panelInstansi = new com.bpd.arsip.view.panel.PanelInstansi();
         panelUser = new com.bpd.arsip.view.panel.PanelUser();
         panelPenyimpanan = new com.bpd.arsip.view.panel.PanelPenyimpanan();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        menuPengaturanQuota = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         menuPenyimpanan = new javax.swing.JMenuItem();
         menuPejabat = new javax.swing.JMenuItem();
         menuInstansi = new javax.swing.JMenuItem();
@@ -64,16 +57,7 @@ public class MainFrame extends Frame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        javax.swing.GroupLayout imageTransitionComponentLayout = new javax.swing.GroupLayout(imageTransitionComponent);
-        imageTransitionComponent.setLayout(imageTransitionComponentLayout);
-        imageTransitionComponentLayout.setHorizontalGroup(
-            imageTransitionComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        imageTransitionComponentLayout.setVerticalGroup(
-            imageTransitionComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        dialogComponent.setLayout(new java.awt.BorderLayout());
 
         setAnimationHide(com.bpd.arsip.component.Animation.HIDE_TO_RIGHT);
         setAnimationShow(com.bpd.arsip.component.Animation.SHOW_FROM_LEFT);
@@ -84,7 +68,7 @@ public class MainFrame extends Frame {
             }
         });
 
-        panelGradient1.setColorBottom(new java.awt.Color(0, 0, 204));
+        panelGradient1.setColorBottom(new java.awt.Color(51, 0, 153));
 
         panelFooter.setColorBottom(new java.awt.Color(0, 0, 204));
 
@@ -123,7 +107,6 @@ public class MainFrame extends Frame {
 
         panelCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         panelCard.setLayout(new java.awt.CardLayout());
-        panelCard.add(panelPengaturanQuota, "panelPengaturanQuota");
         panelCard.add(panelPejabat, "panelPejabat");
         panelCard.add(panelInstansi, "panelInstansi");
         panelCard.add(panelUser, "panelUser");
@@ -166,16 +149,7 @@ public class MainFrame extends Frame {
 
         jMenu1.setText("Pengaturan");
 
-        menuPengaturanQuota.setText("Quota Penyimpanan");
-        menuPengaturanQuota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuPengaturanQuotaActionPerformed(evt);
-            }
-        });
-        jMenu1.add(menuPengaturanQuota);
-        jMenu1.add(jSeparator1);
-
-        menuPenyimpanan.setText("Daftar Rak & Dus");
+        menuPenyimpanan.setText("Daftar Penyimpanan Arsip");
         menuPenyimpanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuPenyimpananActionPerformed(evt);
@@ -226,12 +200,6 @@ public class MainFrame extends Frame {
         exit();
     }//GEN-LAST:event_formWindowClosing
 
-    private void menuPengaturanQuotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPengaturanQuotaActionPerformed
-        // TODO add your handling code here:
-        showPanel(panelPengaturanQuota, "panelPengaturanQuota", "Pengaturan Quota Rak & Dus");
-        panelPengaturanQuota.initFrame();
-    }//GEN-LAST:event_menuPengaturanQuotaActionPerformed
-
     private void menuPejabatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPejabatActionPerformed
         // TODO add your handling code here:
         showPanel(panelPejabat, "panelPejabat", "Pengaturan Data Pejabat");
@@ -252,8 +220,7 @@ public class MainFrame extends Frame {
 
     private void menuPenyimpananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenyimpananActionPerformed
         // TODO add your handling code here:
-        showPanel(panelPenyimpanan, "panelPenyimpanan", "Pengaturan Tempat Penyimpanan");
-        panelPenyimpanan.initPanel();
+        showPanel(panelPenyimpanan, "panelPenyimpanan", "Pengaturan Penyimpanan");
         panelPenyimpanan.loadAllTab();
     }//GEN-LAST:event_menuPenyimpananActionPerformed
 
@@ -294,14 +261,12 @@ public class MainFrame extends Frame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.stripbandunk.jglasspane.component.DialogComponent dialogComponent;
-    private com.stripbandunk.jglasspane.component.ImageTransitionComponent imageTransitionComponent;
     private com.stripbandunk.jglasspane.JGlassPane jGlassPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JProgressBar jProgressBar;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private dany.swing.lib.label.LabelDate labelDate1;
     private dany.swing.lib.label.LabelWhite labelHalaman;
@@ -309,7 +274,6 @@ public class MainFrame extends Frame {
     private dany.swing.lib.label.LabelWhite labelUsername;
     private javax.swing.JMenuItem menuInstansi;
     private javax.swing.JMenuItem menuPejabat;
-    private javax.swing.JMenuItem menuPengaturanQuota;
     private javax.swing.JMenuItem menuPenyimpanan;
     private javax.swing.JMenuItem menuUser;
     private dany.swing.lib.panel.PanelImageAlpha panelCard;
@@ -318,7 +282,6 @@ public class MainFrame extends Frame {
     private com.bpd.arsip.view.panel.PanelInstansi panelInstansi;
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
     private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
-    private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota;
     private com.bpd.arsip.view.panel.PanelPenyimpanan panelPenyimpanan;
     private com.bpd.arsip.view.panel.PanelUser panelUser;
     private com.bpd.arsip.component.ViewPortTransparan viewPortTransparan1;
@@ -328,9 +291,6 @@ public class MainFrame extends Frame {
         setGlassPane(jGlassPane);
         getGlassPane().setVisible(true);
         jGlassPane.addGlassPaneComponent(dialogComponent);
-        jGlassPane.addGlassPaneComponent(imageTransitionComponent);
-        
-        imageTransitionComponent.setImageCreator(new ComponentImageCreator(panelCard));
         dialogComponent.setDialogBackground(new DialogBackgroundColor(Color.GRAY));
     }
 
@@ -345,12 +305,7 @@ public class MainFrame extends Frame {
     }
 
     void showPanel(Component panel, String card, String header) {
-        WipeRightImageTransition transition=new WipeRightImageTransition();
-        transition.setCoordinate(GraphicHelper.getLocation(panelCard, jGlassPane));
-        
-        imageTransitionComponent.setTransition(transition);
-        imageTransitionComponent.start();
-        labelHalaman.setText(header);
+       labelHalaman.setText(header);
         if (panel.isVisible()) {
             return;
         }
@@ -360,10 +315,10 @@ public class MainFrame extends Frame {
     
     public void initPanel(){
         panelPejabat.setMainFrame(this);
-        panelPengaturanQuota.setMainFrame(this);
         panelInstansi.setMainFrame(this);
         panelUser.setMainFrame(this);
-        panelPenyimpanan.setMainFrame(this);
+        panelPenyimpanan.initPanel(this);
+        
     }
 
 }

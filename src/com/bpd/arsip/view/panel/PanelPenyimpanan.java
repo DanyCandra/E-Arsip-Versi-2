@@ -7,23 +7,29 @@ import com.bpd.arsip.view.MainFrame;
  * @author Dany Candra
  */
 public class PanelPenyimpanan extends javax.swing.JPanel {
-    
-    private MainFrame mainFrame;
+
     /**
      * Creates new form PanelPenyimpanan
      */
+    int start = 0;
+
     public PanelPenyimpanan() {
         initComponents();
-        initPanel();
     }
 
-    public MainFrame getMainFrame() {
-        return mainFrame;
+    public PanelPengaturanQuota getPanelPengaturanQuota1() {
+        return panelPengaturanQuota1;
     }
 
-    public void setMainFrame(MainFrame mainFrame) {
-        this.mainFrame = mainFrame;
+    public PanelPenyimpananLantai getPanelPenyimpananLantai() {
+        return panelPenyimpananLantai1;
     }
+
+    public PanelPenyimpananDus getPanelPenyimpananDus() {
+        return panelPenyimpananDus1;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,70 +41,51 @@ public class PanelPenyimpanan extends javax.swing.JPanel {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        panelPengaturanQuota1 = new com.bpd.arsip.view.panel.PanelPengaturanQuota();
         panelPenyimpananLantai1 = new com.bpd.arsip.view.panel.PanelPenyimpananLantai();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        panelPenyimpananDus1 = new com.bpd.arsip.view.panel.PanelPenyimpananDus();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setOpaque(false);
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(panelPenyimpananLantai1, java.awt.BorderLayout.CENTER);
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+        jTabbedPane1.addTab("Pengaturan Quota Rak & Dus", panelPengaturanQuota1);
+        jTabbedPane1.addTab("Pengaturan Tempat Arsip", panelPenyimpananLantai1);
+        jTabbedPane1.addTab("Pengaturan Dus Arsip", panelPenyimpananDus1);
 
-        jTabbedPane1.addTab("Tempat Penyimpanan", jPanel1);
-
-        jPanel2.setOpaque(false);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 895, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel2);
-
-        jPanel3.setOpaque(false);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 895, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel3);
-
-        add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+        add(jTabbedPane1);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+        int now = jTabbedPane1.getSelectedIndex();
+        if (start != now) {
+            loadAllTab();
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private com.bpd.arsip.view.panel.PanelPengaturanQuota panelPengaturanQuota1;
+    private com.bpd.arsip.view.panel.PanelPenyimpananDus panelPenyimpananDus1;
     private com.bpd.arsip.view.panel.PanelPenyimpananLantai panelPenyimpananLantai1;
     // End of variables declaration//GEN-END:variables
 
-    public void initPanel(){
-        panelPenyimpananLantai1.setMainFrame(getMainFrame());
-       
+    public void initPanel(MainFrame mainFrame) {
+        panelPenyimpananLantai1.setMainFrame(mainFrame);
+        panelPengaturanQuota1.setMainFrame(mainFrame);
+        panelPenyimpananDus1.setMainFrame(mainFrame);
     }
-    
-    public void loadAllTab(){
-        panelPenyimpananLantai1.load();
+
+    public void loadAllTab() {
+        getPanelPengaturanQuota1().initFrame();
+        getPanelPenyimpananLantai().load();
+        getPanelPenyimpananDus().load();
     }
 }

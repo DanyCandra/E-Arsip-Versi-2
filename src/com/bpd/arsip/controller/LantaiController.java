@@ -4,6 +4,7 @@ import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.helper.HelperGeneratorAutoId;
 import com.bpd.arsip.model.LantaiModel;
 import com.bpd.arsip.validator.ValidatorNotNull;
+import com.bpd.arsip.validator.ValidatorNumber;
 import com.bpd.arsip.validator.ValidatorTextLimit;
 import com.bpd.arsip.view.panel.PanelPenyimpananLantai;
 import java.util.List;
@@ -62,11 +63,12 @@ public class LantaiController {
     public void insertLantai(PanelPenyimpananLantai view) {
         String namaLantai = view.getTextNama().getText().toUpperCase();
 
-        if (ValidatorNotNull.isNotNull(namaLantai, view, "NAMA LANTAI")
-                && ValidatorTextLimit.isLimit(namaLantai, 50, view, "NAMA LANTAI")) {
+        if (ValidatorNotNull.isNotNull(namaLantai, view, "KODE TEMPAT")
+                && ValidatorNumber.isNumber(namaLantai, view, "KODE TEMPAT")
+                && ValidatorTextLimit.isLimit(namaLantai,3, view, "KODE TEMPAT")) {
             try {
 
-                lantaiModel.setIdLantai(HelperGeneratorAutoId.generateAutoId());
+                lantaiModel.setIdLantai(HelperGeneratorAutoId.generateAutoIdLantai());
                 lantaiModel.setNamaLantai(namaLantai);
                 if (lantaiModel.isCanInsert() == true) {
                     lantaiModel.insert();
@@ -90,8 +92,9 @@ public class LantaiController {
         } else {
             String namaLantai = view.getTextNama().getText().toUpperCase();
 
-            if (ValidatorNotNull.isNotNull(namaLantai, view, "NAMA LANTAI")
-                    && ValidatorTextLimit.isLimit(namaLantai, 50, view, "NAMA LANTAI")) {
+            if (ValidatorNotNull.isNotNull(namaLantai, view, "KODE TEMPAT")
+                    && ValidatorNumber.isNumber(namaLantai, view, "KODE TEMPAT")
+                    && ValidatorTextLimit.isLimit(namaLantai,3, view, "KODE TEMPAT")) {
                 try {
 
                     lantaiModel.setNamaLantai(namaLantai);

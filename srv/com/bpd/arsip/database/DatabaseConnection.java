@@ -1,14 +1,18 @@
 package com.bpd.arsip.database;
 
+import com.bpd.arsip.dao.DusDao;
 import com.bpd.arsip.dao.InstansiDao;
 import com.bpd.arsip.dao.PejabatDao;
 import com.bpd.arsip.dao.QuotaDao;
 import com.bpd.arsip.dao.UserDao;
 import com.bpd.arsip.dao.impl.InstansiDaoImpl;
 import com.bpd.arsip.dao.LantaiDao;
+import com.bpd.arsip.dao.RakDao;
+import com.bpd.arsip.dao.impl.DusDaoImpl;
 import com.bpd.arsip.dao.impl.LantaiDaoImpl;
 import com.bpd.arsip.dao.impl.PejabatDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
+import com.bpd.arsip.dao.impl.RakDaoImpl;
 import com.bpd.arsip.dao.impl.UserDaoImpl;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.io.FileInputStream;
@@ -36,6 +40,24 @@ public class DatabaseConnection {
     private static UserDao userDao;
 
     private static LantaiDao lantaiDao;
+
+    private static RakDao rakDao;
+
+    private static DusDao dusDao;
+
+    public static RakDao getRakDao() {
+        if (rakDao == null) {
+            rakDao = new RakDaoImpl(getConnection());
+        }
+        return rakDao;
+    }
+
+    public static DusDao getDusDao() {
+        if (dusDao == null) {
+            dusDao = new DusDaoImpl(getConnection());
+        }
+        return dusDao;
+    }
 
     public static LantaiDao getLantaiDao() {
         if (lantaiDao == null) {

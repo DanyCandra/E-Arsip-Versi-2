@@ -24,6 +24,7 @@ public class PanelPengaturanQuota extends javax.swing.JPanel {
         controller = new QuotaController();
         controller.setQuotaModel(model);
         initComponents();
+        
 
     }
 

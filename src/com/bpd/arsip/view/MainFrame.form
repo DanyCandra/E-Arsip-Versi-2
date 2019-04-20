@@ -10,28 +10,10 @@
     </Container>
     <Container class="com.stripbandunk.jglasspane.component.DialogComponent" name="dialogComponent">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
-        <Property name="horizontalGap" type="int" value="30"/>
-        <Property name="verticalGap" type="int" value="30"/>
-      </Layout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
     </Container>
     <Component class="com.bpd.arsip.view.dialog.PanelLoading" name="panelLoading">
     </Component>
-    <Container class="com.stripbandunk.jglasspane.component.ImageTransitionComponent" name="imageTransitionComponent">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
     <Container class="com.bpd.arsip.component.ViewPortTransparan" name="viewPortTransparan1">
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
@@ -41,19 +23,9 @@
             <Property name="text" type="java.lang.String" value="Pengaturan"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menuPengaturanQuota">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Quota Penyimpanan"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPengaturanQuotaActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuPenyimpanan">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Daftar Rak &amp; Dus"/>
+                <Property name="text" type="java.lang.String" value="Daftar Penyimpanan Arsip"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPenyimpananActionPerformed"/>
@@ -137,7 +109,7 @@
     <Container class="dany.swing.lib.panel.PanelGradient" name="panelGradient1">
       <Properties>
         <Property name="colorBottom" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="0" red="0" type="rgb"/>
+          <Color blue="99" green="0" red="33" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -264,13 +236,6 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
-            <Component class="com.bpd.arsip.view.panel.PanelPengaturanQuota" name="panelPengaturanQuota">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="panelPengaturanQuota"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="com.bpd.arsip.view.panel.PanelPejabat" name="panelPejabat">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
