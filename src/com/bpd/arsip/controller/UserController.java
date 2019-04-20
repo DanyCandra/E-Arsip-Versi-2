@@ -120,14 +120,9 @@ public class UserController {
                     userModel.setNama(nama);
                     userModel.setUserName(username);
                     userModel.setPassword(password);
-                    if (userModel.isCanInsert() == true) {
-                        userModel.update();
-                        JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
-                        batal(view);
-
-                    } else {
-                        JOptionPane.showMessageDialog(view, "Username Tidak Boleh Sama");
-                    }
+                    userModel.update();
+                    JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
+                    batal(view);
 
                 } catch (ArsipException ex) {
                     JOptionPane.showMessageDialog(view, new Object[]{"Terjadi Error Dengan Database", ex.getMessage()}, "Telah Terjadi Error", JOptionPane.ERROR_MESSAGE);

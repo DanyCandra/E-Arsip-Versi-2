@@ -232,6 +232,7 @@ public class PejabatController {
         } else if (view.isInput() == false) {
             updatePejabat(view);
         }
+        loadTablePejabat(view);
     }
 
 }
