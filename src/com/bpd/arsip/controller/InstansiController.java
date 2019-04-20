@@ -197,6 +197,8 @@ public class InstansiController {
         } else if (view.isInput() == false) {
             update(view);
         }
+        
+        loadTableInstansi(view);
     }
 
     public void batal(PanelInstansi view) {

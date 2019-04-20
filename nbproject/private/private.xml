@@ -2,8 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
-            <file>file:/D:/PROJECT/E-Arsip%20Versi%202/src/com/bpd/arsip/view/MainFrame.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/srv/com/bpd/arsip/entitas/Instansi.java</file>
         </group>
+>>>>>>> 44a469bda5e8e8a2e9be12e64fd4f8e97aaf59cc
     </open-files>
 </project-private>
