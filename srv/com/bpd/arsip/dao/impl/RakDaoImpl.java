@@ -235,5 +235,30 @@ public class RakDaoImpl implements RakDao {
             }
         }
     }
+    
+    @Override
+    public void updateQuotaRakById(String idRak, int quotaBaru) throws ArsipException {
+        final String INSERT = "UPDATE RAK SET QUOTA=? WHERE ID_RAK=?";
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(INSERT);
+            statement.setInt(1, quotaBaru);
+            statement.setString(2, idRak);
+
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+
+            throw new ArsipException(ex.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+    }
 
 }

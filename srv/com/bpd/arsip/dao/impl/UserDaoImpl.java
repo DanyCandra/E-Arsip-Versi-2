@@ -29,8 +29,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void insertUser(User user) throws ArsipException {
-        final String INSERT = "INSERT INTO USER (ID_USER,USERNAME,PASSWORD,NAMA) "
-                + "VALUES (?,?,?,?)";
+        final String INSERT = "INSERT INTO USER (ID_USER,USERNAME,PASSWORD,NAMA,PREVILLAGE) "
+                + "VALUES (?,?,?,?,?)";
 
         PreparedStatement statement = null;
         try {
@@ -40,6 +40,7 @@ public class UserDaoImpl implements UserDao {
             statement.setString(2, user.getUserName());
             statement.setString(3, user.getPassword());
             statement.setString(4, user.getNama());
+            statement.setInt(5, user.getPrevillage());
             statement.executeUpdate();
 
         } catch (SQLException ex) {
@@ -70,6 +71,7 @@ public class UserDaoImpl implements UserDao {
                 user.setNama(set.getString("NAMA"));
                 user.setPassword(set.getString("PASSWORD"));
                 user.setUserName(set.getString("USERNAME"));
+                user.setPrevillage(set.getInt("PREVILLAGE"));
                 list.add(user);
             }
         } catch (SQLException ex) {
@@ -89,7 +91,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void updateUser(User user) throws ArsipException {
-        final String UPDATE = "UPDATE USER SET USERNAME=?,PASSWORD=?,NAMA=? "
+        final String UPDATE = "UPDATE USER SET USERNAME=?,PASSWORD=?,NAMA=? ,PREVILLAGE=? "
                 + "WHERE ID_USER=?";
 
         PreparedStatement statement = null;
@@ -99,7 +101,9 @@ public class UserDaoImpl implements UserDao {
             statement.setString(1, user.getUserName());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getNama());
-            statement.setString(4, user.getIdUser());
+            statement.setInt(4, user.getPrevillage());
+            statement.setString(5, user.getIdUser());
+            
             statement.executeUpdate();
 
         } catch (SQLException ex) {
@@ -196,6 +200,7 @@ public class UserDaoImpl implements UserDao {
                 user.setNama(set.getString("NAMA"));
                 user.setPassword(set.getString("PASSWORD"));
                 user.setUserName(set.getString("USERNAME"));
+                user.setPrevillage(set.getInt("PREVILLAGE"));
             }
         } catch (SQLException ex) {
             throw new ArsipException(ex.getMessage());
@@ -228,6 +233,7 @@ public class UserDaoImpl implements UserDao {
                 user.setNama(set.getString("NAMA"));
                 user.setPassword(set.getString("PASSWORD"));
                 user.setUserName(set.getString("USERNAME"));
+                user.setPrevillage(set.getInt("PREVILLAGE"));
             }
         } catch (SQLException ex) {
             throw new ArsipException(ex.getMessage());
@@ -292,6 +298,7 @@ public class UserDaoImpl implements UserDao {
                 user.setNama(set.getString("NAMA"));
                 user.setPassword(set.getString("PASSWORD"));
                 user.setUserName(set.getString("USERNAME"));
+                user.setPrevillage(set.getInt("PREVILLAGE"));
                 list.add(user);
             }
         } catch (SQLException ex) {

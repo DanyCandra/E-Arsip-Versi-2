@@ -18,6 +18,8 @@ import javax.swing.JFrame;
 public class CenterFrame {
 
     public static void makeCenter(Dialog component) {
+        component.setTitle("E - Arsip Kredit | Bank Jateng");
+        component.setIconImage(getIcon());
         Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension framesize = component.getSize();
         if (framesize.height > screensize.height) {
@@ -30,6 +32,8 @@ public class CenterFrame {
     }
 
     public static void makeCenter(JFrame component) {
+        component.setTitle("E - Arsip Kredit | Bank Jateng");
+        component.setIconImage(getIcon());
         Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension framesize = component.getSize();
         if (framesize.height > screensize.height) {
@@ -42,7 +46,7 @@ public class CenterFrame {
     }
 
     public static Image getIcon() {
-        Image image = Toolkit.getDefaultToolkit().getImage("/com/bpd/arsip/icon/favicon.png");
+        Image image = Toolkit.getDefaultToolkit().getImage("rsc/com/bpd/arsip/icon/favicon.png");
         return image;
     }
 

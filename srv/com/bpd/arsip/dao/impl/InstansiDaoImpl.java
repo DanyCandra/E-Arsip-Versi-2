@@ -268,4 +268,36 @@ public class InstansiDaoImpl implements InstansiDao {
         return list;
     }
 
+    @Override
+    public Instansi getInstansiByName(String namaInstansi) throws ArsipException {
+        final String SELECT = "SELECT * FROM INSTANSI WHERE NAMA_INSTANSI=?";
+        Instansi instansi = null;
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(SELECT);
+            statement.setString(1, namaInstansi);
+            ResultSet set = statement.executeQuery();
+            if (set.next()) {
+                instansi = new Instansi();
+                instansi.setIdInstansi(set.getString("ID_INSTANSI"));
+                instansi.setNamaInstansi(set.getString("NAMA_INSTANSI"));
+                instansi.setAlamat(set.getString("ALAMAT"));
+                instansi.setTelepon(set.getString("TELEPON"));
+            }
+        } catch (SQLException ex) {
+            throw new ArsipException(ex.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    throw new ArsipException(ex.getMessage());
+                }
+            }
+        }
+
+        return instansi;
+    }
+
 }

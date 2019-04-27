@@ -24,11 +24,13 @@ public interface InstansiDao {
     public List<Instansi> getAllInstansi() throws ArsipException;
 
     public Instansi getInstansi(String idInstansi) throws ArsipException;
-    
+
+    public Instansi getInstansiByName(String namaInstansi) throws ArsipException;
+
     public List<Instansi> getAllInstansiByName(String namaInstansi) throws ArsipException;
 
     public boolean isCanDelete(String idInstansi) throws ArsipException;
-    
+
     public boolean isCanInsert(String namaIsntansi) throws ArsipException;
 
 }

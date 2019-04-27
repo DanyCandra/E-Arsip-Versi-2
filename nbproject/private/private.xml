@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/controller/UserController.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/controller/LantaiController.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/panel/PanelPenyimpananDus.java</file>
             <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/MainFrame.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/panel/PanelInstansi.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/model/UserModel.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/controller/DusController.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/panel/PanelUser.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/panel/PanelPenyimpananLantai.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/srv/com/bpd/arsip/dao/impl/UserDaoImpl.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/controller/DatabaseController.java</file>
+            <file>file:/D:/Project/E-Arsip-Versi-2/src/com/bpd/arsip/view/Test.java</file>
         </group>
     </open-files>
 </project-private>

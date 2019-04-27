@@ -23,6 +23,182 @@
         </Property>
       </Properties>
     </Component>
+    <Container class="javax.swing.JDialog" name="dialogHapusDus">
+      <Properties>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[700, 350]"/>
+        </Property>
+        <Property name="modal" type="boolean" value="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="dany.swing.lib.panel.PanelGradient" name="panelGradient1">
+          <Properties>
+            <Property name="colorBottom" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="0" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Center"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="buttonHapus" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="buttonBatalHapus" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="labelWhite5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelWhite9" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="textHapusJumlah" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="comboHapusRak" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelWhite3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelWhite6" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="labelWhite7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelWhite8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="labelWhite3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="comboHapusRak" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="labelWhite9" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelWhite5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="textHapusJumlah" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="buttonBatalHapus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonHapus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="labelWhite6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="labelWhite7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="labelWhite8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus Dus Arsip"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="24" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Jumlah Dus :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="textHapusJumlah">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="buttonBatalHapus">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Batal"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBatalHapusActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="buttonHapus">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHapusActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Perhatian !!!"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="18" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1. Dus yang akan dihapus berutan dari no dus akhir sejumlah isian di Kolom Jumlah Dus"/>
+              </Properties>
+            </Component>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2. Pastikan jumlah dus yang akan di hapus sudah tidak memiliki isi Berkas Kredit."/>
+              </Properties>
+            </Component>
+            <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite9">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="Pilih Rak :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="comboHapusRak">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -50,7 +226,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" max="32767" attributes="0"/>
                   <Component id="jPanel2" max="32767" attributes="0"/>
-                  <Component id="jPagination" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jPagination" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -63,8 +243,11 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jPagination" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jPagination" max="32767" attributes="0"/>
+                  <Component id="jButton1" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -92,16 +275,16 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="labelWhite1" min="-2" pref="104" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="comboLokasi" max="32767" attributes="0"/>
+                          <Component id="comboLokasi" pref="518" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="buttonTambah" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="buttonHapus" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton2" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="buttonSimpan" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonSimpan" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="buttonBatal" linkSize="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -119,7 +302,7 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="labelWhite1" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="labelWhite1" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -129,14 +312,14 @@
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="textJumlahDus" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelWhite2" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="labelWhite2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonBatal" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonHapus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonTambah" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBatal" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonTambah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonSimpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jButton2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -152,6 +335,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonBatal">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Batal"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -159,16 +345,11 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBatalActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonHapus">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Hapus"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHapusActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="buttonTambah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tambah"/>
           </Properties>
           <Events>
@@ -177,6 +358,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonSimpan">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Simpan"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -214,6 +398,14 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hapus"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -243,6 +435,9 @@
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
             <Property name="viewport" type="javax.swing.JViewport" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="viewPortTransparan1"/>
             </Property>
@@ -258,6 +453,20 @@
       </Properties>
       <Events>
         <EventHandler event="onPageChange" listener="com.stripbandunk.jwidget.listener.PaginationListener" parameters="com.stripbandunk.jwidget.event.PaginationEvent" handler="jPaginationOnPageChange"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Hapus Dus"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

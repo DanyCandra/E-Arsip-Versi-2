@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  *
  * @author Dany Candra
  */
-public class NamaRakRender extends DefaultTableCellRenderer {
+public class NamaRakRender extends TableRenderDefault {
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {

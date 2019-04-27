@@ -8,6 +8,7 @@ package com.bpd.arsip.controller;
 import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.model.DusModel;
 import com.bpd.arsip.model.LantaiModel;
+import com.bpd.arsip.model.RakModel;
 import com.bpd.arsip.validator.ValidatorNotNull;
 import com.bpd.arsip.validator.ValidatorNumber;
 import com.bpd.arsip.validator.ValidatorTextLimit;
@@ -31,6 +32,12 @@ public class DusController {
 
     private LantaiModel lantaiModel;
 
+    private RakModel rakModel;
+
+    public void setRakModel(RakModel rakModel) {
+        this.rakModel = rakModel;
+    }
+
     public void setDusModel(DusModel dusModel) {
         this.dusModel = dusModel;
     }
@@ -41,10 +48,9 @@ public class DusController {
 
     public void initInputButton(PanelPenyimpananDus view, boolean value) {
         view.getButtonTambah().setEnabled(value);
-        view.getButtonHapus().setEnabled(value);
         view.getButtonBatal().setEnabled(!value);
         view.getButtonSimpan().setEnabled(!value);
-        view.getTableLantai().setEnabled(value);
+        view.getTableDus().setEnabled(value);
 
         view.getComboLokasi().setEnabled(!value);
         view.getTextJumlahDus().setEnabled(!value);
@@ -65,10 +71,6 @@ public class DusController {
         initInputButton(view, false);
         inputText(view, true);
         view.setInput(true);
-    }
-
-    public void hapus(PanelPenyimpananDus aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void batal(PanelPenyimpananDus view) {
@@ -169,18 +171,92 @@ public class DusController {
                         int jumlah = Integer.parseInt(tmpJumlah);
                         try {
                             dusModel.insertDus(jumlah, lantaiTmp);
+                            loadAll(view);
                         } catch (ArsipException ex) {
                             JOptionPane.showMessageDialog(view, new Object[]{"Gagal Terhubung Dengan Database", ex.getMessage()}, "Telah Terjadi Error", JOptionPane.ERROR_MESSAGE);
                             Logger.getLogger(DusController.class.getName()).log(Level.SEVERE, null, ex);
                         }
+                        JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
                         view.getMainFrame().startLoading(false);
 
                     });
                 }).start();
             }
         }
-        batal(view);
-        JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
+
     }
 
+    public boolean isSelectedRow(PanelPenyimpananDus view) {
+        boolean result = false;
+        if (view.getTableDus().getSelectedRow() != -1 && view.getTableDus().getSelectedRowCount() == 1) {
+            result = true;
+        } else {
+            JOptionPane.showMessageDialog(view, "Silahkan Pilih Data Terlebih Dahulu");
+        }
+        return result;
+    }
+
+    public void hapus(PanelPenyimpananDus view) {
+        if (isSelectedRow(view) == true) {
+            int index = view.getTableDus().getSelectedRow();
+            if (JOptionPane.showConfirmDialog(view, "Apakah Anda Yakin Akan Menghapus Data ?") == JOptionPane.OK_OPTION) {
+            }
+        }
+    }
+
+    public void loadAll(PanelPenyimpananDus view) {
+        batal(view);
+        loadTableLantai(view, view.getPAGE_SIZE());
+        loadComboBox(view);
+        loadComboBoxRak(view);
+    }
+
+//   =================================================================================================================================
+//                                            Method yang digunakan untuk dialog Hapus
+//   =================================================================================================================================
+//   
+    public void loadComboBoxRak(final PanelPenyimpananDus view) {
+        new SwingWorker<List<RakModel>, Object>() {
+            @Override
+            protected List<RakModel> doInBackground() throws Exception {
+                List<RakModel> list = rakModel.load();
+                return list;
+            }
+
+            @Override
+            protected void done() {
+                try {
+                    view.getComboBoxrRakModel().removeAllElements();
+                    for (RakModel model : get()) {
+                        view.getComboBoxrRakModel().addElement(model);
+                    }
+                } catch (ExecutionException | InterruptedException ex) {
+                    Logger.getLogger(DusController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.execute();
+    }
+
+    public void hapusDus(PanelPenyimpananDus view) {
+
+        if (JOptionPane.showConfirmDialog(view.getDialogHapusDus(), "Apakah Anda Yakin Akan Menghapus Data ?") == JOptionPane.OK_OPTION) {
+            String tmpJumlah = view.getTextHapusJumlah().getText();
+            RakModel model = (RakModel) view.getComboBoxrRakModel().getSelectedItem();
+            int index = view.getComboHapusRak().getSelectedIndex();
+            if (index >= 0
+                    && ValidatorNumber.isNumber(tmpJumlah, view.getDialogHapusDus(), "Jumlah Data")
+                    && ValidatorTextLimit.isLimit(tmpJumlah, 2, view, "Jumlah Data")) {
+                try {
+                    int jumlah = Integer.valueOf(tmpJumlah);
+                    dusModel.deleteDus(jumlah, model.getIdRak());
+                } catch (ArsipException ex) {
+                    Logger.getLogger(DusController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(view.getDialogHapusDus(), "Data Berhasil di Hapus?");
+                view.getTextHapusJumlah().setText("");
+                view.getDialogHapusDus().setVisible(false);
+                loadAll(view);
+            }
+        }
+    }
 }

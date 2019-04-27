@@ -9,6 +9,7 @@ import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.model.DatabaseModel;
 import com.bpd.arsip.validator.ValidatorNotNull;
 import com.bpd.arsip.view.dialog.DialogDatabaseSetting;
+import com.bpd.arsip.view.dialog.DialogLogin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -95,8 +96,8 @@ public class DatabaseController {
 
     public void showLoginDialog(DialogDatabaseSetting view) {
         view.setVisible(false);
-        //DialogLogin login = new DialogLogin();
-        //login.setVisible(true);
+        DialogLogin login = new DialogLogin();
+        login.setVisible(true);
     }
     
     public void closeConnection(){

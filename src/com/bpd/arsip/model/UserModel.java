@@ -4,6 +4,7 @@ import com.bpd.arsip.dao.UserDao;
 import com.bpd.arsip.database.DatabaseConnection;
 import com.bpd.arsip.entitas.User;
 import com.bpd.arsip.exception.ArsipException;
+import com.bpd.arsip.helper.render.TableHakAksesRender;
 import com.bpd.arsip.helper.render.TableRenderDefault;
 import com.stripbandunk.jwidget.annotation.TableColumn;
 import java.io.FileInputStream;
@@ -20,24 +21,27 @@ import java.util.logging.Logger;
  * @author Dany Candra
  */
 public class UserModel {
-    
-    @TableColumn(name = "ID USER", number = 1, size = 60,renderer = TableRenderDefault.class)
+
+    @TableColumn(name = "ID USER", number = 1, size = 30, renderer = TableRenderDefault.class)
     private String idUser;
-    @TableColumn(name = "USERNAME", number = 3, size = 60,renderer = TableRenderDefault.class)
+    @TableColumn(name = "USERNAME", number = 2, size = 50, renderer = TableRenderDefault.class)
     private String userName;
 
     private String password;
-    @TableColumn(name = "NAMA", number = 2, size = 60,renderer = TableRenderDefault.class)
+    @TableColumn(name = "NAMA", number = 3, size = 40, renderer = TableRenderDefault.class)
     private String nama;
+    @TableColumn(name = "HAL AKSES", number = 4, size = 65, renderer = TableHakAksesRender.class)
+    private int previllage;
 
     public UserModel() {
     }
 
-    public UserModel(String idUser, String userName, String password, String nama) {
+    public UserModel(String idUser, String userName, String password, String nama, int previllage) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
         this.nama = nama;
+        this.previllage = previllage;
     }
 
     public String getIdUser() {
@@ -72,6 +76,16 @@ public class UserModel {
         this.nama = nama;
     }
 
+    public int getPrevillage() {
+        return previllage;
+    }
+
+    public void setPrevillage(int previllage) {
+        this.previllage = previllage;
+    }
+    
+    
+
     public List<UserModel> getAllUserModel() throws ArsipException {
         List<UserModel> list = new ArrayList<>();
 
@@ -83,6 +97,7 @@ public class UserModel {
             model.setNama(user.getNama());
             model.setPassword(user.getPassword());
             model.setUserName(user.getUserName());
+            model.setPrevillage(user.getPrevillage());
             return model;
         }).forEachOrdered((model) -> {
             list.add(model);
@@ -96,6 +111,7 @@ public class UserModel {
         user.setNama(nama);
         user.setPassword(password);
         user.setUserName(userName);
+        user.setPrevillage(previllage);
 
         UserDao dao = DatabaseConnection.getUserDao();
         dao.insertUser(user);
@@ -107,6 +123,7 @@ public class UserModel {
         user.setNama(nama);
         user.setPassword(password);
         user.setUserName(userName);
+        user.setPrevillage(previllage);
 
         UserDao dao = DatabaseConnection.getUserDao();
         dao.updateUser(user);
@@ -135,6 +152,7 @@ public class UserModel {
         user.setNama(model.getNama());
         user.setPassword(model.getPassword());
         user.setUserName(model.getUserName());
+        user.setPrevillage(model.getPrevillage());
         return user;
     }
 
@@ -150,6 +168,7 @@ public class UserModel {
                 setNama(user.getNama());
                 setPassword(user.getPassword());
                 setUserName(user.getUserName());
+                setPrevillage(user.getPrevillage());
             } else {
                 result = false;
             }
@@ -183,7 +202,7 @@ public class UserModel {
             throw new ArsipException(ex.getMessage());
         } finally {
             try {
-                if (fileInputStream!=null) {
+                if (fileInputStream != null) {
                     fileInputStream.close();
                 }
             } catch (IOException ex) {
@@ -194,7 +213,7 @@ public class UserModel {
         return result;
     }
 
-    public  List<UserModel> getAllUserModelByName(String namaPemilik) throws ArsipException {
+    public List<UserModel> getAllUserModelByName(String namaPemilik) throws ArsipException {
         List<UserModel> list = new ArrayList<>();
 
         UserDao dao = DatabaseConnection.getUserDao();
@@ -205,6 +224,7 @@ public class UserModel {
             model.setNama(user.getNama());
             model.setPassword(user.getPassword());
             model.setUserName(user.getUserName());
+            model.setPrevillage(user.getPrevillage());
             return model;
         }).forEachOrdered((model) -> {
             list.add(model);
@@ -221,11 +241,12 @@ public class UserModel {
             model.setNama(user.getNama());
             model.setPassword(user.getPassword());
             model.setUserName(user.getUserName());
+            model.setPrevillage(user.getPrevillage());
         }
 
         return model;
     }
-    
+
     public void updateUserAdmin() throws ArsipException {
         try {
             FileOutputStream outputStream = new FileOutputStream("conf/user.properties");

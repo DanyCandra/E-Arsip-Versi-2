@@ -85,12 +85,14 @@
                               <Component id="labelWhite2" min="-2" pref="91" max="-2" attributes="0"/>
                               <Component id="labelWhite3" min="-2" pref="91" max="-2" attributes="0"/>
                               <Component id="labelWhite1" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="labelWhite4" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="textUsername" alignment="1" max="32767" attributes="0"/>
                               <Component id="textNama" alignment="1" max="32767" attributes="0"/>
                               <Component id="textPassword" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboPrevillage" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -114,25 +116,30 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="textNama" max="32767" attributes="0"/>
-                      <Component id="labelWhite1" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="labelWhite1" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="textUsername" max="32767" attributes="0"/>
-                      <Component id="labelWhite2" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="labelWhite2" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelWhite3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="textPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelWhite3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="textPassword" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelWhite4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="comboPrevillage" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonBatal" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonHapus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonUbah" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonTambah" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBatal" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonHapus" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonUbah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonTambah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonSimpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -170,6 +177,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonBatal">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Batal"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -179,6 +189,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonHapus">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Hapus"/>
           </Properties>
           <Events>
@@ -187,6 +200,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonUbah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ubah"/>
           </Properties>
           <Events>
@@ -195,6 +211,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonTambah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tambah"/>
           </Properties>
           <Events>
@@ -203,6 +222,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonSimpan">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Simpan"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -218,8 +240,34 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="textPassword">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+        </Component>
+        <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Previllage :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboPrevillage">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="User"/>
+                <StringItem index="1" value="Administrator"/>
+              </StringArray>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -251,11 +299,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textCari" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonCari" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textCari" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonCari" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="255" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="221" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -282,6 +330,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonCari">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/com/bpd/arsip/icon/search.png"/>
             </Property>

@@ -19,6 +19,10 @@ public interface DusDao {
     public void insertDus(Dus dus) throws ArsipException;
     
     public void updateStock(Dus dus) throws ArsipException;
+    
+    public void deleteDus(String idDus) throws ArsipException;
+    
+    public boolean isCanDelete(String idDus)throws ArsipException;
 
     public List<Dus> getAllDus() throws ArsipException;
 
@@ -33,6 +37,8 @@ public interface DusDao {
     public List<Dus> getAllDus(String idRak) throws ArsipException;
 
     public Dus getDus(String id) throws ArsipException;
+    
+    public List<Dus> getDusForDelete(int jumlah,String id_rak)throws ArsipException;
     
 
     

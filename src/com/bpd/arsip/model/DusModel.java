@@ -6,6 +6,7 @@
 package com.bpd.arsip.model;
 
 import com.bpd.arsip.dao.DusDao;
+import com.bpd.arsip.dao.InstansiDao;
 import com.bpd.arsip.dao.LantaiDao;
 import com.bpd.arsip.dao.QuotaDao;
 import com.bpd.arsip.dao.RakDao;
@@ -18,7 +19,7 @@ import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.helper.HelperGeneratorAutoId;
 import com.bpd.arsip.helper.render.DusTableRender;
 import com.bpd.arsip.helper.render.LantaiTableRender;
-import com.bpd.arsip.helper.render.RakTableRender;
+import com.bpd.arsip.helper.render.TableRakRender;
 import com.bpd.arsip.helper.render.TableRenderDefault;
 import com.stripbandunk.jwidget.annotation.TableColumn;
 import java.util.ArrayList;
@@ -34,9 +35,9 @@ public class DusModel {
     private String idDus;
     @TableColumn(name = "LOKASI", number = 1, size = 40, renderer = LantaiTableRender.class)
     private LantaiModel lokasi;
-    @TableColumn(name = "RAK", number = 1, size = 40, renderer = RakTableRender.class)
+    @TableColumn(name = "RAK", number = 1, size = 40, renderer = TableRakRender.class)
     private RakModel rak;
-    @TableColumn(name = "QUOTA", number = 1, size = 40,renderer = TableRenderDefault.class)
+    @TableColumn(name = "QUOTA", number = 1, size = 40, renderer = TableRenderDefault.class)
     private int quota;
 
     public DusModel() {
@@ -104,7 +105,7 @@ public class DusModel {
         DusDao dusDao = DatabaseConnection.getDusDao();
 
         int rak = rakDao.getRakAkhir();
-        System.out.println("Jumlah Rak Sekarang : "+rak);
+        System.out.println("Jumlah Rak Sekarang : " + rak);
 
         if (rak == 0) {
             rak = 1;
@@ -113,16 +114,16 @@ public class DusModel {
             rak1.setNamaRak(rak);
             rak1.setQuota(getQuotaRak());
             rakDao.insertRak(rak1);
-            System.out.println("membuat rak dengan nomar rak "+rak1.getNamaRak());
+            System.out.println("membuat rak dengan nomar rak " + rak1.getNamaRak());
         }
         Rak rakForTmpId = rakDao.getRak(rak);
         System.out.println();
         String idRak = rakForTmpId.getIdRak();
         int dus = dusDao.getDusAkhirByRak(idRak);
-        System.out.println("jumlah dus di rak "+rakForTmpId.getIdRak()+" adalah: "+dus);
+        System.out.println("jumlah dus di rak " + rakForTmpId.getIdRak() + " adalah: " + dus);
 
         int tmpquotaRak = rakDao.getQuotaRakAkhir();
-        System.out.println("Sisa Quota Dus di "+rakForTmpId.getIdRak()+" adalah: "+tmpquotaRak);
+        System.out.println("Sisa Quota Dus di " + rakForTmpId.getIdRak() + " adalah: " + tmpquotaRak);
         int quotaRak = getQuotaRak();
         int jumlahdus = jumlahDusInput;
 
@@ -132,7 +133,7 @@ public class DusModel {
                     tmpquotaRak = tmpquotaRak - 1;
                     //update rak
                     rakDao.updateQuotaRak(rak, tmpquotaRak);
-                    System.out.println("Sisa Quota Dus di "+rakForTmpId.getIdRak()+" adalah: "+tmpquotaRak);
+                    System.out.println("Sisa Quota Dus di " + rakForTmpId.getIdRak() + " adalah: " + tmpquotaRak);
                 }
             } else if (tmpquotaRak == 0) {
                 rak++;
@@ -245,7 +246,12 @@ public class DusModel {
     public void updateStokPenerimaan() throws ArsipException {
         Dus dus = new Dus();
         dus.setIdDus(idDus);
-        dus.setQuota(quota - 1);
+        int newQuota = quota - 1;
+        if (newQuota <= 0) {
+            dus.setQuota(0);
+        } else {
+            dus.setQuota(newQuota);
+        }
 
         DusDao dao = DatabaseConnection.getDusDao();
         dao.updateStock(dus);
@@ -254,7 +260,12 @@ public class DusModel {
     public void updateStokPengembalian() throws ArsipException {
         Dus dus = new Dus();
         dus.setIdDus(idDus);
-        dus.setQuota(quota + 1);
+        int newQuota = quota + 1;
+        if (newQuota >= getQuotaDus()) {
+            dus.setQuota(getQuotaDus());
+        } else {
+            dus.setQuota(quota + 1);
+        }
 
         DusDao dao = DatabaseConnection.getDusDao();
         dao.updateStock(dus);
@@ -267,6 +278,33 @@ public class DusModel {
         dus.setLantai(new LantaiModel().getLantaiFromModel(model.getLokasi()));
         dus.setRak(new RakModel().getRakFromModel(model.getRak()));
         return dus;
+    }
+
+    public void deleteDus(int jumlahData, String idRak) throws ArsipException {
+        DusDao dusDao = DatabaseConnection.getDusDao();
+        RakDao rakDao = DatabaseConnection.getRakDao();
+        List<Dus> listDelete = dusDao.getDusForDelete(jumlahData, idRak);
+
+        boolean isCanDelete;
+        int jumlahHapus = 0;
+        int quotaRak = rakDao.getRak(idRak).getQuota();
+        List<Dus> dusDelete = new ArrayList<>();
+        for (Dus tmpData : listDelete) {
+            isCanDelete = dusDao.isCanDelete(tmpData.getIdDus());
+            if (isCanDelete == false) {
+                break;
+            } else {
+                jumlahHapus += 1;
+                quotaRak += 1;
+                dusDelete.add(tmpData);
+                if (jumlahHapus == jumlahData) {
+                    for (Dus dusReadyToDelete : dusDelete) {
+                        dusDao.deleteDus(dusReadyToDelete.getIdDus());
+                    }
+                    rakDao.updateQuotaRakById(idRak, quotaRak);
+                }
+            }
+        }
     }
 
 }

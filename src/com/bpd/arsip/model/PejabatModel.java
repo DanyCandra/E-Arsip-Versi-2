@@ -24,7 +24,7 @@ public class PejabatModel {
     private String idPejabat;
     @TableColumn(name = "NAMA ", number = 2, size = 60,renderer = TableRenderDefault.class)
     private String namaPejabat;
-    @TableColumn(name = "JABATAN", number = 3, size = 60,renderer = TableRenderDefault.class)
+    @TableColumn(name = "JABATAN", number = 3,size = 80,renderer = TableRenderDefault.class)
     private String jabatan;
 
     public PejabatModel() {
@@ -149,6 +149,15 @@ public class PejabatModel {
         return model;
     }
     
+    public void selectPejabatByName(String namaPejabat) throws ArsipException {
+        PejabatDao dao = DatabaseConnection.getPejabatDao();
+        Pejabat pejabat = dao.getPejabatByNamaPejabat(namaPejabat);
+        if (pejabat != null) {
+            setIdPejabat(pejabat.getIdPejabat());
+            setJabatan(pejabat.getJabatan());
+            setNamaPejabat(pejabat.getNamaPejabat());
+        }
+    }
   
 
 }

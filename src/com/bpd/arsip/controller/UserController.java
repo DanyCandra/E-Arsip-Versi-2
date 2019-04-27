@@ -65,6 +65,7 @@ public class UserController {
         view.getTextNama().setText(userModel.getNama());
         view.getTextUsername().setText(userModel.getUserName());
         view.getTextPassword().setText(userModel.getPassword());
+        view.getComboPrevillage().setSelectedIndex(userModel.getPrevillage());
     }
 
     public void insert(PanelUser view) {
@@ -72,6 +73,7 @@ public class UserController {
         String nama = view.getTextNama().getText().toUpperCase();
         String username = view.getTextUsername().getText().toUpperCase();
         String password = new String(view.getTextPassword().getPassword()).toUpperCase();
+        int previllage = view.getComboPrevillage().getSelectedIndex();
 
         if (ValidatorNotNull.isNotNull(nama, view, "NAMA")
                 && ValidatorNotNull.isNotNull(username, view, "USERNAME")
@@ -85,6 +87,7 @@ public class UserController {
                 userModel.setNama(nama);
                 userModel.setUserName(username);
                 userModel.setPassword(password);
+                userModel.setPrevillage(previllage);
                 if (userModel.isCanInsert() == true) {
                     userModel.insert();
                     JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
@@ -108,6 +111,7 @@ public class UserController {
             String nama = view.getTextNama().getText().toUpperCase();
             String username = view.getTextUsername().getText().toUpperCase();
             String password = new String(view.getTextPassword().getPassword()).toUpperCase();
+            int previllage = view.getComboPrevillage().getSelectedIndex();
 
             if (ValidatorNotNull.isNotNull(nama, view, "NAMA")
                     && ValidatorNotNull.isNotNull(username, view, "USERNAME")
@@ -120,6 +124,7 @@ public class UserController {
                     userModel.setNama(nama);
                     userModel.setUserName(username);
                     userModel.setPassword(password);
+                    userModel.setPrevillage(previllage);
                     userModel.update();
                     JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
                     batal(view);
@@ -139,10 +144,12 @@ public class UserController {
         view.getButtonBatal().setEnabled(!value);
         view.getButtonSimpan().setEnabled(!value);
         view.getTableUser().setEnabled(value);
+        
 
         view.getTextNama().setEnabled(!value);
         view.getTextUsername().setEnabled(!value);
         view.getTextPassword().setEnabled(!value);
+        view.getComboPrevillage().setEnabled(!value);
     }
 
     public void inputText(PanelUser view, boolean isInput) {
@@ -150,6 +157,7 @@ public class UserController {
             view.getTextNama().setText("");
             view.getTextPassword().setText("");
             view.getTextUsername().setText("");
+            view.getComboPrevillage().setSelectedIndex(0);
         }
         view.getTextNama().requestFocus();
     }

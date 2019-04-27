@@ -15,6 +15,7 @@ public class User {
     private String userName;
     private String password;
     private String nama;
+    private int previllage;
 
     public User() {
     }
@@ -49,6 +50,14 @@ public class User {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public int getPrevillage() {
+        return previllage;
+    }
+
+    public void setPrevillage(int previllage) {
+        this.previllage = previllage;
     }
 
 }

@@ -74,6 +74,7 @@ public class LantaiController {
                     lantaiModel.insert();
                     JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
                     batal(view);
+                    loadTableLantai(view);
                 } else {
                     JOptionPane.showMessageDialog(view, "Data Gagal Disimpan, Data Telah Tersedia");
                 }
@@ -101,6 +102,7 @@ public class LantaiController {
                     lantaiModel.update();
                     JOptionPane.showMessageDialog(view, "Data Berhasil Disimpan");
                     batal(view);
+                    loadTableLantai(view);
 
                 } catch (ArsipException ex) {
                     JOptionPane.showMessageDialog(view, new Object[]{"Terjadi Error Dengan Database", ex.getMessage()}, "Telah Terjadi Error", JOptionPane.ERROR_MESSAGE);
@@ -156,7 +158,8 @@ public class LantaiController {
         } else if (view.isInput() == false) {
             updateLantai(view);
         }
-        loadTableLantai(view);
+        
+        
     }
 
     public void batal(PanelPenyimpananLantai view) {

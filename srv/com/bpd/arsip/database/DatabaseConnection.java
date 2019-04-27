@@ -1,5 +1,7 @@
 package com.bpd.arsip.database;
 
+import com.bpd.arsip.dao.CisDao;
+import com.bpd.arsip.dao.DebiturDao;
 import com.bpd.arsip.dao.DusDao;
 import com.bpd.arsip.dao.InstansiDao;
 import com.bpd.arsip.dao.PejabatDao;
@@ -7,10 +9,14 @@ import com.bpd.arsip.dao.QuotaDao;
 import com.bpd.arsip.dao.UserDao;
 import com.bpd.arsip.dao.impl.InstansiDaoImpl;
 import com.bpd.arsip.dao.LantaiDao;
+import com.bpd.arsip.dao.PengarsipanDao;
 import com.bpd.arsip.dao.RakDao;
+import com.bpd.arsip.dao.impl.CisDaoImpl;
+import com.bpd.arsip.dao.impl.DebiturDaoImpl;
 import com.bpd.arsip.dao.impl.DusDaoImpl;
 import com.bpd.arsip.dao.impl.LantaiDaoImpl;
 import com.bpd.arsip.dao.impl.PejabatDaoImpl;
+import com.bpd.arsip.dao.impl.PengarsipanDaoImpl;
 import com.bpd.arsip.dao.impl.QuotaDaoImpl;
 import com.bpd.arsip.dao.impl.RakDaoImpl;
 import com.bpd.arsip.dao.impl.UserDaoImpl;
@@ -44,6 +50,35 @@ public class DatabaseConnection {
     private static RakDao rakDao;
 
     private static DusDao dusDao;
+
+    private static DebiturDao debiturDao;
+
+    private static CisDao cisDao;
+
+    private static PengarsipanDao pengarsipanDao;
+
+    public static PengarsipanDao getPengarsipanDao() {
+
+        if (pengarsipanDao == null) {
+            pengarsipanDao = new PengarsipanDaoImpl(getConnection());
+        }
+        return pengarsipanDao;
+    }
+
+    public static CisDao getCisDao() {
+
+        if (cisDao == null) {
+            cisDao = new CisDaoImpl(getConnection());
+        }
+        return cisDao;
+    }
+
+    public static DebiturDao getDebiturDao() {
+        if (debiturDao == null) {
+            debiturDao = new DebiturDaoImpl(getConnection());
+        }
+        return debiturDao;
+    }
 
     public static RakDao getRakDao() {
         if (rakDao == null) {

@@ -3,9 +3,11 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.UserController;
 import com.bpd.arsip.model.UserModel;
 import com.bpd.arsip.view.MainFrame;
+import com.bpd.arsip.view.Test;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -94,6 +96,10 @@ public class PanelUser extends javax.swing.JPanel {
         return textCari;
     }
 
+    public JComboBox<String> getComboPrevillage() {
+        return comboPrevillage;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,6 +123,8 @@ public class PanelUser extends javax.swing.JPanel {
         buttonSimpan = new javax.swing.JButton();
         labelWhite3 = new dany.swing.lib.label.LabelWhite();
         textPassword = new javax.swing.JPasswordField();
+        labelWhite4 = new dany.swing.lib.label.LabelWhite();
+        comboPrevillage = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textCari = new javax.swing.JTextField();
@@ -145,6 +153,7 @@ public class PanelUser extends javax.swing.JPanel {
         textUsername.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         textUsername.setEnabled(false);
 
+        buttonBatal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
         buttonBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +162,7 @@ public class PanelUser extends javax.swing.JPanel {
             }
         });
 
+        buttonHapus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonHapus.setText("Hapus");
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +170,7 @@ public class PanelUser extends javax.swing.JPanel {
             }
         });
 
+        buttonUbah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonUbah.setText("Ubah");
         buttonUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +178,7 @@ public class PanelUser extends javax.swing.JPanel {
             }
         });
 
+        buttonTambah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonTambah.setText("Tambah");
         buttonTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +186,7 @@ public class PanelUser extends javax.swing.JPanel {
             }
         });
 
+        buttonSimpan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonSimpan.setText("Simpan");
         buttonSimpan.setEnabled(false);
         buttonSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +198,15 @@ public class PanelUser extends javax.swing.JPanel {
         labelWhite3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelWhite3.setText("Password :");
 
+        textPassword.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         textPassword.setEnabled(false);
+
+        labelWhite4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelWhite4.setText("Previllage :");
+
+        comboPrevillage.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        comboPrevillage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Administrator" }));
+        comboPrevillage.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,12 +219,14 @@ public class PanelUser extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelWhite4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textUsername, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textNama, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textPassword)))
+                            .addComponent(textPassword)
+                            .addComponent(comboPrevillage, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 225, Short.MAX_VALUE)
                         .addComponent(buttonTambah)
@@ -224,22 +247,26 @@ public class PanelUser extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textNama)
-                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textUsername)
-                    .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelWhite4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboPrevillage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBatal)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonUbah)
-                    .addComponent(buttonTambah)
-                    .addComponent(buttonSimpan))
+                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -255,6 +282,7 @@ public class PanelUser extends javax.swing.JPanel {
             }
         });
 
+        buttonCari.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/search.png"))); // NOI18N
         buttonCari.setText("Cari");
         buttonCari.addActionListener(new java.awt.event.ActionListener() {
@@ -278,10 +306,10 @@ public class PanelUser extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCari))
+                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -351,12 +379,14 @@ public class PanelUser extends javax.swing.JPanel {
     private javax.swing.JButton buttonSimpan;
     private javax.swing.JButton buttonTambah;
     private javax.swing.JButton buttonUbah;
+    private javax.swing.JComboBox<String> comboPrevillage;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private dany.swing.lib.label.LabelWhite labelWhite1;
     private dany.swing.lib.label.LabelWhite labelWhite2;
     private dany.swing.lib.label.LabelWhite labelWhite3;
+    private dany.swing.lib.label.LabelWhite labelWhite4;
     private com.stripbandunk.jwidget.JDynamicTable tableUser;
     private javax.swing.JTextField textCari;
     private javax.swing.JTextField textNama;

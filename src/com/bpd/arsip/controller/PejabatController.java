@@ -233,6 +233,7 @@ public class PejabatController {
             updatePejabat(view);
         }
         loadTablePejabat(view);
+        batal(view);
     }
 
 }

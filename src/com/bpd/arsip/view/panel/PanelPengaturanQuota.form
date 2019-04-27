@@ -51,18 +51,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelWhite1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textRak" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelWhite1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="textRak" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelWhite2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textDus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelWhite2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="textDus" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buttonSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonBatal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSimpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="buttonBatal" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>

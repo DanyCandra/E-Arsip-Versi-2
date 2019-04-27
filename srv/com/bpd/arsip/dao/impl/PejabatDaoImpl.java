@@ -272,4 +272,35 @@ public class PejabatDaoImpl implements PejabatDao {
         return list;
     }
 
+    @Override
+    public Pejabat getPejabatByNamaPejabat(String namaPejabat) throws ArsipException {
+        final String SELECT = "SELECT * FROM PEJABAT WHERE NAMA_PEJABAT=?";
+        Pejabat pejabat = null;
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(SELECT);
+            statement.setString(1, namaPejabat);
+            ResultSet set = statement.executeQuery();
+            if (set.next()) {
+                pejabat = new Pejabat();
+                pejabat.setIdPejabat(set.getString("ID_PEJABAT"));
+                pejabat.setNamaPejabat(set.getString("NAMA_PEJABAT"));
+                pejabat.setJabatan(set.getString("JABATAN"));
+            }
+        } catch (SQLException ex) {
+            throw new ArsipException(ex.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    throw new ArsipException(ex.getMessage());
+                }
+            }
+        }
+
+        return pejabat;
+    }
+
 }

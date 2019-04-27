@@ -3,6 +3,7 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.InstansiController;
 import com.bpd.arsip.model.InstansiModel;
 import com.bpd.arsip.view.MainFrame;
+import com.bpd.arsip.view.Test;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
 import javax.swing.JButton;
@@ -144,6 +145,7 @@ public class PanelInstansi extends javax.swing.JPanel {
         textAlamat.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         textAlamat.setEnabled(false);
 
+        buttonBatal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
         buttonBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +154,7 @@ public class PanelInstansi extends javax.swing.JPanel {
             }
         });
 
+        buttonHapus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonHapus.setText("Hapus");
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +162,7 @@ public class PanelInstansi extends javax.swing.JPanel {
             }
         });
 
+        buttonUbah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonUbah.setText("Ubah");
         buttonUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +170,7 @@ public class PanelInstansi extends javax.swing.JPanel {
             }
         });
 
+        buttonTambah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonTambah.setText("Tambah");
         buttonTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +178,7 @@ public class PanelInstansi extends javax.swing.JPanel {
             }
         });
 
+        buttonSimpan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonSimpan.setText("Simpan");
         buttonSimpan.setEnabled(false);
         buttonSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -223,23 +229,23 @@ public class PanelInstansi extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textNamaInstansi)
+                    .addComponent(textNamaInstansi, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textAlamat)
+                    .addComponent(textAlamat, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textNoTelepon)
+                    .addComponent(textNoTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(labelWhite3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBatal)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonUbah)
-                    .addComponent(buttonTambah)
-                    .addComponent(buttonSimpan))
+                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -255,6 +261,7 @@ public class PanelInstansi extends javax.swing.JPanel {
             }
         });
 
+        buttonCari.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/search.png"))); // NOI18N
         buttonCari.setText("Cari");
         buttonCari.addActionListener(new java.awt.event.ActionListener() {
@@ -278,8 +285,8 @@ public class PanelInstansi extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCari))
+                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
         );

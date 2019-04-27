@@ -189,7 +189,7 @@ public class DusDaoImpl implements DusDao {
     public List<Dus> getAllDus(String idRak) throws ArsipException {
         final String SELECT_ALL = "SELECT * FROM DUS WHERE ID_RAK=? ORDER BY ID_DUS";
 
-        List<Dus> list = new ArrayList<Dus>();
+        List<Dus> list = new ArrayList<>();
 
         PreparedStatement statement = null;
         try {
@@ -224,7 +224,7 @@ public class DusDaoImpl implements DusDao {
     public List<Dus> getDusEmpety() throws ArsipException {
         final String SELECT_ALL = "SELECT * FROM DUS WHERE QUOTA > 0 ORDER BY ID_DUS";
 
-        List<Dus> list = new ArrayList<Dus>();
+        List<Dus> list = new ArrayList<>();
 
         PreparedStatement statement = null;
         try {
@@ -313,6 +313,100 @@ public class DusDaoImpl implements DusDao {
                 }
             }
         }
+    }
+
+    @Override
+    public void deleteDus(String idDus) throws ArsipException {
+        final String DELETE_DUS = "DELETE  FROM DUS WHERE ID_DUS=?";
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(DELETE_DUS);
+            statement.setString(1, idDus);
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            throw new ArsipException(ex.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+    }
+    
+    @Override
+    public boolean isCanDelete(String idDus) throws ArsipException {
+        final String DELETE = "SELECT ID_DUS FROM PENGARSIPAN WHERE ID_DUS = ? ";
+        boolean result = true;
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(DELETE);
+            statement.setString(1, idDus);
+
+            ResultSet set = statement.executeQuery();
+
+            if (set.next()) {
+                result = false;
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            throw new ArsipException(ex.getMessage());
+
+        } finally {
+
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    System.err.println(ex.getMessage());
+                    throw new ArsipException(ex.getMessage());
+                }
+            }
+            return result;
+        }
+    }
+
+    @Override
+    public List<Dus> getDusForDelete(int jumlah,String id_rak) throws ArsipException {     
+        final String SELECT_ALL = "SELECT * FROM DUS WHERE ID_RAK = ? ORDER BY ID_DUS DESC LIMIT 0,?";
+        
+
+        List<Dus> list = new ArrayList<>();
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(SELECT_ALL);
+            statement.setInt(2, jumlah);
+            statement.setString(1, id_rak);
+            ResultSet set = statement.executeQuery();
+            while (set.next()) {
+                Dus dus = new Dus();
+                dus.setIdDus(set.getString("ID_DUS"));
+                dus.setLantai(DatabaseConnection.getLantaiDao().getLantai(set.getString("ID_LANTAI")));
+                dus.setRak(DatabaseConnection.getRakDao().getRak(set.getString("ID_RAK")));
+                dus.setQuota(set.getInt("QUOTA"));
+                list.add(dus);
+            }
+        } catch (SQLException ex) {
+
+            throw new ArsipException(ex.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+
+        return list;
     }
 
 }

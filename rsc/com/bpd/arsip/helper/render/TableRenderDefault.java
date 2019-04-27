@@ -50,11 +50,12 @@ public class TableRenderDefault implements TableCellRenderer {
         }
 
         label.setOpaque(false);
+        label.setFont(new java.awt.Font("sansserif", 1, 13));
 
         if (isSelected) {
             label.setOpaque(true);
             label.setForeground(table.getSelectionForeground());
-            label.setBackground(Color.BLUE);
+            label.setBackground(Color.RED);
         } else {
             label.setForeground(table.getForeground());
         }

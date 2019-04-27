@@ -5,7 +5,6 @@
  */
 package com.bpd.arsip.dao;
 
-
 import com.bpd.arsip.entitas.Rak;
 import com.bpd.arsip.exception.ArsipException;
 import java.util.List;
@@ -21,13 +20,14 @@ public interface RakDao {
     public List<Rak> getAllRak() throws ArsipException;
 
     public Rak getRak(String idRak) throws ArsipException;
-    
+
     public Rak getRak(int namaRak) throws ArsipException;
-    
-    public void updateQuotaRak(int namaRak,int quotaBaru)throws ArsipException;
-    
-    public int getRakAkhir()throws ArsipException;
-    
-    public int getQuotaRakAkhir()throws ArsipException;
-    
+
+    public void updateQuotaRak(int namaRak, int quotaBaru) throws ArsipException;
+
+    public int getRakAkhir() throws ArsipException;
+
+    public int getQuotaRakAkhir() throws ArsipException;
+
+    public void updateQuotaRakById(String idRak, int quotaBaru) throws ArsipException;
 }

@@ -11,8 +11,14 @@
     </Container>
     <Component class="com.stripbandunk.jwidget.JDynamicTable" name="tablePejabat">
       <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="12" style="1"/>
         </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
@@ -111,21 +117,21 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="textNama" max="32767" attributes="0"/>
-                      <Component id="labelWhite1" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="labelWhite1" pref="35" max="32767" attributes="0"/>
+                      <Component id="textNama" pref="35" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="textJabatan" max="32767" attributes="0"/>
-                      <Component id="labelWhite2" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="labelWhite2" pref="35" max="32767" attributes="0"/>
+                      <Component id="textJabatan" pref="35" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonBatal" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonHapus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonUbah" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonTambah" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBatal" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonHapus" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonUbah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonTambah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonSimpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -163,6 +169,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonBatal">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Batal"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -172,6 +181,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonHapus">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Hapus"/>
           </Properties>
           <Events>
@@ -180,6 +192,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonUbah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ubah"/>
           </Properties>
           <Events>
@@ -188,6 +203,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonTambah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tambah"/>
           </Properties>
           <Events>
@@ -196,6 +214,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonSimpan">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Simpan"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -233,11 +254,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textCari" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonCari" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textCari" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonCari" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="255" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="238" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -264,6 +285,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonCari">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/com/bpd/arsip/icon/search.png"/>
             </Property>

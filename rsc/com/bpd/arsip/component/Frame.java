@@ -27,10 +27,12 @@ public class Frame extends JFrame {
         Image image=icon.getImage();
         setIconImage(image);
         setTitle("E - Arsip Kredit | Bank Jateng");
-        //setAnimationShow(Animation.SHOW_FROM_TOP);
-        //setAnimationHide(Animation.HIDE_TO_BOTTOM);
-        //setAnimationTime(animationTime);
+        setAnimationShow(Animation.SHOW_FROM_TOP);
+        setAnimationHide(Animation.HIDE_TO_BOTTOM);
+        setAnimationTime(animationTime);
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        
+       
     }
 
     public int getAnimationTime() {

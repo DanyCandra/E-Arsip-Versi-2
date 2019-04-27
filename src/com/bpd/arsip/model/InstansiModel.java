@@ -167,6 +167,15 @@ public class InstansiModel {
         return instansi;
     }
     
-   
-
+    public void selectInstansiModelByName(String namaInstansi) throws ArsipException {
+        InstansiDao dao = DatabaseConnection.getInstansiDao();
+        Instansi instansi = dao.getInstansiByName(namaInstansi);
+        if (instansi != null) {
+            setIdInstansi(instansi.getIdInstansi());
+            setAlamat(instansi.getAlamat());
+            setNamaInstansi(instansi.getNamaInstansi());
+            setTelepon(instansi.getTelepon());
+        }
+    }
+    
 }

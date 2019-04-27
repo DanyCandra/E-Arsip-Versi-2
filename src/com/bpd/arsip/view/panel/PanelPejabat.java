@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  * @author Dany Candra
  */
 public class PanelPejabat extends javax.swing.JPanel {
-    
+
     private final PejabatModel pejabatModel;
     private final PejabatController pejabatController;
     private final DynamicTableModel<PejabatModel> tableModelPejabat;
@@ -30,61 +30,61 @@ public class PanelPejabat extends javax.swing.JPanel {
         initComponents();
         tableModelPejabat = new DynamicTableModel<>(PejabatModel.class);
         tablePejabat.setDynamicModel(tableModelPejabat);
-        
+
     }
-    
+
     public boolean isInput() {
         return input;
     }
-    
+
     public void setInput(boolean input) {
         this.input = input;
     }
-    
+
     public void setMainFrame(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
     }
-    
+
     public JButton getButtonBatal() {
         return buttonBatal;
     }
-    
+
     public JButton getButtonHapus() {
         return buttonHapus;
     }
-    
+
     public JButton getButtonSimpan() {
         return buttonSimpan;
     }
-    
+
     public JButton getButtonTambah() {
         return buttonTambah;
     }
-    
+
     public JButton getButtonUbah() {
         return buttonUbah;
     }
-    
+
     public JTextField getTextJabatan() {
         return textJabatan;
     }
-    
+
     public JTextField getTextNama() {
         return textNama;
     }
-    
+
     public JDynamicTable getTablePejabat() {
         return tablePejabat;
     }
-    
+
     public DynamicTableModel<PejabatModel> getTableModelPejabat() {
         return tableModelPejabat;
     }
-    
+
     public MainFrame getMainFrame() {
         return mainFrame;
     }
-    
+
     public JTextField getTextCari() {
         return textCari;
     }
@@ -117,7 +117,9 @@ public class PanelPejabat extends javax.swing.JPanel {
 
         viewPortTransparan1.setView(tablePejabat);
 
+        tablePejabat.setBorder(null);
         tablePejabat.setForeground(new java.awt.Color(255, 255, 255));
+        tablePejabat.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         tablePejabat.setOpaque(false);
 
         setBackground(new java.awt.Color(0, 0, 153));
@@ -138,6 +140,7 @@ public class PanelPejabat extends javax.swing.JPanel {
         textJabatan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         textJabatan.setEnabled(false);
 
+        buttonBatal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
         buttonBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +149,7 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        buttonHapus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonHapus.setText("Hapus");
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +157,7 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        buttonUbah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonUbah.setText("Ubah");
         buttonUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +165,7 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        buttonTambah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonTambah.setText("Tambah");
         buttonTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +173,7 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        buttonSimpan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonSimpan.setText("Simpan");
         buttonSimpan.setEnabled(false);
         buttonSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -209,19 +216,19 @@ public class PanelPejabat extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textNama)
-                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(labelWhite1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(textNama, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textJabatan)
-                    .addComponent(labelWhite2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelWhite2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(textJabatan, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBatal)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonUbah)
-                    .addComponent(buttonTambah)
-                    .addComponent(buttonSimpan))
+                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -237,6 +244,7 @@ public class PanelPejabat extends javax.swing.JPanel {
             }
         });
 
+        buttonCari.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/search.png"))); // NOI18N
         buttonCari.setText("Cari");
         buttonCari.addActionListener(new java.awt.event.ActionListener() {
@@ -260,10 +268,10 @@ public class PanelPejabat extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCari))
+                    .addComponent(textCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCari, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -349,5 +357,5 @@ public class PanelPejabat extends javax.swing.JPanel {
         pejabatController.loadTablePejabat(this);
         pejabatController.batal(this);
     }
-    
+
 }

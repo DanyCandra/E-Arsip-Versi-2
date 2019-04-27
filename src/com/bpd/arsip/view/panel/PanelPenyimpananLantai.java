@@ -3,6 +3,7 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.LantaiController;
 import com.bpd.arsip.model.LantaiModel;
 import com.bpd.arsip.view.MainFrame;
+import com.bpd.arsip.view.Test;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
 import javax.swing.JButton;
@@ -121,6 +122,7 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
         textNama.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         textNama.setEnabled(false);
 
+        buttonBatal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonBatal.setText("Batal");
         buttonBatal.setEnabled(false);
         buttonBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +131,7 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             }
         });
 
+        buttonHapus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonHapus.setText("Hapus");
         buttonHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +139,7 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             }
         });
 
+        buttonUbah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonUbah.setText("Ubah");
         buttonUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +147,7 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             }
         });
 
+        buttonTambah.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonTambah.setText("Tambah");
         buttonTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +155,7 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             }
         });
 
+        buttonSimpan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         buttonSimpan.setText("Simpan");
         buttonSimpan.setEnabled(false);
         buttonSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -189,14 +195,14 @@ public class PanelPenyimpananLantai extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textNama)
-                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBatal)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonUbah)
-                    .addComponent(buttonTambah)
-                    .addComponent(buttonSimpan))
+                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
