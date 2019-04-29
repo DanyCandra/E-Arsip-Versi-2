@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CoverBerkas" pageWidth="595" pageHeight="340" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CIF" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     pengarsipan.`cif` AS pengarsipan_cif,
+     pengarsipan.`id_dus` AS pengarsipan_id_dus,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`id_instansi` AS debitur_id_instansi,
+     instansi.`nama_instansi` AS instansi_nama_instansi
+FROM
+     `debitur` debitur INNER JOIN `pengarsipan` pengarsipan ON debitur.`cif` = pengarsipan.`cif`
+     INNER JOIN `instansi` instansi ON debitur.`id_instansi` = instansi.`id_instansi`
+WHERE
+	pengarsipan.`cif` =$P{CIF}]]>
+	</queryString>
+	<field name="pengarsipan_cif" class="java.lang.String"/>
+	<field name="pengarsipan_id_dus" class="java.lang.String"/>
+	<field name="debitur_cif" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="debitur_telepon" class="java.lang.String"/>
+	<field name="debitur_id_instansi" class="java.lang.String"/>
+	<field name="instansi_nama_instansi" class="java.lang.String"/>
+	<title>
+		<band height="290" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="290"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="40" width="89" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Nama Debitur	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="40" width="100" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="55" width="89" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[CIF		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="55" width="100" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pengarsipan_cif}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="70" width="89" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Alamat		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="70" width="191" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="40" width="87" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Dinas/Instansi	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="411" y="40" width="100" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{instansi_nama_instansi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="55" width="87" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Telepon		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="411" y="55" width="100" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_telepon}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="97" width="89" height="20"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Dokumen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="0" width="59" height="20"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Dus :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="0" width="93" height="20"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pengarsipan_id_dus}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="188" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[5. Taspen			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="158" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_terakhir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="143" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[2. SK Pengangkatan		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="173" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="128" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_cpns}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="188" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_taspen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="143" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="128" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[1. SK CPNS		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="158" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[3. SK Terkahir		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="173" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[4. SK Pensiun		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="203" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_karip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="263" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[10. Lainnya		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="218" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[7. SHM			:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="233" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[8. SHT			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="248" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_ijazah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="263" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_lainnya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="233" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sht}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="248" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[9. Ijazah			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="218" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_shm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="203" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[6. Karip			:]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

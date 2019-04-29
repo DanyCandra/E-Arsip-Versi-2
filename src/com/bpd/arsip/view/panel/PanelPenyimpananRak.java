@@ -102,7 +102,7 @@ public class PanelPenyimpananRak extends javax.swing.JPanel {
 
         jPanel1.setOpaque(false);
 
-        jPanelRak.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Daftar Rak"));
+        jPanelRak.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Daftar Rak", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanelRak.setOpaque(false);
 
         jScrollPane1.setViewport(viewPortTransparan1);
@@ -129,7 +129,7 @@ public class PanelPenyimpananRak extends javax.swing.JPanel {
         );
         jPanelRakLayout.setVerticalGroup(
             jPanelRakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 133, Short.MAX_VALUE)
             .addGroup(jPanelRakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelRakLayout.createSequentialGroup()
                     .addContainerGap()
@@ -137,7 +137,7 @@ public class PanelPenyimpananRak extends javax.swing.JPanel {
                     .addContainerGap()))
         );
 
-        jPanelDus.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Daftar Dus"));
+        jPanelDus.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Daftar Rak", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanelDus.setOpaque(false);
 
         jScrollPane2.setViewport(viewPortTransparan2);
@@ -159,7 +159,7 @@ public class PanelPenyimpananRak extends javax.swing.JPanel {
         );
         jPanelDusLayout.setVerticalGroup(
             jPanelDusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
+            .addGap(0, 140, Short.MAX_VALUE)
             .addGroup(jPanelDusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelDusLayout.createSequentialGroup()
                     .addContainerGap()

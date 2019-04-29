@@ -26,17 +26,17 @@ public class CisModel {
 
     @TableColumn(name = "CIF", number = 1, size = 20, renderer = TableDebiturRender.class)
     private DebiturModel debiturModel;
-    @TableColumn(name = "NAMA", number = 2, size = 50)
+    @TableColumn(name = "NAMA", number = 2, size = 50,renderer = TableDebiturRender.class)
     private String nama;
-    @TableColumn(name = "CIF CIS", number = 3, size = 20)
+    @TableColumn(name = "CIF CIS", number = 3, size = 20,renderer = TableDebiturRender.class)
     private String cifCis;
-    @TableColumn(name = "NO PINJAMAN", number = 4, size = 20)
+    @TableColumn(name = "NO PINJAMAN", number = 4, size = 20,renderer = TableDebiturRender.class)
     private String noPinjam;
-    @TableColumn(name = "TANGGAL REALISASI", number = 5, size = 20)
+    @TableColumn(name = "TANGGAL REALISASI", number = 5, size = 20,renderer = TableDebiturRender.class)
     private Date tanggalRealisasi;
-    @TableColumn(name = "TANGGAL MULAI", number = 6, size = 20)
+    @TableColumn(name = "TANGGAL MULAI", number = 6, size = 20,renderer = TableDebiturRender.class)
     private Date tanggalMulai;
-    @TableColumn(name = "TANGGAL SELESAI", number = 7, size = 20)
+    @TableColumn(name = "TANGGAL SELESAI", number = 7, size = 20,renderer = TableDebiturRender.class)
     private Date tanggalSelesai;
     @TableColumn(name = "JUMLAH PERTANGGUNGAN", number = 8, size = 20, renderer = JumlahPertanggunganRender.class)
     private double jumlahPertanggungan;

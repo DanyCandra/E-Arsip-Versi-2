@@ -12,12 +12,14 @@ import dany.swing.lib.label.LabelWhite;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Dany
  */
-public class MainFrame extends com.bpd.arsip.component.Frame {
+public final class MainFrame extends com.bpd.arsip.component.Frame {
 
     private UserModel userModel;
 
@@ -25,10 +27,15 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
      * Creates new form Frame
      */
     public MainFrame() {
+        //setResizable(false);
+        setSize(1200, 700);
         initComponents();
         initGlassPane();
         initPanel();
         CenterFrame.makeCenter(this);
+        actionListernerMenu();
+        showPanel(panelMenuUser, "panelMenuUser", "Selamat Datang");
+
     }
 
     public UserModel getUserModel() {
@@ -79,18 +86,48 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         panelPenerimaanBerkas = new com.bpd.arsip.view.panel.PanelPenerimaanBerkas();
         panelPembaruanBerkas = new com.bpd.arsip.view.panel.PanelPembaruanBerkas();
         panelPengembalianBerkas = new com.bpd.arsip.view.panel.PanelPengembalianBerkas();
+        panelPencarianBerkas = new com.bpd.arsip.view.panel.PanelPencarianBerkas();
+        panelPenyesuaianBerkas = new com.bpd.arsip.view.panel.PanelPenyesuaianBerkas();
+        panelPenyesuaianCis = new com.bpd.arsip.view.panel.PanelPenyesuaianCis();
+        panelUbahPassword = new com.bpd.arsip.view.panel.PanelUbahPassword();
+        panelPenyesuaianDataDebitur = new com.bpd.arsip.view.panel.PanelPenyesuaianDataDebitur();
+        panelLaporanCis = new com.bpd.arsip.view.panel.PanelLaporanCis();
+        panelLaporanIsiDus = new com.bpd.arsip.view.panel.PanelLaporanIsiDus();
+        panelLaporanPenerimaanBerkas = new com.bpd.arsip.view.panel.PanelLaporanPenerimaanBerkas();
+        panelLaporanPengembalianBerkas = new com.bpd.arsip.view.panel.PanelLaporanPengembalianBerkas();
+        panelLaporanOpname = new com.bpd.arsip.view.panel.PanelLaporanOpname();
+        panelMenuUser = new com.bpd.arsip.view.panel.PanelMenuUser();
+        panelMenuTransaksi = new com.bpd.arsip.view.panel.PanelMenuTransaksi();
+        panelMenuPengaturan = new com.bpd.arsip.view.panel.PanelMenuPengaturan();
+        panelMenuLaporan = new com.bpd.arsip.view.panel.PanelMenuLaporan();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         meniPenyimpnan = new javax.swing.JMenuItem();
         menuPejabat = new javax.swing.JMenuItem();
         menuInstansi = new javax.swing.JMenuItem();
         menuUser = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        menuUbahPassword = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuPenerimaan = new javax.swing.JMenuItem();
         menuPembaruan = new javax.swing.JMenuItem();
         menuPengembalian = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuPenyesuaianBerkas = new javax.swing.JMenuItem();
+        menuPenyesuaianCis = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        menuPencarian = new javax.swing.JMenu();
+        menuCari = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        menuLaporanCis = new javax.swing.JMenuItem();
+        menuLaporanIsiDus = new javax.swing.JMenuItem();
+        menuLaporanPenerimaanBerkas = new javax.swing.JMenuItem();
+        menuLaporanPengembalian = new javax.swing.JMenuItem();
+        menuLaporanOpname = new javax.swing.JMenuItem();
 
         viewPortContainer.setView(panelCard);
+
+        dialogComponent.setLayout(new java.awt.GridBagLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 700));
@@ -106,7 +143,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
             panelFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFooterLayout.createSequentialGroup()
                 .addComponent(labelWhite4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1163, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -119,10 +156,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
                 .addGap(0, 1, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelFooter, java.awt.BorderLayout.PAGE_END);
-
         panelBody.setColorBottom(new java.awt.Color(0, 51, 153));
-        panelBody.setLayout(new java.awt.BorderLayout());
 
         panelHeader.setAlpha(0.4F);
         panelHeader.setImageBackground(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/header.jpg"))); // NOI18N
@@ -139,10 +173,15 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         labelWhite5.setText("Selamat Datang,");
 
         buttonIconGlass1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/home_24px.png"))); // NOI18N
-        buttonIconGlass1.setText("Beranda");
+        buttonIconGlass1.setText("Home");
         buttonIconGlass1.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         buttonIconGlass1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         buttonIconGlass1.setVerticalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonIconGlass1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIconGlass1ActionPerformed(evt);
+            }
+        });
 
         labelHalaman.setText("Navigator");
         labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -156,7 +195,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
                 .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelHalaman, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 606, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
                         .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,11 +237,8 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
                 .addContainerGap())
         );
 
-        panelBody.add(panelHeader, java.awt.BorderLayout.PAGE_START);
-
         panelMain.setBorder(null);
         panelMain.setAlpha(0.0F);
-        panelMain.setLayout(new java.awt.BorderLayout());
 
         scrollPaneMainFrame.setBorder(null);
         scrollPaneMainFrame.setViewportBorder(null);
@@ -217,17 +253,57 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         panelCard.add(panelPenerimaanBerkas, "panelPenerimaanBerkas");
         panelCard.add(panelPembaruanBerkas, "panelPembaruanBerkas");
         panelCard.add(panelPengembalianBerkas, "panelPengembalianBerkas");
+        panelCard.add(panelPencarianBerkas, "panelPencarianBerkas");
+        panelCard.add(panelPenyesuaianBerkas, "panelPenyesuaianBerkas");
+        panelCard.add(panelPenyesuaianCis, "panelPenyesuaianCis");
+        panelCard.add(panelUbahPassword, "panelUbahPassword");
+        panelCard.add(panelPenyesuaianDataDebitur, "panelPenyesuaianDataDebitur");
+        panelCard.add(panelLaporanCis, "panelLaporanCis");
+        panelCard.add(panelLaporanIsiDus, "panelLaporanIsiDus");
+        panelCard.add(panelLaporanPenerimaanBerkas, "panelLaporanPenerimaanBerkas");
+        panelCard.add(panelLaporanPengembalianBerkas, "panelLaporanPengembalianBerkas");
+        panelCard.add(panelLaporanOpname, "panelLaporanOpname");
+        panelCard.add(panelMenuUser, "panelMenuUser");
+        panelCard.add(panelMenuTransaksi, "panelMenuTransaksi");
+        panelCard.add(panelMenuPengaturan, "panelMenuPengaturan");
+        panelCard.add(panelMenuLaporan, "panelMenuLaporan");
 
         scrollPaneMainFrame.setViewportView(panelCard);
 
-        panelMain.add(scrollPaneMainFrame, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout panelMainLayout = new javax.swing.GroupLayout(panelMain);
+        panelMain.setLayout(panelMainLayout);
+        panelMainLayout.setHorizontalGroup(
+            panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPaneMainFrame, javax.swing.GroupLayout.DEFAULT_SIZE, 1367, Short.MAX_VALUE)
+        );
+        panelMainLayout.setVerticalGroup(
+            panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMainLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(scrollPaneMainFrame, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+        );
 
-        panelBody.add(panelMain, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout panelBodyLayout = new javax.swing.GroupLayout(panelBody);
+        panelBody.setLayout(panelBodyLayout);
+        panelBodyLayout.setHorizontalGroup(
+            panelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1367, Short.MAX_VALUE)
+            .addComponent(panelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelBodyLayout.setVerticalGroup(
+            panelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBodyLayout.createSequentialGroup()
+                .addComponent(panelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(panelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        getContentPane().add(panelBody, java.awt.BorderLayout.CENTER);
+        jMenuBar1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
         jMenu1.setText("Pengaturan");
+        jMenu1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
+        meniPenyimpnan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         meniPenyimpnan.setText("Daftar Penyimpanan Arsip");
         meniPenyimpnan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,6 +312,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         });
         jMenu1.add(meniPenyimpnan);
 
+        menuPejabat.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuPejabat.setText("Daftar Pejabat Bank");
         menuPejabat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,6 +321,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         });
         jMenu1.add(menuPejabat);
 
+        menuInstansi.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuInstansi.setText("Daftar Instansi");
         menuInstansi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,6 +330,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         });
         jMenu1.add(menuInstansi);
 
+        menuUser.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuUser.setText("Daftar User");
         menuUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,11 +338,23 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
             }
         });
         jMenu1.add(menuUser);
+        jMenu1.add(jSeparator2);
+
+        menuUbahPassword.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuUbahPassword.setText("Ubah Password");
+        menuUbahPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuUbahPasswordActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuUbahPassword);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Transaksi");
+        jMenu2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
+        menuPenerimaan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuPenerimaan.setText("Penerimaan Berkas Kredit Baru");
         menuPenerimaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,6 +363,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         });
         jMenu2.add(menuPenerimaan);
 
+        menuPembaruan.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuPembaruan.setText("Pembaruan Berkas Kredit");
         menuPembaruan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,6 +372,7 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         });
         jMenu2.add(menuPembaruan);
 
+        menuPengembalian.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         menuPengembalian.setText("Pengembalian Berkas Kredit");
         menuPengembalian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,10 +380,122 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
             }
         });
         jMenu2.add(menuPengembalian);
+        jMenu2.add(jSeparator1);
+
+        menuPenyesuaianBerkas.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuPenyesuaianBerkas.setText("Pemindahan Berkas Kredit");
+        menuPenyesuaianBerkas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPenyesuaianBerkasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuPenyesuaianBerkas);
+
+        menuPenyesuaianCis.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuPenyesuaianCis.setText("Penyesuaian Data Cis (Pinjaman)");
+        menuPenyesuaianCis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPenyesuaianCisActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuPenyesuaianCis);
+
+        jMenuItem1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jMenuItem1.setText("Penyesuian Data Debitur");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
 
         jMenuBar1.add(jMenu2);
 
+        menuPencarian.setText("Pencairan");
+        menuPencarian.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuPencarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPencarianActionPerformed(evt);
+            }
+        });
+
+        menuCari.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuCari.setText("Pencairan Berkas Kredit");
+        menuCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCariActionPerformed(evt);
+            }
+        });
+        menuPencarian.add(menuCari);
+
+        jMenuBar1.add(menuPencarian);
+
+        jMenu3.setText("Laporan");
+        jMenu3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+
+        menuLaporanCis.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuLaporanCis.setText("Laporan Cis");
+        menuLaporanCis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLaporanCisActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuLaporanCis);
+
+        menuLaporanIsiDus.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuLaporanIsiDus.setText("Laporan Isi Dus");
+        menuLaporanIsiDus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLaporanIsiDusActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuLaporanIsiDus);
+
+        menuLaporanPenerimaanBerkas.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuLaporanPenerimaanBerkas.setText("Laporan Penerimaan Berkas");
+        menuLaporanPenerimaanBerkas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLaporanPenerimaanBerkasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuLaporanPenerimaanBerkas);
+
+        menuLaporanPengembalian.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuLaporanPengembalian.setText("Laporan Pengembalian Berkas");
+        menuLaporanPengembalian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLaporanPengembalianActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuLaporanPengembalian);
+
+        menuLaporanOpname.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        menuLaporanOpname.setText("Laporan Opname Berkas");
+        menuLaporanOpname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLaporanOpnameActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuLaporanOpname);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelFooter, javax.swing.GroupLayout.DEFAULT_SIZE, 1367, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(panelFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -339,49 +544,124 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
 
     private void menuPengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPengembalianActionPerformed
         // TODO add your handling code here:
-
         showPanel(panelPengembalianBerkas, "panelPengembalianBerkas", "Pengembalian Berkas Kredit");
         panelPengembalianBerkas.loadTable();
         panelPengembalianBerkas.setUserModel(getUserModel());
     }//GEN-LAST:event_menuPengembalianActionPerformed
 
+    private void menuPencarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPencarianActionPerformed
+        // TODO add your handling code here:
+        //panelPencarianBerkas
+
+    }//GEN-LAST:event_menuPencarianActionPerformed
+
+    private void menuCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCariActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelPencarianBerkas, "panelPencarianBerkas", "Pencarian Berkas Kredit");
+        panelPencarianBerkas.loadTable();
+    }//GEN-LAST:event_menuCariActionPerformed
+
+    private void menuPenyesuaianBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenyesuaianBerkasActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelPenyesuaianBerkas, "panelPenyesuaianBerkas", "Pemindahan Berkas Kredit");
+        panelPenyesuaianBerkas.loadTable();
+    }//GEN-LAST:event_menuPenyesuaianBerkasActionPerformed
+
+    private void menuPenyesuaianCisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenyesuaianCisActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelPenyesuaianCis, "panelPenyesuaianCis", "Penyesuaian Data Cis (Pinjaman)");
+        panelPenyesuaianCis.loadData();
+    }//GEN-LAST:event_menuPenyesuaianCisActionPerformed
+
+    private void menuUbahPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUbahPasswordActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelUbahPassword, "panelUbahPassword", "Ubah Password User");
+        panelUbahPassword.setId(userModel.getIdUser());
+        panelUbahPassword.getTextPassword().setText(userModel.getPassword());
+        panelUbahPassword.getTextUlangPassword().setText(userModel.getPassword());
+        panelUbahPassword.getTextPemilik().setText(userModel.getNama());
+        panelUbahPassword.getTextUsername().setText(userModel.getUserName());
+        panelUbahPassword.loadCurrentUser();
+    }//GEN-LAST:event_menuUbahPasswordActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelPenyesuaianDataDebitur, "panelPenyesuaianDataDebitur", "Penyesuaian Data Debitur");
+        panelPenyesuaianDataDebitur.loadData();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void menuLaporanCisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLaporanCisActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelLaporanCis, "panelLaporanCis", "Laporan Data CIS");
+        panelLaporanCis.loadData();
+    }//GEN-LAST:event_menuLaporanCisActionPerformed
+
+    private void menuLaporanIsiDusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLaporanIsiDusActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelLaporanIsiDus, "panelLaporanIsiDus", "Laporan Isi Dus Arsip");
+        panelLaporanIsiDus.loadTable();
+    }//GEN-LAST:event_menuLaporanIsiDusActionPerformed
+
+    private void menuLaporanPenerimaanBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLaporanPenerimaanBerkasActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelLaporanPenerimaanBerkas, "panelLaporanPenerimaanBerkas", "Laporan Penerimaan Berkas");
+        panelLaporanPenerimaanBerkas.loadData();
+    }//GEN-LAST:event_menuLaporanPenerimaanBerkasActionPerformed
+
+    private void menuLaporanPengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLaporanPengembalianActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelLaporanPengembalianBerkas, "panelLaporanPengembalianBerkas", "Laporan Pengembalian Berkas");
+        panelLaporanPengembalianBerkas.loadData();
+    }//GEN-LAST:event_menuLaporanPengembalianActionPerformed
+
+    private void menuLaporanOpnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLaporanOpnameActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelLaporanOpname, "panelLaporanOpname", "Laporan Opname Berkas");
+        panelLaporanOpname.loadData();
+    }//GEN-LAST:event_menuLaporanOpnameActionPerformed
+
+    private void buttonIconGlass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIconGlass1ActionPerformed
+        // TODO add your handling code here:
+        showPanel(panelMenuUser, "panelMenuUser", "Selamat Datang");
+    }//GEN-LAST:event_buttonIconGlass1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new MainFrame().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private dany.swing.lib.button.ButtonIconGlass buttonIconGlass1;
@@ -389,8 +669,12 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
     private com.stripbandunk.jglasspane.JGlassPane jGlassPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JProgressBar jProgressBar;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private dany.swing.lib.label.LabelDate labelDate1;
     private dany.swing.lib.label.LabelWhite labelHalaman;
     private dany.swing.lib.label.LabelTime labelTime1;
@@ -399,24 +683,48 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
     private dany.swing.lib.label.LabelWhite labelWhite4;
     private dany.swing.lib.label.LabelWhite labelWhite5;
     private javax.swing.JMenuItem meniPenyimpnan;
+    private javax.swing.JMenuItem menuCari;
     private javax.swing.JMenuItem menuInstansi;
+    private javax.swing.JMenuItem menuLaporanCis;
+    private javax.swing.JMenuItem menuLaporanIsiDus;
+    private javax.swing.JMenuItem menuLaporanOpname;
+    private javax.swing.JMenuItem menuLaporanPenerimaanBerkas;
+    private javax.swing.JMenuItem menuLaporanPengembalian;
     private javax.swing.JMenuItem menuPejabat;
     private javax.swing.JMenuItem menuPembaruan;
+    private javax.swing.JMenu menuPencarian;
     private javax.swing.JMenuItem menuPenerimaan;
     private javax.swing.JMenuItem menuPengembalian;
+    private javax.swing.JMenuItem menuPenyesuaianBerkas;
+    private javax.swing.JMenuItem menuPenyesuaianCis;
+    private javax.swing.JMenuItem menuUbahPassword;
     private javax.swing.JMenuItem menuUser;
     private dany.swing.lib.panel.PanelGradient panelBody;
     private javax.swing.JPanel panelCard;
     private dany.swing.lib.panel.PanelGradient panelFooter;
     private dany.swing.lib.panel.PanelImageAlpha panelHeader;
     private com.bpd.arsip.view.panel.PanelInstansi panelInstansi;
+    private com.bpd.arsip.view.panel.PanelLaporanCis panelLaporanCis;
+    private com.bpd.arsip.view.panel.PanelLaporanIsiDus panelLaporanIsiDus;
+    private com.bpd.arsip.view.panel.PanelLaporanOpname panelLaporanOpname;
+    private com.bpd.arsip.view.panel.PanelLaporanPenerimaanBerkas panelLaporanPenerimaanBerkas;
+    private com.bpd.arsip.view.panel.PanelLaporanPengembalianBerkas panelLaporanPengembalianBerkas;
     private com.bpd.arsip.view.dialog.PanelLoading panelLoading;
     private dany.swing.lib.panel.PanelAlpha panelMain;
+    private com.bpd.arsip.view.panel.PanelMenuLaporan panelMenuLaporan;
+    private com.bpd.arsip.view.panel.PanelMenuPengaturan panelMenuPengaturan;
+    private com.bpd.arsip.view.panel.PanelMenuTransaksi panelMenuTransaksi;
+    private com.bpd.arsip.view.panel.PanelMenuUser panelMenuUser;
     private com.bpd.arsip.view.panel.PanelPejabat panelPejabat;
     private com.bpd.arsip.view.panel.PanelPembaruanBerkas panelPembaruanBerkas;
+    private com.bpd.arsip.view.panel.PanelPencarianBerkas panelPencarianBerkas;
     private com.bpd.arsip.view.panel.PanelPenerimaanBerkas panelPenerimaanBerkas;
     private com.bpd.arsip.view.panel.PanelPengembalianBerkas panelPengembalianBerkas;
+    private com.bpd.arsip.view.panel.PanelPenyesuaianBerkas panelPenyesuaianBerkas;
+    private com.bpd.arsip.view.panel.PanelPenyesuaianCis panelPenyesuaianCis;
+    private com.bpd.arsip.view.panel.PanelPenyesuaianDataDebitur panelPenyesuaianDataDebitur;
     private com.bpd.arsip.view.panel.PanelPenyimpanan panelPenyimpanan;
+    private com.bpd.arsip.view.panel.PanelUbahPassword panelUbahPassword;
     private com.bpd.arsip.view.panel.PanelUser panelUser;
     private javax.swing.JScrollPane scrollPaneMainFrame;
     private dany.swing.lib.label.LabelWhite textUsername;
@@ -455,6 +763,253 @@ public class MainFrame extends com.bpd.arsip.component.Frame {
         panelUser.setMainFrame(this);
         panelPenyimpanan.initPanel(this);
         panelPengembalianBerkas.setMainFrame(this);
+        panelPencarianBerkas.setMainFrame(this);
+        panelPenyesuaianBerkas.setMainFrame(this);
+        panelLaporanIsiDus.setMainFrame(this);
+        panelLaporanCis.setMainFrame(this);
+        panelLaporanPenerimaanBerkas.setMainFrame(this);
+        panelLaporanPengembalianBerkas.setMainFrame(this);
+        panelLaporanOpname.setMainFrame(this);
 
     }
+
+    public void setMenuUser() {
+        if (getUserModel().getPrevillage() == 0) {
+            menuUser.setVisible(false);
+            panelMenuPengaturan.getDaftarUser().setVisible(false);
+        } else {
+            menuUser.setVisible(true);
+            panelMenuPengaturan.getDaftarUser().setVisible(true);
+        }
+    }
+
+    public void actionListernerMenu() {
+
+        panelMenuUser.addListenerMenuLaporanUser(new AksiTombolMenuUserLaporan());
+        panelMenuUser.addListenerMenuPencarianUser(new AksiTombolMenuUserPencarian());
+        panelMenuUser.addListenerMenuPengaturanUser(new AksiTombolMenuUserPengaturan());
+        panelMenuUser.addListenerMenuTransaksiUser(new AksiTombolMenuUserTransaksi());
+
+        panelMenuPengaturan.addListenerMenuPengaturanDaftarInstansi(new AksiTombolMenuPengaturanInstansi());
+        panelMenuPengaturan.addListenerMenuPengaturanDaftarUser(new AksiTombolMenuPengaturanDaftarUser());
+        panelMenuPengaturan.addListenerMenuPengaturanGantiPassword(new AksiTombolMenuPengaturanGantiPassword());
+        panelMenuPengaturan.addListenerMenuPengaturanPejabatBank(new AksiTombolMenuPengaturanPejabatBank());
+        panelMenuPengaturan.addListenerMenuPengaturanPenyimpananBerkas(new AksiTombolMenuPengaturanPenyimpananArsip());
+
+        panelMenuTransaksi.addListenerPembaruanBerkas(new AksiTombolMenuTransaksiPembaruanBerkas());
+        panelMenuTransaksi.addListenerPenerimaanBerkas(new AksiTombolMenuTransaksiPenerimaanBerkas());
+        panelMenuTransaksi.addListenerPengembalianBerkas(new AksiTombolMenuTransaksiPengembalianBerkas());
+        panelMenuTransaksi.addListenerPenyesuaianCis(new AksiTombolMenuTransaksiPenyesuaianCis());
+        panelMenuTransaksi.addListenerPenyesuaianDebitur(new AksiTombolMenuTransaksiPenyesuaianDebitur());
+        panelMenuTransaksi.addListenerPindahBerkas(new AksiTombolMenuTransaksiPindahBerkas());
+
+        panelMenuLaporan.addListenerMenuLaporanCis(new AksiTombolMenuLaporanCis());
+        panelMenuLaporan.addListenerMenuLaporanIsiDus(new AksiTombolMenuLaporanIsiDus());
+        panelMenuLaporan.addListenerMenuLaporanJatuhTempo(new AksiTombolMenuLaporanJatuhTempo());
+        panelMenuLaporan.addListenerMenuLaporanOpname(new AksiTombolMenuLaporanOpname());
+        panelMenuLaporan.addListenerMenuLaporanPenerimaan(new AksiTombolMenuLaporanPenerimaan());
+        panelMenuLaporan.addListenerMenuLaporanPengembalian(new AksiTombolMenuLaporanPengembalian());
+
+    }
+
+    class AksiTombolMenuLaporanCis implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelLaporanCis, "panelLaporanCis", "Laporan Data CIS");
+            panelLaporanCis.loadData();
+        }
+
+    }
+
+    class AksiTombolMenuLaporanIsiDus implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelLaporanIsiDus, "panelLaporanIsiDus", "Laporan Isi Dus Arsip");
+            panelLaporanIsiDus.loadTable();
+        }
+
+    }
+
+    class AksiTombolMenuLaporanJatuhTempo implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+
+    class AksiTombolMenuLaporanOpname implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelLaporanOpname, "panelLaporanOpname", "Laporan Opname Berkas");
+            panelLaporanOpname.loadData();
+        }
+    }
+
+    class AksiTombolMenuLaporanPenerimaan implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelLaporanPenerimaanBerkas, "panelLaporanPenerimaanBerkas", "Laporan Penerimaan Berkas");
+            panelLaporanPenerimaanBerkas.loadData();
+        }
+
+    }
+
+    class AksiTombolMenuLaporanPengembalian implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelLaporanPengembalianBerkas, "panelLaporanPengembalianBerkas", "Laporan Pengembalian Berkas");
+            panelLaporanPengembalianBerkas.loadData();
+        }
+
+    }
+
+    class AksiTombolMenuUserPencarian implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPencarianBerkas, "panelPencarianBerkas", "Pencarian Berkas Kredit");
+            panelPencarianBerkas.loadTable();
+        }
+    }
+
+    class AksiTombolMenuUserTransaksi implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelMenuTransaksi, "panelMenuTransaksi", "Menu Transaksi");
+        }
+    }
+
+    class AksiTombolMenuUserPengaturan implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelMenuPengaturan, "panelMenuPengaturan", "Menu Pengaturan");
+        }
+    }
+
+    class AksiTombolMenuUserLaporan implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelMenuLaporan, "panelMenuLaporan", "Menu Laporan");
+        }
+    }
+
+    class AksiTombolMenuPengaturanPenyimpananArsip implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPenyimpanan, "panelPenyimpanan", "Pengaturan Penyimpanan Arsip");
+            panelPenyimpanan.loadAllTab();
+            panelPenyimpanan.setFirstTab();
+        }
+    }
+
+    class AksiTombolMenuPengaturanPejabatBank implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPejabat, "panelPejabat", "Pengaturan Daftar Pejabat");
+            panelPejabat.load();
+        }
+    }
+
+    class AksiTombolMenuPengaturanInstansi implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelInstansi, "panelInstansi", "Pengaturan Daftar Instansi");
+            panelInstansi.load();
+        }
+    }
+
+    class AksiTombolMenuPengaturanDaftarUser implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelUser, "panelUser", "Pengaturan Daftar User");
+            panelUser.load();
+        }
+    }
+
+    class AksiTombolMenuPengaturanGantiPassword implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelUbahPassword, "panelUbahPassword", "Ubah Password User");
+            panelUbahPassword.setId(userModel.getIdUser());
+            panelUbahPassword.getTextPassword().setText(userModel.getPassword());
+            panelUbahPassword.getTextUlangPassword().setText(userModel.getPassword());
+            panelUbahPassword.getTextPemilik().setText(userModel.getNama());
+            panelUbahPassword.getTextUsername().setText(userModel.getUserName());
+            panelUbahPassword.loadCurrentUser();
+        }
+    }
+
+    class AksiTombolMenuTransaksiPembaruanBerkas implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPembaruanBerkas, "panelPembaruanBerkas", "Pembaruan Berkas Kredit");
+            panelPembaruanBerkas.initInput();
+            panelPembaruanBerkas.setFisrtTab();
+            panelPembaruanBerkas.setUserModel(getUserModel());
+        }
+    }
+
+    class AksiTombolMenuTransaksiPenerimaanBerkas implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPenerimaanBerkas, "panelPenerimaanBerkas", "Penerimaan Berkas Kredit Baru");
+            panelPenerimaanBerkas.setFisrtTab();
+            panelPenerimaanBerkas.setUserModel(getUserModel());
+            panelPenerimaanBerkas.initInput();
+        }
+    }
+
+    class AksiTombolMenuTransaksiPengembalianBerkas implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPengembalianBerkas, "panelPengembalianBerkas", "Pengembalian Berkas Kredit");
+            panelPengembalianBerkas.loadTable();
+            panelPengembalianBerkas.setUserModel(getUserModel());
+        }
+    }
+
+    class AksiTombolMenuTransaksiPenyesuaianCis implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPenyesuaianCis, "panelPenyesuaianCis", "Penyesuaian Data Cis (Pinjaman)");
+            panelPenyesuaianCis.loadData();
+        }
+    }
+
+    class AksiTombolMenuTransaksiPenyesuaianDebitur implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPenyesuaianDataDebitur, "panelPenyesuaianDataDebitur", "Penyesuaian Data Debitur");
+            panelPenyesuaianDataDebitur.loadData();
+        }
+    }
+
+    class AksiTombolMenuTransaksiPindahBerkas implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showPanel(panelPenyesuaianBerkas, "panelPenyesuaianBerkas", "Pemindahan Berkas Kredit");
+            panelPenyesuaianBerkas.loadTable();
+        }
+    }
+
 }

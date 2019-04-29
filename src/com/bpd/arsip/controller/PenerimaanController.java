@@ -290,13 +290,13 @@ public class PenerimaanController {
 
     public boolean setParamerterCis(PanelPenerimaanBerkas view) {
         boolean result = false;
-        String noPinjaman = view.getTextNoPinjaman().getText();
+        String noPinjaman = view.getTextNoPinjaman().getText().toUpperCase();
         Date tanggalRealisasi = view.getTextTanggalMulai().getDate();
         Date tanggalMulai = view.getTextTanggalMulai().getDate();
         Date tanggalSelesai = view.getTextTanggalSelesai().getDate();
-        String tmpJumalhPertanggungan = view.getTextPertanggungan().getText();
-        String pinjamanke = view.getTextPinjamanKe().getText();
-        String jenisPinjaman = view.getComboPinjaman().getSelectedItem().toString();
+        String tmpJumalhPertanggungan = view.getTextPertanggungan().getText().toUpperCase();
+        String pinjamanke = view.getTextPinjamanKe().getText().toUpperCase();
+        String jenisPinjaman = view.getComboPinjaman().getSelectedItem().toString().toUpperCase();
 
         if (tanggalMulai == null || tanggalRealisasi == null || tanggalSelesai == null) {
             JOptionPane.showMessageDialog(view, "Silahkan input tanggal dengan benar", "Pesan Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -322,46 +322,46 @@ public class PenerimaanController {
     private boolean setParameterDebitur(PanelPenerimaanBerkas view) throws ArsipException {
         boolean result = false;
 
-        String cif = view.getTextCif().getText();
-        String nama = view.getTextNama().getText();
-        String tempatLahir = view.getTextTempatLahir().getText();
+        String cif = view.getTextCif().getText().toUpperCase();
+        String nama = view.getTextNama().getText().toUpperCase();
+        String tempatLahir = view.getTextTempatLahir().getText().toUpperCase();
         Date tanggalLahir = view.getTextTanggalLahir().getDate();
-        String nik = view.getTextNik().getText();
-        String alamat = view.getTextAlamat().getText();
-        String kelurahan = view.getTextKelurahan().getText();
-        String kecamatan = view.getTextKecamatan().getText();
-        String telepon = view.getTextTelepon().getText();
+        String nik = view.getTextNik().getText().toUpperCase();
+        String alamat = view.getTextAlamat().getText().toUpperCase();
+        String kelurahan = view.getTextKelurahan().getText().toUpperCase();
+        String kecamatan = view.getTextKecamatan().getText().toUpperCase();
+        String telepon = view.getTextTelepon().getText().toUpperCase();
 
-        String skCpns = view.getTextSkCpns().getText();
-        String skPengangkatan = view.getTextSkPengangkatan().getText();
-        String skTerakhir = view.getTextSkTerakhir().getText();
-        String taspen = view.getTextTaspen().getText();
-        String skPensiun = view.getTextSkPensiun().getText();
-        String karip = view.getTextKarip().getText();
-        String shm = view.getTextSHM().getText();
-        String sht = view.getTextSHT().getText();
-        String ijazah = view.getTextIjazah().getText();
-        String lainnya = view.getTextLainnya1().getText();
+        String skCpns = view.getTextSkCpns().getText().toUpperCase();
+        String skPengangkatan = view.getTextSkPengangkatan().getText().toUpperCase();
+        String skTerakhir = view.getTextSkTerakhir().getText().toUpperCase();
+        String taspen = view.getTextTaspen().getText().toUpperCase();
+        String skPensiun = view.getTextSkPensiun().getText().toUpperCase();
+        String karip = view.getTextKarip().getText().toUpperCase();
+        String shm = view.getTextSHM().getText().toUpperCase();
+        String sht = view.getTextSHT().getText().toUpperCase();
+        String ijazah = view.getTextIjazah().getText().toUpperCase();
+        String lainnya = view.getTextLainnya1().getText().toUpperCase();
         instansiModel.selectInstansiModelByName((String) view.getComboInstansi().getSelectedItem());
-        String sp2k = view.getTextSP2K().getText();
-        String suratPerjanjian = view.getTextPerjanjianKredit().getText();
-        String skPotongTermin = view.getTextSkPotongTermin().getText();
-        String spk = view.getTextSPK().getText();
-        String warkatDeposito = view.getTextWarkatDeposito().getText();
-        String skPencairanDeposito = view.getTextPencairanDeposito().getText();
-        String shgb = view.getTextShgb().getText();
-        String imb = view.getTextIMB().getText();
-        String coverNote = view.getTextCoverNote().getText();
-        String ajb = view.getTextAjb().getText();
-        String skmht = view.getTextSkmht().getText();
-        String apht = view.getTextApht().getText();
-        String bpkb = view.getTextBpkb().getText();
-        String kwitansi = view.getTextKwitansi().getText();
-        String fiducia = view.getTextFiducia().getText();
-        String lainnya2 = view.getTextLainnya2().getText();
-        String permohonanKredit = view.getTextNoPermohonan().getText();
-        String siup = view.getTextSiup().getText();
-        String tdp = view.getTextTdp().getText();
+        String sp2k = view.getTextSP2K().getText().toUpperCase();
+        String suratPerjanjian = view.getTextPerjanjianKredit().getText().toUpperCase();
+        String skPotongTermin = view.getTextSkPotongTermin().getText().toUpperCase();
+        String spk = view.getTextSPK().getText().toUpperCase();
+        String warkatDeposito = view.getTextWarkatDeposito().getText().toUpperCase();
+        String skPencairanDeposito = view.getTextPencairanDeposito().getText().toUpperCase();
+        String shgb = view.getTextShgb().getText().toUpperCase();
+        String imb = view.getTextIMB().getText().toUpperCase();
+        String coverNote = view.getTextCoverNote().getText().toUpperCase();
+        String ajb = view.getTextAjb().getText().toUpperCase();
+        String skmht = view.getTextSkmht().getText().toUpperCase();
+        String apht = view.getTextApht().getText().toUpperCase();
+        String bpkb = view.getTextBpkb().getText().toUpperCase();
+        String kwitansi = view.getTextKwitansi().getText().toUpperCase();
+        String fiducia = view.getTextFiducia().getText().toUpperCase();
+        String lainnya2 = view.getTextLainnya2().getText().toUpperCase();
+        String permohonanKredit = view.getTextNoPermohonan().getText().toUpperCase();
+        String siup = view.getTextSiup().getText().toUpperCase();
+        String tdp = view.getTextTdp().getText().toUpperCase();
         Date tanggalSiup = view.getTextTanggalSiup().getDate();
         Date tanggalTdp = view.getTextTanggalTDP().getDate();
 

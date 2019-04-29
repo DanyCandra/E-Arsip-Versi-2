@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanCisFix" language="groovy" pageWidth="3368" pageHeight="2380" orientation="Landscape" columnWidth="3328" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1901"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     cis.`id_cis` AS cis_id_cis,
+     cis.`cif` AS cis_cif,
+     cis.`cif_cis` AS cis_cif_cis,
+     cis.`no_pinjaman` AS cis_no_pinjaman,
+     cis.`tanggal_realisasi` AS cis_tanggal_realisasi,
+     cis.`tanggal_mulai` AS cis_tanggal_mulai,
+     cis.`tanggal_selesai` AS cis_tanggal_selesai,
+     cis.`jumlah_pertanggungan` AS cis_jumlah_pertanggungan,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`id_instansi` AS debitur_id_instansi
+FROM
+     `debitur` debitur INNER JOIN `cis` cis ON debitur.`cif` = cis.`cif`
+WHERE
+     cis.`cif` = '02010102']]>
+		</queryString>
+		<field name="cis_id_cis" class="java.lang.String"/>
+		<field name="cis_cif" class="java.lang.String"/>
+		<field name="cis_cif_cis" class="java.lang.String"/>
+		<field name="cis_no_pinjaman" class="java.lang.String"/>
+		<field name="cis_tanggal_realisasi" class="java.sql.Date"/>
+		<field name="cis_tanggal_mulai" class="java.sql.Date"/>
+		<field name="cis_tanggal_selesai" class="java.sql.Date"/>
+		<field name="cis_jumlah_pertanggungan" class="java.lang.Double"/>
+		<field name="debitur_cif" class="java.lang.String"/>
+		<field name="debitur_nama" class="java.lang.String"/>
+		<field name="debitur_tempat_lahir" class="java.lang.String"/>
+		<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+		<field name="debitur_nik" class="java.lang.String"/>
+		<field name="debitur_alamat" class="java.lang.String"/>
+		<field name="debitur_kelurahan" class="java.lang.String"/>
+		<field name="debitur_kecamatan" class="java.lang.String"/>
+		<field name="debitur_telepon" class="java.lang.String"/>
+		<field name="debitur_sk_cpns" class="java.lang.String"/>
+		<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+		<field name="debitur_sk_terakhir" class="java.lang.String"/>
+		<field name="debitur_taspen" class="java.lang.String"/>
+		<field name="debitur_sk_pensiun" class="java.lang.String"/>
+		<field name="debitur_karip" class="java.lang.String"/>
+		<field name="debitur_shm" class="java.lang.String"/>
+		<field name="debitur_sht" class="java.lang.String"/>
+		<field name="debitur_ijazah" class="java.lang.String"/>
+		<field name="debitur_lainnya" class="java.lang.String"/>
+		<field name="debitur_id_instansi" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="TanggalMulai" class="java.lang.String"/>
+	<parameter name="TanggalSelesai" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     cis.`id_cis` AS cis_id_cis,
+     cis.`cif` AS cis_cif,
+     cis.`cif_cis` AS cis_cif_cis,
+     cis.`no_pinjaman` AS cis_no_pinjaman,
+     cis.`tanggal_realisasi` AS cis_tanggal_realisasi,
+     cis.`tanggal_mulai` AS cis_tanggal_mulai,
+     cis.`tanggal_selesai` AS cis_tanggal_selesai,
+     cis.`jumlah_pertanggungan` AS cis_jumlah_pertanggungan,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`id_instansi` AS debitur_id_instansi
+FROM
+     `debitur` debitur INNER JOIN `cis` cis ON debitur.`cif` = cis.`cif`
+WHERE
+     ( cis.`tanggal_realisasi` >= $P{TanggalMulai}) AND (cis.`tanggal_realisasi` <= $P{TanggalSelesai})]]>
+	</queryString>
+	<field name="cis_id_cis" class="java.lang.String"/>
+	<field name="cis_cif" class="java.lang.String"/>
+	<field name="cis_cif_cis" class="java.lang.String"/>
+	<field name="cis_no_pinjaman" class="java.lang.String"/>
+	<field name="cis_tanggal_realisasi" class="java.sql.Date"/>
+	<field name="cis_tanggal_mulai" class="java.sql.Date"/>
+	<field name="cis_tanggal_selesai" class="java.sql.Date"/>
+	<field name="cis_jumlah_pertanggungan" class="java.lang.Double"/>
+	<field name="debitur_cif" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_tempat_lahir" class="java.lang.String"/>
+	<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+	<field name="debitur_nik" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="debitur_kelurahan" class="java.lang.String"/>
+	<field name="debitur_kecamatan" class="java.lang.String"/>
+	<field name="debitur_telepon" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="debitur_id_instansi" class="java.lang.String"/>
+	<variable name="No" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{No}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="49" y="0" width="261" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="130" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="144" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO PINJAMAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="584" y="26" width="139" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AWAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="723" y="26" width="131" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AKHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="854" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK CPNS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="584" y="0" width="270" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JANGKA WAKTU KREDIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1079" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK PENGANGKATAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1304" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK TERAKHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1529" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Taspen / ASABRI / DAPENMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1754" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK PENSIUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1979" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2204" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2429" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2654" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IJAZAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2879" y="26" width="225" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAINNYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3104" y="0" width="224" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH NILAI PERTANGGUNGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="854" y="0" width="2250" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOKUMEN YANG DIJAMINKAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="0" width="261" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="130" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cis_cif_cis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="144" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cis_no_pinjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="584" y="0" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{cis_tanggal_mulai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="723" y="0" width="131" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{cis_tanggal_selesai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="854" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_cpns}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1079" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1304" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_terakhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1529" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_taspen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1754" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1979" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_karip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2204" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_shm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2429" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sht}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2654" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_ijazah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2879" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_lainnya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3104" y="0" width="224" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{cis_jumlah_pertanggungan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

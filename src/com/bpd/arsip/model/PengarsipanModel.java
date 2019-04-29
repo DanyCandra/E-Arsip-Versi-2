@@ -29,21 +29,21 @@ public class PengarsipanModel {
 
     @TableColumn(name = "CIF", number = 1, size = 20, renderer = TableDebiturRender.class, groups = {"ttpengembalian", "lappengembalian"})
     private DebiturModel debiturModel;
-    @TableColumn(name = "NAMA", number = 2, size = 40, renderer = TableRenderDefault.class,groups = {"ttpengembalian", "lappengembalian"})
+    @TableColumn(name = "NAMA", number = 2, size = 35, renderer = TableRenderDefault.class,groups = {"ttpengembalian", "lappengembalian"})
     private String nama;
     @TableColumn(name = "TANGGAL TERIMA", number = 3, size = 20,renderer = TableRenderDefault.class,  groups = {"ttpengembalian"})
     private Date tanggalTerima;
-    @TableColumn(name = "PETUGAS PENERIMA", number = 4, size = 30, renderer = TableUserRender.class, groups = {"ttpengembalian"})
+    @TableColumn(name = "PETUGAS PENERIMA", number = 4, size = 20, renderer = TableUserRender.class, groups = {"ttpengembalian"})
     private UserModel userPenerima;
-    @TableColumn(name = "PEJABAT PENERIMA", number = 5, size = 30, renderer = TablePejabatRender.class, groups = {"ttpengembalian"})
+    @TableColumn(name = "PEJABAT PENERIMA", number = 5, size = 20, renderer = TablePejabatRender.class, groups = {"ttpengembalian"})
     private PejabatModel pejabatPenerima;
-    @TableColumn(name = "DUS", number = 6, size = 5, renderer = DusRender.class, groups = {"ttpengembalian"})
+    @TableColumn(name = "DUS", number = 6, size = 10, renderer = DusRender.class, groups = {"ttpengembalian"})
     private DusModel dus;
     @TableColumn(name = "TANGGAL KEMBALI", number = 7, size = 20,renderer = TableRenderDefault.class, groups = {"lappengembalian"})
     private Date tanggalKembali;
-    @TableColumn(name = "PETUGAS PENGEMBALI", number = 8, size = 30, renderer = TableUserRender.class, groups = {"lappengembalian"})
+    @TableColumn(name = "PETUGAS PENGEMBALI", number = 8, size = 20, renderer = TableUserRender.class, groups = {"lappengembalian"})
     private UserModel userPengembali;
-    @TableColumn(name = "PEJABAT PENGEMBALI", number = 9, size = 30, renderer = TablePejabatRender.class, groups = {"lappengembalian"})
+    @TableColumn(name = "PEJABAT PENGEMBALI", number = 9, size = 20, renderer = TablePejabatRender.class, groups = {"lappengembalian"})
     private PejabatModel pejabatPengembali;
     @TableColumn(name = "STATUS BERKAS", number = 10, size = 20, renderer = TableStatusBerkasRender.class, groups = {"ttpengembalian"})
     private String statusArsip;

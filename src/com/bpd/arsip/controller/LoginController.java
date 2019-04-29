@@ -9,10 +9,12 @@ import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.model.UserModel;
 import com.bpd.arsip.validator.ValidatorNotNull;
 import com.bpd.arsip.view.MainFrame;
+import com.bpd.arsip.view.dialog.DialogLoadAwal;
 import com.bpd.arsip.view.dialog.DialogLogin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 
 /**
  *
@@ -35,17 +37,40 @@ public class LoginController {
             try {
                 if (userModel.getUserLogin(username, password) == true
                         || userModel.getUserLoginByProperties(username, password) == true) {
-                    JOptionPane.showMessageDialog(view, "Login Berhasil, Selamat Datang Operator");
+                    JOptionPane.showMessageDialog(view, "Login Berhasil, Selamat Datang " + userModel.getNama());
                     view.setVisible(false);
-                    
-                    MainFrame frame = new MainFrame();
-                    frame.setUserModel(userModel);
-                    frame.getTextUsername().setText(userModel.getNama());
-                    frame.setVisible(true);
+
+                    new SwingWorker<Object, Object>() {
+                        DialogLoadAwal sp = new DialogLoadAwal();
+                        MainFrame frame = null;
+
+                        @Override
+                        protected Object doInBackground() throws Exception {
+                            sp.setLocationRelativeTo(null);
+                            sp.setVisible(true);
+
+                            frame = new MainFrame();
+                            frame.setUserModel(userModel);
+                            frame.getTextUsername().setText(userModel.getNama().toUpperCase());
+                            return null;
+
+                        }
+
+                        @Override
+                        protected void done() {
+
+                            frame.setVisible(true);
+                            frame.setMenuUser();
+                            sp.setVisible(false);
+                        }
+
+                    }.execute();
+
                 } else {
                     JOptionPane.showMessageDialog(view, "Username Tidak Terdaftar");
                 }
             } catch (ArsipException ex) {
+                JOptionPane.showMessageDialog(view, "Username Tidak Terdaftar");
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

@@ -26,9 +26,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" pref="1345" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -38,7 +38,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTabbedPane1" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -144,7 +144,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="labelWhite5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="textTanggalLahir" pref="762" max="32767" attributes="0"/>
+                                          <Component id="textTanggalLahir" pref="773" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="textAlamat" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
@@ -214,7 +214,7 @@
                               <Component id="comboInstansi" linkSize="3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="labelWhite10" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -401,8 +401,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <Component id="jPanel5" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -431,53 +430,47 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labelWhite13" alignment="0" pref="135" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="labelWhite21" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="labelWhite22" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="textPertanggungan" min="-2" pref="367" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="labelWhite14" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="27" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="comboPinjaman" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="labelWhite13" linkSize="10" alignment="0" pref="135" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="textNoPermohonan" min="-2" pref="373" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="771" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="labelWhite21" linkSize="10" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="labelWhite22" linkSize="10" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="textPertanggungan" min="-2" pref="367" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="labelWhite14" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="comboPinjaman" alignment="0" min="-2" pref="1144" max="-2" attributes="0"/>
+                                      <Component id="textNoPermohonan" min="-2" pref="373" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labelWhite12" pref="129" max="32767" attributes="0"/>
-                              <Component id="labelWhite11" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelWhite23" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="textNoPinjaman" min="-2" pref="917" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="labelWhite12" linkSize="10" pref="129" max="32767" attributes="0"/>
+                                      <Component id="labelWhite11" linkSize="10" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="labelWhite23" linkSize="10" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="labelWhite24" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="textPinjamanKe" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="textNoPinjaman" min="-2" pref="934" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="labelWhite24" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="textPinjamanKe" min="-2" pref="110" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="textTanggalMulai" alignment="0" min="-2" pref="393" max="-2" attributes="0"/>
+                                      <Component id="textTanggalSelesai" alignment="0" min="-2" pref="395" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="textTanggalSelesai" min="-2" pref="376" max="-2" attributes="0"/>
-                              <Component id="textTanggalMulai" min="-2" pref="376" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -486,14 +479,14 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="comboPinjaman" max="32767" attributes="0"/>
-                              <Component id="labelWhite21" linkSize="5" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelWhite21" linkSize="5" alignment="3" max="32767" attributes="0"/>
+                              <Component id="comboPinjaman" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="textNoPermohonan" pref="35" max="32767" attributes="0"/>
-                              <Component id="labelWhite22" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelWhite22" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="textNoPermohonan" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -507,27 +500,27 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="labelWhite11" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="textTanggalMulai" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="textTanggalMulai" linkSize="6" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="labelWhite12" linkSize="5" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="textTanggalSelesai" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="textTanggalSelesai" linkSize="6" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="labelWhite13" linkSize="5" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="textPertanggungan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="labelWhite14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelWhite13" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textPertanggungan" linkSize="6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="labelWhite14" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <EmptySpace pref="87" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -535,9 +528,6 @@
               <SubComponents>
                 <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite21">
                   <Properties>
-                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                      <ComponentRef name="default"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="JENIS PINJAMAN"/>
                   </Properties>
                 </Component>
@@ -694,7 +684,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="textSPK" max="32767" attributes="0"/>
                           <Component id="textTaspen" max="32767" attributes="0"/>
-                          <Component id="textSP2K" pref="479" max="32767" attributes="0"/>
+                          <Component id="textSP2K" pref="484" max="32767" attributes="0"/>
                           <Component id="textSkCpns" max="32767" attributes="0"/>
                           <Component id="textSkTerakhir" max="32767" attributes="0"/>
                           <Component id="textWarkatDeposito" max="32767" attributes="0"/>
@@ -710,12 +700,12 @@
                       </Group>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textPerjanjianKredit" alignment="0" pref="479" max="32767" attributes="0"/>
-                          <Component id="textPencairanDeposito" alignment="0" pref="479" max="32767" attributes="0"/>
-                          <Component id="textSkPotongTermin" alignment="0" pref="479" max="32767" attributes="0"/>
-                          <Component id="textKarip" alignment="0" pref="479" max="32767" attributes="0"/>
-                          <Component id="textSkPensiun" alignment="0" pref="479" max="32767" attributes="0"/>
-                          <Component id="textSkPengangkatan" alignment="0" pref="479" max="32767" attributes="0"/>
+                          <Component id="textPerjanjianKredit" alignment="0" pref="485" max="32767" attributes="0"/>
+                          <Component id="textPencairanDeposito" alignment="0" pref="485" max="32767" attributes="0"/>
+                          <Component id="textSkPotongTermin" alignment="0" pref="485" max="32767" attributes="0"/>
+                          <Component id="textKarip" alignment="0" pref="485" max="32767" attributes="0"/>
+                          <Component id="textSkPensiun" alignment="0" pref="485" max="32767" attributes="0"/>
+                          <Component id="textSkPengangkatan" alignment="0" pref="485" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -757,7 +747,7 @@
                               <Component id="textSkPotongTermin" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="textPencairanDeposito" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace pref="165" max="32767" attributes="0"/>
+                              <EmptySpace pref="132" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1062,12 +1052,12 @@
                           <Component id="textFiducia" alignment="0" max="32767" attributes="0"/>
                           <Component id="textLainnya1" alignment="1" max="32767" attributes="0"/>
                           <Component id="textBpkb" max="32767" attributes="0"/>
-                          <Component id="textAjb" alignment="0" pref="480" max="32767" attributes="0"/>
+                          <Component id="textAjb" alignment="0" pref="485" max="32767" attributes="0"/>
                           <Component id="textApht" alignment="0" max="32767" attributes="0"/>
                           <Component id="textSHM" max="32767" attributes="0"/>
                           <Component id="textIMB" max="32767" attributes="0"/>
                           <Component id="textSiup" alignment="1" max="32767" attributes="0"/>
-                          <Component id="textTanggalSiup" pref="480" max="32767" attributes="0"/>
+                          <Component id="textTanggalSiup" pref="485" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1083,7 +1073,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="textTanggalTDP" pref="476" max="32767" attributes="0"/>
+                          <Component id="textTanggalTDP" pref="482" max="32767" attributes="0"/>
                           <Component id="textTdp" alignment="0" max="32767" attributes="0"/>
                           <Component id="textIjazah" alignment="0" max="32767" attributes="0"/>
                           <Component id="textKwitansi" alignment="0" max="32767" attributes="0"/>
@@ -1578,7 +1568,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="234" max="32767" attributes="0"/>
+                      <EmptySpace pref="185" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1589,8 +1579,8 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Penyimpanan">
-                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true"/>
+                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                        <TitledBorder/>
                       </Border>
                       <Font PropertyName="font" name="sansserif" size="14" style="1"/>
                       <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1607,7 +1597,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="1114" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="1111" max="32767" attributes="0"/>
                                   <Component id="buttonSimpan" linkSize="1" min="-2" pref="90" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="buttonBatal" linkSize="1" min="-2" pref="77" max="-2" attributes="0"/>

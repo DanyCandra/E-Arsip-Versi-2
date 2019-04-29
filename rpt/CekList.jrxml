@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CekList" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e90699fe-5ca1-4232-950a-9a9a43bf0d3f">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="549"/>
+	<parameter name="no_pinjaman" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalDokumen" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     no_pinjaman AS no_pinjaman,
+     cif_cis AS cif_cis,
+     nama AS nama,
+     sk_cpns AS sk_cpns,
+     sk_pengangkatan AS sk_pengangkatan,
+     sk_terakhir AS sk_terkahir,
+     taspen AS taspen,
+     sk_pensiun AS sk_pensiun,
+     shm AS shm,
+     karip AS karip,
+     sht AS sht,
+     ijazah AS ijazah,
+     lainnya AS lainnya,
+     sp2k AS sp2k,
+     surat_perjanjian AS surat_perjanjian,
+     spk AS spk,
+     sk_potong_termin AS sk_potong_termin,
+     warkat_deposito AS warkat_deposito,
+     sk_pencairan_deposito AS sk_pencairan_deposito,
+     shgb AS shgb,
+     imb AS imb,
+     ajb AS ajb,
+     cover_note AS cover_note,
+     skmht AS skmht,
+     apht AS apht,
+     bpkb AS bpkb,
+     kwitansi AS kwitansi,
+     fiducia AS fiducia,
+     lainnya2 AS lainnya_2,
+     permohonan_kredit AS permohonan_kredit,
+     cis.`cif` AS cif
+FROM
+     `cis` cis INNER JOIN `debitur` debitur ON cis.`cif` = debitur.`cif`
+WHERE
+  no_pinjaman = $P{no_pinjaman}]]>
+	</queryString>
+	<field name="no_pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cif_cis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_cpns" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_pengangkatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_terkahir" class="java.lang.String"/>
+	<field name="taspen" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_pensiun" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="shm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="karip" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sht" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ijazah" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lainnya" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sp2k" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="surat_perjanjian" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="spk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_potong_termin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="warkat_deposito" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sk_pencairan_deposito" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="shgb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ajb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cover_note" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="skmht" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apht" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bpkb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kwitansi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fiducia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lainnya_2" class="java.lang.String"/>
+	<field name="permohonan_kredit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="JenisPinjaman" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[($F{cif_cis}.contains("PLO")? "PLO" : "KWU")]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="total" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[( $F{sk_cpns}.equals("") ? $V{total}+0 : $V{total}+1 )]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="variable1" class="java.lang.Integer">
+		<variableExpression><![CDATA[( $F{sk_cpns}.equals("") ? $V{total}+4 : $V{total}+1 )]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="33" uuid="59bc4d3b-8ee2-4d88-b3e9-c1097a47b6c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Check List Opname Dokumen Kredit (Asli)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="555" height="20" uuid="38f362d5-f633-4fa7-8f53-7f96df12e959"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OPNAME DOKUMEN KREDIT ASLI UNTUK DEBITUR SEBAGAI BERIKUT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="675" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="12" width="100" height="13" uuid="f810a02d-3534-4fac-8ec2-5cbff5594a6f"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="25" width="100" height="15" uuid="9dbc3481-f76c-41f5-96e8-5cacc12ad386"/>
+				<text><![CDATA[CIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="40" width="100" height="15" uuid="f1a6c4d9-2970-495f-a2dd-28c8906f2851"/>
+				<text><![CDATA[NO PINJAMAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="55" width="100" height="15" uuid="1f06b105-b38f-4156-8012-a9b286a0275b"/>
+				<text><![CDATA[JENIS PINJAMAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="12" width="341" height="15" uuid="6a061552-753f-480c-b1a2-dd284946b166"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="40" width="341" height="15" uuid="7074fb2a-0fb7-433f-852d-61b1db9da915"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{no_pinjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="27" width="341" height="15" uuid="eeaca259-5107-4f02-9282-98b0cc950b32"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="55" width="341" height="15" uuid="8ee9cacf-f711-4ebb-a76a-4e59eef9ab44"/>
+				<textFieldExpression><![CDATA[$V{JenisPinjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="641" y="304" width="39" height="15" uuid="fe79a502-b714-4c23-b059-5ebf3bb4aa4c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="320" y="327" width="39" height="15" uuid="d24c5a2d-ded7-449f-942c-69e6b63ee471">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pencairan_deposito}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="177" width="39" height="15" uuid="e8e8ecf9-1141-4c95-bdca-3a1d525e08e7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pengangkatan}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="143" width="210" height="15" uuid="260146d6-9515-4c5e-9340-43cfeda424ee"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Perjanjian Kredit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="342" width="174" height="15" uuid="659196b5-2ed3-4b88-8e83-ccb2c2fff3d5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="505" width="210" height="15" uuid="606dadbf-869d-49d7-8100-e1ed543e16ed"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fiducia]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="487" width="549" height="1" uuid="faace500-e382-4e1e-b4d7-c6b9bd3a2d6d"/>
+			</line>
+			<staticText>
+				<reportElement x="50" y="110" width="210" height="15" uuid="c88d9065-d969-436e-8d1a-288915e17080"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Permohonan Kredit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="592" width="220" height="30" uuid="e4fea5a0-b20c-4852-a34f-a914274c333f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Petugas Pelaksana Legal dan Admin Kredit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="437" width="210" height="15" uuid="e6ae4d39-dc26-4ea7-8610-eee39a4f760d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Akta Pembebanan Hak Tanggungan (APHT)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="243" width="39" height="15" uuid="c1c2a9d6-fd12-4af0-9f35-a0f2eac74ff9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pensiun}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="160" width="210" height="15" uuid="a59e16d1-673a-4fff-a213-4bbbb0c12368"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SK Calon Pegawai]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="373" width="39" height="15" uuid="2c40cd15-1084-4a7f-a448-774b6f4d5572">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{imb}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="423" width="549" height="1" uuid="5f96ccc3-0683-40a7-86e9-069aa1291120"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="408" width="30" height="15" uuid="2408bb95-7b3f-43bb-8f23-a4bcbd877148">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[19]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="111" width="174" height="15" uuid="3b2cd09b-3487-4108-8380-ca624774312e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{permohonan_kredit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="276" width="210" height="15" uuid="b4171951-812a-42df-8d73-525c51001c70"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Termin/Kontrak Kerja/ Surat Perintah Kerja (SPK)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="328" width="174" height="15" uuid="94db40e6-8a72-4dad-8849-d0f59bf1cd81">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_pencairan_deposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="506" width="39" height="15" uuid="f0aab2ad-2fbf-48c2-99fe-b026eac90bfa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{fiducia}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="226" width="210" height="15" uuid="baeae6e9-b0b5-4590-b007-b92fcf8b2dfa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ijazah atau Dokumen yang dipersamakan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="407" width="39" height="15" uuid="3ff2b066-057b-451f-9db3-508d879bd743">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{ajb}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="538" width="39" height="15" uuid="90365c39-843e-4fcf-9308-cc0b27cb1d7e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{lainnya_2}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="349" y="592" width="220" height="30" uuid="e8ae8c34-9b5a-494d-a27a-7563438a0386"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Kasie Legal dan Admin Kredit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="572" width="120" height="20" uuid="dab579a3-43ad-4a94-906d-f77c43f5aec2"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Purwokerto,  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="391" width="174" height="15" uuid="43fa2fcf-8e9e-4363-a833-2754d6ae3fe4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cover_note}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="522" width="39" height="15" uuid="65fc5525-cae2-4ca4-8bef-81bc3c80eb20">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{lainnya}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="471" width="39" height="15" uuid="cc5afbe9-de9c-4910-a0aa-031ceaba9648">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{bpkb}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="194" width="39" height="15" uuid="24ea3dd6-c04e-464d-9b2e-d3c4a54b25ba">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_terkahir}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="92" width="39" height="18" uuid="e02a0fbd-db28-4185-ba96-167bd09c813c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TIDAK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="454" width="210" height="15" uuid="b46f931f-0482-4586-98bb-9e143d88878c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sertifikat Hak Tanggungan (SHT)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="193" width="549" height="1" uuid="034011b1-0b24-412a-8785-7695d7109843"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="261" width="39" height="15" uuid="38399caf-3a9e-430f-902e-ada5039a50d7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{karip}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="310" width="39" height="15" uuid="5df6ee19-3231-43ab-84bc-5342dbe77081">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{warkat_deposito}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="226" width="549" height="1" uuid="46cf6839-e5bf-40d8-b7a1-42facd848891"/>
+			</line>
+			<line>
+				<reportElement x="10" y="259" width="549" height="1" uuid="ff20b730-4fda-4f9a-936b-2a94ec244e8c"/>
+			</line>
+			<staticText>
+				<reportElement x="370" y="92" width="188" height="18" uuid="2025e0e9-5b21-430b-973c-e70cb007e1ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOMOR DUKUMEN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="311" width="174" height="15" uuid="bd1d967a-40bf-4c22-a25f-b53def1a47c3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warkat_deposito}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="358" width="549" height="1" uuid="b659cfd5-6ef8-4634-95ad-de4f4230d90a"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="211" width="30" height="15" uuid="5882baa6-95a0-439e-837a-cefe06567af2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="327" width="210" height="15" uuid="b91ee626-9c70-4b82-969e-b530e397c0e3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Surat Kuasa Pencairan Deposito]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="159" width="549" height="1" uuid="a602d0ff-f13f-47c3-916b-08b6632c667e"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="194" width="30" height="15" uuid="7cb670a0-f55e-4b4d-a32b-04a9fd4dc6e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="406" width="549" height="1" uuid="7cf34dcd-668a-4bf6-b357-64a946316222"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="328" width="39" height="15" uuid="2a1351e8-e075-40dc-ae1e-ad460477fae2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pencairan_deposito}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="310" width="210" height="15" uuid="631da0d4-8220-43c8-933b-acc80c336803"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Warkat Deposito]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="472" width="174" height="15" uuid="70cfc070-81a1-4b63-883b-b121ca995931"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bpkb}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="407" width="210" height="15" uuid="0c528f52-b088-4986-999a-088c904b92d1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Akat Jual Beli (AJB)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="209" width="549" height="1" uuid="7f32da43-8843-4582-8132-cf419fbc0724"/>
+			</line>
+			<line>
+				<reportElement x="10" y="276" width="549" height="1" uuid="18365837-fa31-47e4-b7db-b161d9f32c9c"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="556" width="30" height="15" uuid="fb6f7f31-a0e2-4272-ba62-2cf9dd3e011d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[28]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="210" width="174" height="15" uuid="4460dace-35ce-41d8-8ae3-de6c02b7e0dd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taspen}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="438" width="549" height="1" uuid="40885778-9406-4d3c-be2b-6a617e591a86"/>
+			</line>
+			<line>
+				<reportElement x="10" y="89" width="1" height="480" uuid="5d032b70-4437-4b2d-a557-26d310c18b21"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="438" width="30" height="15" uuid="afb5b4c5-8056-44cf-971c-ee4ccc5fa39d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[21]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="373" width="549" height="1" uuid="f5a6c024-9bec-4daa-b0c8-a30b467bfeb4"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="455" width="30" height="15" uuid="63016ebf-25b5-4d63-9043-2cf637bb4704">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[22]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="127" width="210" height="15" uuid="85a1e525-e83e-48d2-bdaf-ffa6299ae8f1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Surat Pemberitahuan Persetujuan Kredit (SP2K)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="309" width="549" height="1" uuid="069d3c25-9d0d-4e4d-9e97-784026ae69aa"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="178" width="30" height="15" uuid="f725b21c-515a-4857-91ff-80f0c04cfac1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="326" width="549" height="1" uuid="c4fb2b36-980f-448a-8974-28009e37fee4"/>
+			</line>
+			<line>
+				<reportElement x="260" y="92" width="1" height="477" uuid="95482da4-ad7f-43c1-a227-44024a5f0199"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="111" width="30" height="15" uuid="1db70b81-9920-478e-902e-d07c2f188260">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="538" width="210" height="15" uuid="891e31ec-debe-4293-a5e6-cc18c469af76"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Lain Lain 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="571" width="199" height="18" uuid="75ca8074-a9da-4aa1-99d4-e72b5d4a61ca"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jumlah Dokumen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="277" width="30" height="15" uuid="3ad1a229-94ce-42fa-8e6b-864851990aa8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="453" width="549" height="1" uuid="2fbdda9a-509d-41a5-9e35-8f23dd3fcdf1"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="455" width="39" height="15" uuid="31769907-51e0-455f-be2c-e007fd7c4bc2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sht}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="391" width="30" height="15" uuid="654c42e9-8110-4c53-8e5b-98e7301c70ef">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[18]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="554" width="549" height="1" uuid="e66dd9ec-4544-4a6d-9946-adf7cf33e520"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="539" width="39" height="15" uuid="20430811-2c42-49de-8405-7b55fc607149">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{lainnya_2}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="177" width="210" height="15" uuid="4554ba6a-b4d5-4024-900f-f3b0a9a7e580"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SK Pengangkatan Pegawai]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="505" width="39" height="15" uuid="3a0ea2af-dc8e-4e2d-ab1d-a7badd27c4e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{fiducia}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="144" width="39" height="15" uuid="85c35ca1-8780-4c32-8531-f2474be1be6b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{surat_perjanjian}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="277" width="39" height="15" uuid="43c98a40-06ff-4556-8b5f-e8fcbbc1f20f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{spk}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="521" width="549" height="1" uuid="61ff173b-6ac2-4fb5-b747-66fb98dbedeb"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="111" width="39" height="15" uuid="fa6ce3f4-50c1-4f91-afbf-b74111baf982">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{permohonan_kredit}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="128" width="30" height="15" uuid="4dd60442-e9ee-40cb-8af7-aff9d1c84db4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="357" width="39" height="15" uuid="56eb8df4-cf6c-420f-b777-d503c89d1b71">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{shgb}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="422" width="39" height="15" uuid="0ab5a77d-da48-469e-b331-b228c1851e9d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{skmht}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="455" width="39" height="15" uuid="a9255342-294f-41e6-abbf-e441d7e1b484">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sht}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="142" width="174" height="15" uuid="30f3a382-73d3-45a1-a5f3-cdb21edc4ad5"/>
+				<textFieldExpression><![CDATA[$F{surat_perjanjian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="421" width="210" height="15" uuid="36a34d88-55d7-4bc4-9e74-ad4ca0aa2766"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Surat Kuasa Membebankan Hak Tanggungan (SKMHT)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="374" width="30" height="15" uuid="c025684b-1a10-451b-9280-a86211fdf2bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="311" width="30" height="15" uuid="787239e0-b490-4d76-a2f1-531747bf9fdb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="408" width="39" height="15" uuid="587ad435-3fa1-460f-af1e-940175e55483">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{ajb}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="227" width="39" height="15" uuid="96e46096-7f83-4dd2-b518-5073f57ac4c9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{ijazah}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="194" width="174" height="15" uuid="4d7cce52-dfa0-4c34-9056-034190fbcfc3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_terkahir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="243" width="210" height="15" uuid="84e28084-d544-41d8-959b-0df9cb35ca76"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SK Pensiun]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="521" width="39" height="15" uuid="5fb3fd45-f7f9-46b2-ab34-9064a0a105ba">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{lainnya}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="161" width="30" height="15" uuid="f46baa1e-5535-4b29-bdc0-8412589a36c5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="328" width="30" height="15" uuid="a58b9586-b3e8-4028-84a3-e3109f098d42">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[14]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="161" width="39" height="15" uuid="2b50c75f-d560-4269-9a48-a5377ed5b502">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_cpns}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="292" width="549" height="1" uuid="17e9c71f-1ab4-43e5-8097-311a6e0fbf89"/>
+			</line>
+			<line>
+				<reportElement x="320" y="90" width="1" height="480" uuid="147a8daf-03fe-434b-95eb-481b8ef078ce"/>
+			</line>
+			<textField>
+				<reportElement x="320" y="160" width="39" height="15" uuid="dfb6884b-ebd8-4371-a859-230dc34cdfd7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_cpns}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="342" width="210" height="15" uuid="969d8489-9a9a-4f7d-915b-9c859ad697ee"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sertifikat Hak Milik (SHM)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="128" width="174" height="15" uuid="0963fb8c-81f3-46a0-9eae-a24142eeb299"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp2k}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="277" width="174" height="15" uuid="2672ca08-35db-46ee-af1e-fe59a62cbc57">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spk}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="422" width="30" height="15" uuid="326fbdc4-62f2-4656-a745-3d89837b3543">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[20	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="522" width="30" height="15" uuid="9eb630e8-400b-480e-b7a0-45168a341b12">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[26]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="293" width="39" height="15" uuid="541ac18e-ef8a-41e6-808a-acf28ed2d0d8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_potong_termin}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="489" width="39" height="15" uuid="5c9775df-f4f6-4788-9ac3-96167d0e8d58">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{kwitansi}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="211" width="39" height="15" uuid="41c8ec88-b4c3-4921-9317-3cae3c7392ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{taspen}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="424" width="174" height="15" uuid="86e80c5e-4f4a-4e4a-9968-d0e5631c3fdf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{skmht}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="161" width="174" height="14" uuid="ef931752-cd8a-4b55-9688-0cf3ebc49507"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_cpns}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="276" width="39" height="15" uuid="f0f45d86-9d96-4961-872c-8f7631185046">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{spk}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="210" width="210" height="15" uuid="532cf9f0-9ff2-4ac3-8653-6adc1cfcfd05"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Kartu Peserta Pensiun (Taspen)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="539" width="30" height="15" uuid="402b90f3-bb9e-408b-a00a-1e868f285a55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[27]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="506" width="30" height="15" uuid="1a5749ce-4a4b-4ff0-8998-e04d95746e60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="294" width="30" height="15" uuid="0fc4ba55-7b72-4d83-b1f2-f5e0ff99d93b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[12]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="358" width="39" height="15" uuid="c6a56422-4e66-48c6-8158-935d7c68416a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{shgb}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="505" width="174" height="15" uuid="942c9e4b-5c34-49d7-a7cc-4ffb806a28e7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fiducia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="261" width="174" height="15" uuid="0ce0c7c4-1146-4d94-965b-08305d296ec6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{karip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="539" width="174" height="15" uuid="86f4928a-59ea-43ae-bfec-bd7e526f929f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lainnya_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="390" width="210" height="15" uuid="2d7d9ef2-8fe9-4821-9f7a-9936ca2f8619"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cover Note]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="537" width="549" height="1" uuid="ab42d4df-88ee-444c-b153-56acc10ab43a"/>
+			</line>
+			<line>
+				<reportElement x="10" y="343" width="549" height="1" uuid="e5c1908e-6b6c-4c86-b06b-007a6599acd6"/>
+			</line>
+			<textField>
+				<reportElement x="376" y="177" width="174" height="15" uuid="9e7cdff2-3887-426b-83ba-dc092284bbd1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="92" width="30" height="18" uuid="c05bebd2-a1d2-49f3-ae8f-e84f110db58a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="242" width="549" height="1" uuid="c9a4a25b-e4a9-449e-ab6b-753a38f4fd92"/>
+			</line>
+			<line>
+				<reportElement x="370" y="92" width="1" height="479" uuid="3ebf1308-8dfa-4e27-98e9-05d593a5ff9b"/>
+			</line>
+			<staticText>
+				<reportElement x="50" y="260" width="210" height="15" uuid="474ccf04-e94f-421b-87c1-e9fe12f2b861"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Kartu Identitas Pensiun (Karip)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="438" width="39" height="15" uuid="93f90696-b2d9-4e8d-9dc2-949cf6ebe61f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{apht}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="128" width="39" height="15" uuid="62c26edc-be86-498d-956b-78275327425e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sp2k}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="110" width="549" height="1" uuid="3020a014-7789-435c-8f0a-762a596ba35f"/>
+			</line>
+			<textField>
+				<reportElement x="376" y="407" width="174" height="15" uuid="96b96b24-cc68-4101-9a97-2e30cd9430a9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ajb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="294" width="39" height="15" uuid="61e9e27a-0538-45e0-bbd4-968b8885fa98">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_potong_termin}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="343" width="30" height="15" uuid="8a7a424c-068b-4b23-893b-9e36eb8fe8f5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[15]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="178" width="39" height="15" uuid="b48a3539-dd88-470a-ae24-25afc89a5ba3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pengangkatan}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="126" width="549" height="1" uuid="83962115-d50b-486d-a5c2-70eae6789787"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="343" width="39" height="15" uuid="c364a504-d823-475e-9a24-7e3077fb1ec8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{shm}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="522" width="174" height="15" uuid="0008af8d-0a29-4f24-891f-ae4462255b6a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lainnya}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="373" width="210" height="15" uuid="27d74838-20cb-4ec8-81b7-89889a70fe44"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ijin Mendirikan Bangunan (IMB)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="389" width="549" height="1" uuid="83123fb6-7412-474f-952e-f83164394569"/>
+			</line>
+			<staticText>
+				<reportElement x="50" y="193" width="210" height="15" uuid="25eaa471-d8b0-4dc4-8ae2-d76973e1b49e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SK Pegawai Terakhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="261" width="30" height="15" uuid="d830b2ee-af73-43c5-8e7e-8ee168fd590f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="357" width="210" height="15" uuid="dafb226e-042f-49b7-86b6-02885ddfe48c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sertifikat Hak Guna Bangunan (SHGB)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="439" width="174" height="15" uuid="46485015-8731-45c7-8026-f108b9f1b59d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apht}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="227" width="30" height="15" uuid="31b44ae6-7c24-4e23-9da2-549d7c4cfd16">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="321" y="144" width="39" height="15" uuid="3ef48796-898c-4d0b-8ff6-c5c2def76a4d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{surat_perjanjian}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="342" width="39" height="15" uuid="8c5231f1-bfec-4334-9055-7f65a6ce1972">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{shm}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="293" width="210" height="15" uuid="52a04c7d-6718-4b8d-88de-b5956dbdfa63"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Surat Kuasa Potong Termin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="92" width="210" height="18" uuid="56f70ef4-c375-4a3e-ab51-43a1ae4a676c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NAMA DOKUMEN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="143" width="549" height="1" uuid="864387f0-48d3-4bd6-87a3-41701f8a1009"/>
+			</line>
+			<staticText>
+				<reportElement x="50" y="488" width="210" height="15" uuid="03ec1b36-be3c-47e4-a536-8c66771fc21d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Kwitansi Pembelian]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="228" width="174" height="15" uuid="83723259-3e41-4723-ae41-873cc8d25d37">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ijazah}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="90" width="549" height="1" uuid="c3ef82fb-30be-4ee3-bf00-bd5a962dde03"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="144" width="30" height="15" uuid="b1dae6b7-3a04-4ec5-94bb-1fa97117d712">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="176" width="549" height="1" uuid="0de45c97-154e-4ae2-94da-d12ae548ccb4"/>
+			</line>
+			<textField>
+				<reportElement x="376" y="489" width="174" height="15" uuid="ac0d57ce-c5a4-4d9c-bfe1-825b7e3ee82f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kwitansi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="193" width="39" height="15" uuid="f4709e73-0ea7-4f7b-9178-4fc4b609a444">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_terkahir}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="358" width="30" height="15" uuid="0b529b20-2bbe-4db0-8078-32eb3015457a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[16]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="244" width="174" height="15" uuid="86da6e3d-2b97-4788-b995-219bd9e02ad8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="521" width="210" height="15" uuid="2bdcad50-8e45-4417-ba6a-a6d1143e9955"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Lain Lain 1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="455" width="174" height="15" uuid="20756eef-6b5d-4479-a50a-9357380f6cea"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sht}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="244" width="30" height="15" uuid="1e8f9674-c6a3-4626-807d-217a08018c64">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="244" width="39" height="15" uuid="c4546ea8-42b0-41f3-8436-5a693d368d87">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sk_pensiun}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="471" width="210" height="15" uuid="6279ca8d-f396-4a23-9ede-f8e10f427c19"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Bukti Pemilikan Kendaraan Bermotor (BPKB)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="311" width="39" height="15" uuid="daf0d997-24b1-4eba-a562-2e754dcc8069">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{warkat_deposito}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="489" width="30" height="15" uuid="dbf73f9e-aa48-4dce-a0bf-71f261f370e2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[24]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="110" width="39" height="15" uuid="a2607142-d7c4-4e72-a238-aa32739b6302">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{permohonan_kredit}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="226" width="39" height="15" uuid="5a08f5d7-855c-406d-95cc-67413be51e88">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{ijazah}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="472" width="39" height="15" uuid="9297faef-6990-45ae-a876-7fcbc1264fa3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{bpkb}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="488" width="39" height="15" uuid="77677d99-8b48-44ce-8f39-35987ab20cb6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{kwitansi}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="294" width="174" height="15" uuid="72be0232-73f5-460f-aee5-4efdec02b8c7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sk_potong_termin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="390" width="39" height="15" uuid="ce5db275-c845-47b7-9a47-1ba06aa5eb92">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cover_note}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="374" width="39" height="15" uuid="1dd20d71-355d-43b1-9564-b51b91776071">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{imb}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="472" width="30" height="15" uuid="48a8ea45-5d18-462c-81ce-fa9bf21c5530">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[23]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="127" width="39" height="15" uuid="0797430c-e4c2-4218-b128-6ae302dfb789">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{sp2k}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="437" width="39" height="15" uuid="2e2236d9-b76a-46b2-bad3-c9c3fd1763ae">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{apht}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="559" y="91" width="1" height="480" uuid="3b6aefd9-d949-4634-8619-feb6a4d850d6"/>
+			</line>
+			<textField>
+				<reportElement x="271" y="391" width="39" height="15" uuid="7d0033b6-c360-4b05-af3b-d5a3588c083e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cover_note}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="271" y="92" width="39" height="18" uuid="5f64625c-c764-474b-a4e1-fbb08ebe88ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ADA]]></text>
+			</staticText>
+			<textField pattern="dd MMMM yyyy">
+				<reportElement x="470" y="572" width="99" height="20" uuid="33aaf819-0c30-43df-9642-e27ecc7dfdb2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="211" width="39" height="15" uuid="d2ee9621-8904-47bb-8cea-a4a3734d24c6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{taspen}.equals("")?"-":"V")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="359" width="174" height="15" uuid="c5d8e0f6-81cc-4ebd-90ea-7aac648d7ecd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shgb}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="570" width="549" height="1" uuid="a7a0ed00-f387-4923-9778-d3a2f1aeafe1"/>
+			</line>
+			<line>
+				<reportElement x="40" y="90" width="1" height="481" uuid="0f2bcd82-b4ea-4e20-bffa-f72254a834c1"/>
+			</line>
+			<textField>
+				<reportElement x="376" y="374" width="174" height="15" uuid="11920ff9-4128-49a0-a382-346f49f98039"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{imb}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="504" width="549" height="1" uuid="a4495a01-a060-4e26-943e-79a8f600ae8d"/>
+			</line>
+			<textField>
+				<reportElement x="320" y="260" width="39" height="15" uuid="859bf4ba-9f64-485e-9e36-4ef0f5608b80">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{karip}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="423" width="39" height="15" uuid="96f70cb4-e339-40c0-9037-aace6e76f7bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{skmht}.equals("")?"V":"-")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="470" width="549" height="1" uuid="3f173845-5cfe-483a-bae6-b0445220f2c0"/>
+			</line>
+			<textField>
+				<reportElement x="259" y="569" width="100" height="20" uuid="c3595c46-3fc1-4d3f-8582-06a2dcdb9440"/>
+				<textFieldExpression><![CDATA[$P{totalDokumen}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>

@@ -7,8 +7,12 @@ package com.bpd.arsip.run;
 
 import com.bpd.arsip.view.dialog.DialogDatabaseSetting;
 import com.bpd.arsip.view.dialog.DialogLogin;
-import java.awt.EventQueue;
+import com.bpd.arsip.view.dialog.SplashScreen;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 
 /**
  *
@@ -21,7 +25,7 @@ public class Runnable {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -33,22 +37,45 @@ public class Runnable {
             java.util.logging.Logger.getLogger(DialogDatabaseSetting.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        EventQueue.invokeLater(new java.lang.Runnable() {
+//        SplashScreen splashScreen = new SplashScreen();
+//        splashScreen.setLocationRelativeTo(null );
+//        splashScreen.setVisible(true);
+//        splashScreen.startLoading();
+        new SwingWorker<Boolean, Object>() {
+            SplashScreen splashScreen = new SplashScreen();
+            DialogDatabaseSetting setting = null;
 
             @Override
-            public void run() {
-                
-                DialogDatabaseSetting setting = new DialogDatabaseSetting();
-                if (setting.cekDatabaseConnection() == true) {
-                    DialogLogin login = new DialogLogin();
-                    login.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Database Belumterhubung Silahkan Setting Database Terlebih Dahulu.");
-                    setting.setVisible(true);
-                }
-            }
-        });
+            protected Boolean doInBackground() throws Exception {
+                Boolean result = false;
+                splashScreen.setLocationRelativeTo(null);
+                splashScreen.setVisible(true);
+                splashScreen.startLoading(true);
+                setting = new DialogDatabaseSetting();
+                result = setting.cekDatabaseConnection();
 
+                return result;
+            }
+
+            @Override
+            protected void done() {
+                splashScreen.setVisible(false);
+
+                try {
+                    if (get()) {
+                        DialogLogin login = new DialogLogin();
+                        login.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Database Belumterhubung Silahkan Setting Database Terlebih Dahulu.");
+                        setting.setVisible(true);
+                    }
+                } catch (InterruptedException | ExecutionException ex) {
+                    Logger.getLogger(Runnable.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+        }.execute();
     }
 
 }

@@ -1,7 +1,6 @@
 package com.bpd.arsip.view.panel;
 
 import com.bpd.arsip.view.MainFrame;
-import com.bpd.arsip.view.Test;
 
 /**
  *
@@ -64,8 +63,8 @@ public class PanelPenyimpanan extends javax.swing.JPanel {
             }
         });
         jTabbedPane1.addTab("Pengaturan Quota Rak & Dus", panelPengaturanQuota1);
-        jTabbedPane1.addTab("Pengaturan Tempat Arsip", panelPenyimpananLantai1);
-        jTabbedPane1.addTab("Pengaturan Dus Arsip", panelPenyimpananDus1);
+        jTabbedPane1.addTab("Daftar Tempat Penyimpanan", panelPenyimpananLantai1);
+        jTabbedPane1.addTab("Daftar Dus Arsip", panelPenyimpananDus1);
 
         panelPenyimpananRak1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jTabbedPane1.addTab("Daftar Rak & Dus Arsip", panelPenyimpananRak1);

@@ -71,7 +71,7 @@ public class DialogHapusDus extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        panelGradient1.setColorBottom(new java.awt.Color(0, 0, 204));
+        panelGradient1.setColorBottom(new java.awt.Color(0, 0, 102));
 
         labelWhite3.setText("Hapus Dus Arsip");
         labelWhite3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N

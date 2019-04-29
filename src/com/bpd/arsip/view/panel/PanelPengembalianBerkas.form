@@ -52,7 +52,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="267" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="251" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="buttonPengembalian" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -106,8 +106,8 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="Pencarian">
-              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder/>
               </Border>
               <Font PropertyName="font" name="sansserif" size="14" style="1"/>
               <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>

@@ -8,7 +8,6 @@ import com.bpd.arsip.model.DusModel;
 import com.bpd.arsip.model.LantaiModel;
 import com.bpd.arsip.model.RakModel;
 import com.bpd.arsip.view.MainFrame;
-import com.bpd.arsip.view.Test;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.JPagination;
 import com.stripbandunk.jwidget.model.DynamicTableModel;

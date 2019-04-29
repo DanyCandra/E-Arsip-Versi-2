@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanCis" pageWidth="3368" pageHeight="2380" orientation="Landscape" columnWidth="3321" leftMargin="28" rightMargin="19" topMargin="0" bottomMargin="0" uuid="c5c76db6-3d45-4e79-bb07-827e2933d22d">
+	<property name="ireport.zoom" value="1.000000000000001"/>
+	<property name="ireport.x" value="1664"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="5cd15ff0-7a94-426f-b4ae-409fa82fd6b6">
+		<queryString>
+			<![CDATA[SELECT
+     cis.`id_cis` AS cis_id_cis,
+     cis.`cif` AS cis_cif,
+     cis.`cif_cis` AS cis_cif_cis,
+     cis.`no_pinjaman` AS cis_no_pinjaman,
+     cis.`tanggal_realisasi` AS cis_tanggal_realisasi,
+     cis.`tanggal_mulai` AS cis_tanggal_mulai,
+     cis.`tanggal_selesai` AS cis_tanggal_selesai,
+     cis.`jumlah_pertanggungan` AS cis_jumlah_pertanggungan,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`id_instansi` AS debitur_id_instansi
+FROM
+     `debitur` debitur INNER JOIN `cis` cis ON debitur.`cif` = cis.`cif`
+WHERE
+     cis.`cif` = '02010102']]>
+		</queryString>
+		<field name="cis_id_cis" class="java.lang.String"/>
+		<field name="cis_cif" class="java.lang.String"/>
+		<field name="cis_cif_cis" class="java.lang.String"/>
+		<field name="cis_no_pinjaman" class="java.lang.String"/>
+		<field name="cis_tanggal_realisasi" class="java.sql.Date"/>
+		<field name="cis_tanggal_mulai" class="java.sql.Date"/>
+		<field name="cis_tanggal_selesai" class="java.sql.Date"/>
+		<field name="cis_jumlah_pertanggungan" class="java.lang.Double"/>
+		<field name="debitur_cif" class="java.lang.String"/>
+		<field name="debitur_nama" class="java.lang.String"/>
+		<field name="debitur_tempat_lahir" class="java.lang.String"/>
+		<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+		<field name="debitur_nik" class="java.lang.String"/>
+		<field name="debitur_alamat" class="java.lang.String"/>
+		<field name="debitur_kelurahan" class="java.lang.String"/>
+		<field name="debitur_kecamatan" class="java.lang.String"/>
+		<field name="debitur_telepon" class="java.lang.String"/>
+		<field name="debitur_sk_cpns" class="java.lang.String"/>
+		<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+		<field name="debitur_sk_terakhir" class="java.lang.String"/>
+		<field name="debitur_taspen" class="java.lang.String"/>
+		<field name="debitur_sk_pensiun" class="java.lang.String"/>
+		<field name="debitur_karip" class="java.lang.String"/>
+		<field name="debitur_shm" class="java.lang.String"/>
+		<field name="debitur_sht" class="java.lang.String"/>
+		<field name="debitur_ijazah" class="java.lang.String"/>
+		<field name="debitur_lainnya" class="java.lang.String"/>
+		<field name="debitur_id_instansi" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     cis.`id_cis` AS cis_id_cis,
+     cis.`cif` AS cis_cif,
+     cis.`cif_cis` AS cis_cif_cis,
+     cis.`no_pinjaman` AS cis_no_pinjaman,
+     cis.`tanggal_realisasi` AS cis_tanggal_realisasi,
+     cis.`tanggal_mulai` AS cis_tanggal_mulai,
+     cis.`tanggal_selesai` AS cis_tanggal_selesai,
+     cis.`jumlah_pertanggungan` AS cis_jumlah_pertanggungan,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`id_instansi` AS debitur_id_instansi
+FROM
+     `debitur` debitur INNER JOIN `cis` cis ON debitur.`cif` = cis.`cif`
+WHERE
+     cis.`cif` = '02010102']]>
+	</queryString>
+	<field name="cis_id_cis" class="java.lang.String"/>
+	<field name="cis_cif" class="java.lang.String"/>
+	<field name="cis_cif_cis" class="java.lang.String"/>
+	<field name="cis_no_pinjaman" class="java.lang.String"/>
+	<field name="cis_tanggal_realisasi" class="java.sql.Date"/>
+	<field name="cis_tanggal_mulai" class="java.sql.Date"/>
+	<field name="cis_tanggal_selesai" class="java.sql.Date"/>
+	<field name="cis_jumlah_pertanggungan" class="java.lang.Double"/>
+	<field name="debitur_cif" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_tempat_lahir" class="java.lang.String"/>
+	<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+	<field name="debitur_nik" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="debitur_kelurahan" class="java.lang.String"/>
+	<field name="debitur_kecamatan" class="java.lang.String"/>
+	<field name="debitur_telepon" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="debitur_id_instansi" class="java.lang.String"/>
+	<variable name="No" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{No}]]></variableExpression>
+	</variable>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="3180" height="59" backcolor="#009999" uuid="0427b210-2466-445a-aacb-b20c2029d4a4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="53" y="0" width="267" height="59" uuid="32486878-6a1e-4893-81ad-64dc8f8d7885"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="59" uuid="f8951772-574e-4071-8fa1-778009d0aaab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Cif]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="0" width="114" height="58" uuid="933a4b48-e005-463a-a55b-b7ed977da36b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Pinjaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="534" y="28" width="164" height="30" uuid="b66764f7-0b3e-4584-9673-0331a45d04a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Awal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="699" y="29" width="151" height="29" uuid="2053e9c3-5894-4534-9348-2cc1aa168450"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Akhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="851" y="1" width="194" height="57" uuid="76567e7c-fd6e-4a96-a878-9c67aeb97060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK CPNS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1046" y="1" width="187" height="57" uuid="47472998-05e8-4e76-b698-896d46673c34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK Pengangkatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1234" y="1" width="186" height="57" uuid="106a1db8-2027-4894-b813-992c2b452853"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK Terakhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1421" y="1" width="204" height="57" uuid="4ad54adf-139e-4e40-bb16-3f903fdffcb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Taspen / ASABRI / DAPENMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1625" y="1" width="190" height="57" uuid="041ba0af-c9f2-476b-8506-0406e43384fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SK Pensiun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1816" y="0" width="220" height="58" uuid="b9ca58fb-4943-46c7-a654-070a4760d6e0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Karip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2037" y="1" width="211" height="57" uuid="e4e0fd78-10e6-4de3-affa-28eb979addea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2252" y="1" width="211" height="57" uuid="1d1f783a-5ccc-4e75-929f-92815533d13a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2464" y="0" width="232" height="58" uuid="bb7a5f25-7dbd-4aaa-842e-c4b8b10125ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ijazah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2697" y="0" width="235" height="58" uuid="9b1d2a2b-421f-4f72-aea2-358f32c94ac0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lainnya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2933" y="0" width="247" height="58" uuid="4bc20148-c3d7-4b6d-9062-4000531a22b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Pertanggungan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="52" height="59" uuid="fac77dc9-a938-4916-bf26-373c9bfbbe18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="52" y="0" width="1" height="59" uuid="c94b95f8-3632-4818-8f7e-1d018eb96fe5"/>
+			</line>
+			<line>
+				<reportElement x="320" y="0" width="1" height="59" uuid="8f544945-0d5b-4aa0-b6cf-e878e4094b6e"/>
+			</line>
+			<line>
+				<reportElement x="419" y="0" width="1" height="59" uuid="87bc9384-c77a-4a75-80ce-e6bce243098b"/>
+			</line>
+			<line>
+				<reportElement x="533" y="0" width="1" height="59" uuid="de1ba9e7-2bbd-454e-a651-d905bcbe6355"/>
+			</line>
+			<line>
+				<reportElement x="850" y="0" width="1" height="59" uuid="3aa8d255-7f3c-4be1-b7c1-f341eed9e81d"/>
+			</line>
+			<line>
+				<reportElement x="534" y="28" width="316" height="1" uuid="f00aec6f-be6e-48c8-a77f-78173514adfd"/>
+			</line>
+			<line>
+				<reportElement x="698" y="28" width="1" height="30" uuid="8e3e0085-51c8-41db-83bf-9cebe307cb97"/>
+			</line>
+			<line>
+				<reportElement x="1045" y="0" width="1" height="59" uuid="649bd540-07fa-4e22-92fa-994bdff22b30"/>
+			</line>
+			<line>
+				<reportElement x="1233" y="0" width="1" height="58" uuid="45c99833-a359-4a4f-adb9-f9be5d382c9e"/>
+			</line>
+			<line>
+				<reportElement x="1420" y="0" width="1" height="58" uuid="1cbecbaf-3e1a-4193-97ad-cdef7815d0fa"/>
+			</line>
+			<line>
+				<reportElement x="1625" y="1" width="1" height="58" uuid="c5dd6640-9f92-4d85-ac52-7dd330dbd521"/>
+			</line>
+			<line>
+				<reportElement x="1815" y="0" width="1" height="58" uuid="42792bcd-1941-4763-8de3-a2048edc3365"/>
+			</line>
+			<line>
+				<reportElement x="2036" y="0" width="1" height="58" uuid="d525c642-2ee5-4830-b7b1-a6474b9fa4af"/>
+			</line>
+			<line>
+				<reportElement x="2248" y="0" width="1" height="58" uuid="79badef0-0714-4754-a40f-00ea184cb4db"/>
+			</line>
+			<line>
+				<reportElement x="3496" y="-10" width="1" height="58" uuid="6c03b6e8-82d5-4eff-9dd4-12c9604c51b3"/>
+			</line>
+			<line>
+				<reportElement x="2463" y="0" width="1" height="58" uuid="d1f9c9f6-8c20-4415-90c6-176c99e6cc05"/>
+			</line>
+			<line>
+				<reportElement x="2696" y="0" width="1" height="58" uuid="1f8ffce3-8f97-4a30-a58f-592e842562f7"/>
+			</line>
+			<line>
+				<reportElement x="2932" y="0" width="1" height="58" uuid="f72f41e4-792e-457e-9f92-93cdc0bd20c8"/>
+			</line>
+			<line>
+				<reportElement x="2696" y="0" width="1" height="58" uuid="893b11f1-d562-49d9-8ca2-f4801795c6c3"/>
+			</line>
+			<line>
+				<reportElement x="2036" y="0" width="1" height="58" uuid="36418f16-6d92-4d93-9f86-5c926db43981"/>
+			</line>
+			<line>
+				<reportElement x="2248" y="0" width="1" height="58" uuid="95a40753-6bfa-45a5-a23e-ba7946b889c1"/>
+			</line>
+			<line>
+				<reportElement x="2932" y="0" width="1" height="58" uuid="92c1caf8-ebac-4d2b-8692-bae530b84c25"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="3180" height="23" uuid="991a50ef-5ce6-4524-a602-49c7668ddcab"/>
+			</rectangle>
+			<line>
+				<reportElement x="1625" y="1" width="1" height="21" uuid="4f63d1a3-25d5-4b33-a55b-bcf3fba940f6"/>
+			</line>
+			<line>
+				<reportElement x="1233" y="0" width="1" height="22" uuid="9268624b-5545-4103-932c-539fa27905f7"/>
+			</line>
+			<line>
+				<reportElement x="533" y="0" width="1" height="23" uuid="9b475b90-8c30-4813-9636-96d6a84aa3e1"/>
+			</line>
+			<line>
+				<reportElement x="52" y="0" width="1" height="22" uuid="8fbbf898-b43f-4fa2-a4a4-cea80aea265c"/>
+			</line>
+			<line>
+				<reportElement x="1815" y="0" width="1" height="23" uuid="14f7576d-36bc-4afb-9833-87b17d17ef61"/>
+			</line>
+			<line>
+				<reportElement x="419" y="0" width="1" height="22" uuid="d0a9eea1-e097-456e-846a-bd2983f53b21"/>
+			</line>
+			<line>
+				<reportElement x="2696" y="0" width="1" height="22" uuid="2b2f62a4-7d53-40ca-a7e7-b6494b31e1ef"/>
+			</line>
+			<line>
+				<reportElement x="2248" y="0" width="1" height="22" uuid="efe04d0c-698b-4a06-870a-7cec84470839"/>
+			</line>
+			<line>
+				<reportElement x="698" y="1" width="1" height="22" uuid="166b5964-76ab-4120-8980-7ca3e586e393"/>
+			</line>
+			<line>
+				<reportElement x="1045" y="0" width="1" height="23" uuid="340d6083-9d65-48c1-b007-28c45cfa7d68"/>
+			</line>
+			<line>
+				<reportElement x="850" y="0" width="1" height="23" uuid="4920905a-4ee1-472b-86a1-1594b4c679cd"/>
+			</line>
+			<line>
+				<reportElement x="2036" y="0" width="1" height="22" uuid="9381a959-c50d-45b5-9904-ec50194484fb"/>
+			</line>
+			<line>
+				<reportElement x="1420" y="0" width="1" height="23" uuid="8699c8f2-ceca-463d-abf8-17448304e99b"/>
+			</line>
+			<line>
+				<reportElement x="2932" y="0" width="1" height="23" uuid="fff44d8f-d7c3-4b65-81e1-f0b17545fcd7"/>
+			</line>
+			<line>
+				<reportElement x="2696" y="0" width="1" height="23" uuid="42ba3bbd-2598-4993-bec2-0c00eab17c7a"/>
+			</line>
+			<line>
+				<reportElement x="320" y="0" width="1" height="22" uuid="89349029-0812-4e3b-a5a2-701380cda293"/>
+			</line>
+			<line>
+				<reportElement x="2464" y="0" width="1" height="23" uuid="c6103666-2de2-4d80-bdc1-75b829f56dfd"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="53" y="1" width="267" height="22" uuid="3aa546b5-f4e1-4ac5-ad27-435fc85f0855"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="419" y="1" width="114" height="22" uuid="3e098db9-c9fc-405a-ac49-e725f87a0e60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cis_no_pinjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="699" y="1" width="151" height="22" uuid="8b607c38-c048-48e5-a778-e1552ef1a55f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cis_tanggal_selesai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1421" y="1" width="204" height="22" uuid="ea7a05ec-964e-44c7-8477-18f27fa70698"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_taspen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1626" y="1" width="189" height="22" uuid="38b484ad-cb8f-4b68-b3ca-5516d200d704"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="2249" y="1" width="214" height="22" uuid="c1e488aa-716c-409f-91a6-956e15c3295f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sht}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="2463" y="1" width="233" height="22" uuid="95bfc656-dff0-4caf-b6c8-404efa1fd180"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_ijazah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="2696" y="1" width="236" height="22" uuid="6d771532-8f78-44f3-b6d5-90537717060a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_lainnya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="2932" y="1" width="248" height="22" uuid="48401c1c-cc13-4699-8a12-181259cdb19a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cis_jumlah_pertanggungan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="534" y="0" width="165" height="23" uuid="9affbf4b-3ed5-4c8f-ad4a-6ab798502e67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cis_tanggal_mulai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="851" y="0" width="194" height="23" uuid="2bdd872e-ad8c-4a14-a1fa-aab6ea77f8d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_cpns}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1046" y="0" width="187" height="23" uuid="b56501fb-6908-4cfd-8498-4669b72c1f43"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1233" y="0" width="187" height="23" uuid="597c670b-9aea-4527-8e82-7d3063aa2c60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_terakhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1816" y="1" width="221" height="22" uuid="ec1d1858-7258-4907-b5cd-4ce3c694da52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_karip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="2037" y="1" width="211" height="22" uuid="a250f945-6a38-4e11-a244-cce5a0810fbe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_shm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="0" width="52" height="23" uuid="bbeae72c-2ede-40c7-bd6a-f96ece68f3d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="320" y="1" width="100" height="22" uuid="dc0dd907-c047-4b33-83f1-a0142582df4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cis_cif_cis}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

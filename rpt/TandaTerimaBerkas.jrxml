@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TandaTerimaBerkas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="432"/>
+	<parameter name="CIF" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     pengarsipan.`id_user_penerima` AS pengarsipan_id_user_penerima,
+     pengarsipan.`id_pejabat_penerima` AS pengarsipan_id_pejabat_penerima,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     pejabat.`nama_pejabat` AS pejabat_nama_pejabat,
+     instansi.`nama_instansi` AS instansi_nama_instansi,
+     pengarsipan.`tanggal_terima` AS pengarsipan_tanggal_terima,
+     pengarsipan.`cif` AS pengarsipan_cif,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     pejabat.`jabatan` AS pejabat_jabatan,
+     user.`nama` AS user_nama
+FROM
+     `debitur` debitur INNER JOIN `pengarsipan` pengarsipan ON debitur.`cif` = pengarsipan.`cif`
+     INNER JOIN `user` user ON pengarsipan.`id_user_penerima` = user.`id_user`
+     INNER JOIN `pejabat` pejabat ON pengarsipan.`id_pejabat_penerima` = pejabat.`id_pejabat`
+     INNER JOIN `instansi` instansi ON debitur.`id_instansi` = instansi.`id_instansi`
+
+where
+	pengarsipan.`cif`=$P{CIF}]]>
+	</queryString>
+	<field name="pengarsipan_id_user_penerima" class="java.lang.String"/>
+	<field name="pengarsipan_id_pejabat_penerima" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_tempat_lahir" class="java.lang.String"/>
+	<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+	<field name="debitur_kelurahan" class="java.lang.String"/>
+	<field name="debitur_kecamatan" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="pejabat_nama_pejabat" class="java.lang.String"/>
+	<field name="instansi_nama_instansi" class="java.lang.String"/>
+	<field name="pengarsipan_tanggal_terima" class="java.sql.Date"/>
+	<field name="pengarsipan_cif" class="java.lang.String"/>
+	<field name="debitur_nik" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="pejabat_jabatan" class="java.lang.String"/>
+	<field name="user_nama" class="java.lang.String"/>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="555" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TANDA TERIMA PENERIMAAN BERKAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="635" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="0" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Telah diterima dari		:	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="15" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Nama			:	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="14" width="299" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="30" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Alamat			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="30" width="299" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="45" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[NIK			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="45" width="299" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_nik}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="60" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Instansi			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="60" width="299" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{instansi_nama_instansi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="117" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Alamat			:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="102" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Nama			:	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="87" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Diterima Oleh		:		]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="102" width="211" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Bank Jateng Cabang Koordinator Purwokerto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="117" width="211" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Jl Gatot Subroto 101 Purwokerto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="143" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Berupa			:		]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="171" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[1. SK CPNS		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="171" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_cpns}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="186" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[2. SK Pengangkatan		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="186" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="201" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[3. SK Terkahir		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="201" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_terakhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="216" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="216" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[4. SK Pensiun		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="231" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[5. Taspen			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="231" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_taspen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="246" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[6. Karip			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="246" width="214" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_karip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="261" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[7. SHM			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="261" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_shm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="276" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[8. SHT			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="276" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_sht}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="291" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[9. Ijazah			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="291" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_ijazah}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="306" width="127" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[10. Lainnya		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="306" width="214" height="15"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_lainnya}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="339" width="528" height="20"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang dijadikan jaminan kredit di PT. Bank Pembangunan Daerah Cabang Koordinator Purwokerto .]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="396" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang Menyerahkan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="465" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="322" y="396" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang Menerima]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="322" y="465" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{user_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="322" y="381" width="63" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Purwokerto,]]></text>
+			</staticText>
+			<textField pattern="dd MMMM YYYY">
+				<reportElement x="385" y="381" width="154" height="15"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{pengarsipan_tanggal_terima}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="171" y="493" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[PT BANK PEMBANGUNAN DAERAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="508" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[JAWA TENGAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="523" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Cabang Koordinator Purwokerto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="171" y="579" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pejabat_nama_pejabat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="594" width="166" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pejabat_jabatan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

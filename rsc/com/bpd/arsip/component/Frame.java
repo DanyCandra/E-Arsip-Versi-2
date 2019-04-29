@@ -16,7 +16,7 @@ public class Frame extends JFrame {
     private static final long serialVersionUID = 1L;
     private Animation animationShow = Animation.NO_ANIMATION;
     private Animation animationHide = Animation.NO_ANIMATION;
-    private int animationTime = 1500;
+    private int animationTime = 1200;
     private Animator animator;
     private Point targetLocation;
     private Point startLocation;

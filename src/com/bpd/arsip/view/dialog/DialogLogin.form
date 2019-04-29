@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="undecorated" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -47,7 +48,6 @@
                       <Component id="labelWhite1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="labelIconReflection1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -185,7 +185,7 @@
         </Component>
         <Component class="dany.swing.lib.label.LabelWhite" name="labelWhite4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Bank Jateng | 2019"/>
+            <Property name="text" type="java.lang.String" value="Bank Jateng | 2016"/>
           </Properties>
         </Component>
       </SubComponents>

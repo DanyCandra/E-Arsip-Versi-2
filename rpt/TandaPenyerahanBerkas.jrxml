@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TandaTerimaBerkas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4065c9cc-cff9-4a4f-9936-8879cd625f4d">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="384"/>
+	<parameter name="CIF" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     pejabat.`nama_pejabat` AS pejabat_nama_pejabat,
+     instansi.`nama_instansi` AS instansi_nama_instansi,
+     pengarsipan.`cif` AS pengarsipan_cif,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     pejabat.`jabatan` AS pejabat_jabatan,
+     user.`nama` AS user_nama,
+     pengarsipan.`tanggal_kembali` AS pengarsipan_tanggal_kembali,
+     pengarsipan.`id_user_pengembali` AS pengarsipan_id_user_pengembali,
+     pengarsipan.`id_pejabat_pengembali` AS pengarsipan_id_pejabat_pengembali
+FROM
+     `debitur` debitur INNER JOIN `pengarsipan` pengarsipan ON debitur.`cif` = pengarsipan.`cif`
+     INNER JOIN `user` user ON pengarsipan.`id_user_pengembali` = user.`id_user`
+     INNER JOIN `pejabat` pejabat ON pengarsipan.`id_pejabat_pengembali` = pejabat.`id_pejabat`
+     INNER JOIN `instansi` instansi ON debitur.`id_instansi` = instansi.`id_instansi`
+WHERE
+     pengarsipan.`cif` = $P{CIF}]]>
+	</queryString>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_tempat_lahir" class="java.lang.String"/>
+	<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+	<field name="debitur_kelurahan" class="java.lang.String"/>
+	<field name="debitur_kecamatan" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="pejabat_nama_pejabat" class="java.lang.String"/>
+	<field name="instansi_nama_instansi" class="java.lang.String"/>
+	<field name="pengarsipan_cif" class="java.lang.String"/>
+	<field name="debitur_nik" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="pejabat_jabatan" class="java.lang.String"/>
+	<field name="user_nama" class="java.lang.String"/>
+	<field name="pengarsipan_tanggal_kembali" class="java.sql.Date"/>
+	<field name="pengarsipan_id_user_pengembali" class="java.lang.String"/>
+	<field name="pengarsipan_id_pejabat_pengembali" class="java.lang.String"/>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="555" height="31" uuid="3dd99e03-1aa5-45f1-a8d2-dacaac50a3dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TANDA TERIMA PENYERAHAN BERKAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="635" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="0" width="127" height="15" uuid="a68cc142-00c5-43d7-8547-b3225c316fee"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Telah diterima dari		:	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="89" width="127" height="15" uuid="df39409e-4556-4491-942c-39a9ec6f089a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Nama			:	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="88" width="299" height="15" uuid="1049869c-0ec8-4306-ba28-40d892b6889d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="104" width="127" height="15" uuid="050f221e-b255-4c2e-b71c-14d6c04409d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Alamat			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="104" width="299" height="15" uuid="c7c1a0f2-683a-4200-87e5-77f5b3512d12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="119" width="127" height="15" uuid="620aa58b-ed6b-442c-a54e-6c3db1bec848"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[NIK			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="119" width="299" height="15" uuid="284d768b-446e-4a82-aefe-91cfcc6179df"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_nik}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="134" width="127" height="15" uuid="e0bacdf3-3198-452c-b45e-4006bfc3a401"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Instansi			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="134" width="299" height="15" uuid="2e880189-9308-4878-9bfd-2c6244245efe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{instansi_nama_instansi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="40" width="127" height="15" uuid="3ba3b6bd-2dce-4a2f-aef6-b57f788fbd33"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Alamat			:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="25" width="127" height="15" uuid="35a29af1-082d-42a2-afcc-11e3d6da307c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Nama			:	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="62" width="127" height="15" uuid="c3d3350b-a47a-40a1-8ed4-53c95ccf2a21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Diterima Oleh		:		]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="25" width="211" height="15" uuid="b2c30b3b-59ee-4a02-be18-2206d7bd20ea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Bank Jateng Cabang Koordinator Purwokerto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="40" width="211" height="15" uuid="4634981d-81f5-4aee-b31b-99266950bc88"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Jl Gatot Subroto 101 Purwokerto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="164" width="127" height="15" uuid="392311a4-d5c7-4778-9953-0dd01d723c4b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Berupa			:		]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="192" width="127" height="15" uuid="5e033b8f-87fe-4036-aca0-9f2872743d65"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[1. SK CPNS		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="192" width="214" height="15" uuid="89a4546c-e57d-44fa-adfd-3d0f3c137e98"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_cpns}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="207" width="127" height="15" uuid="ff109e20-91ea-4239-89fa-97b6e7d00b0d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[2. SK Pengangkatan		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="207" width="214" height="15" uuid="4f458c9f-43a3-44bd-8fe8-9da4dfb5729e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_pengangkatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="222" width="127" height="15" uuid="53683620-2d00-4687-8bad-f2e5edd0e95e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[3. SK Terkahir		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="222" width="214" height="15" uuid="26068d7b-ed36-4237-b927-ba55bedde51a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_terakhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="237" width="214" height="15" uuid="358205cb-c031-421e-9503-9c7b91c03a54"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sk_pensiun}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="237" width="127" height="15" uuid="1de584ef-8be5-496c-ad72-d7af4f5ba14f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[4. SK Pensiun		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="252" width="127" height="15" uuid="e248a40c-1862-4d5b-99cb-795c40e2d836"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[5. Taspen			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="252" width="214" height="15" uuid="b5c926d7-212b-4c62-acab-b0227cfad2cf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_taspen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="267" width="127" height="15" uuid="93a0eb28-858f-4789-8092-9ffcfff3b813"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[6. Karip			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="267" width="214" height="15" uuid="ec6d2725-332d-40cc-a988-0ca4075bda2b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_karip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="282" width="127" height="15" uuid="20414c54-121b-4ef8-b8c9-c217b3a65bc6"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[7. SHM			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="282" width="214" height="15" uuid="cea3f4bc-0666-4cb3-adc1-c510f348fda4"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_shm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="297" width="127" height="15" uuid="e38fbeeb-8147-42d0-bd58-fdbe271d32c8"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[8. SHT			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="297" width="214" height="15" uuid="c0fa913c-27a2-4584-8fc1-092bf7325e26"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_sht}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="312" width="127" height="15" uuid="f03c1598-34e8-426b-99d1-731cd5eeccbe"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[9. Ijazah			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="312" width="214" height="15" uuid="759cddb8-c1c5-4e5e-95ac-0c59566cc32f"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_ijazah}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="327" width="127" height="15" uuid="ab66adf7-64ba-4883-bcd8-c11f62568297"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[10. Lainnya		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="327" width="214" height="15" uuid="d78c9311-7c2a-4857-b25d-194ac4c6e7e0"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_lainnya}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="360" width="528" height="20" uuid="e4cb5942-da18-4370-b54d-a139c603d257"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang dijadikan jaminan kredit di PT. Bank Pembangunan Daerah Cabang Koordinator Purwokerto .]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="402" width="166" height="15" uuid="7dfbd06f-5448-4418-bcc8-33a4825bd50f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang Menerima]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="28" y="471" width="166" height="15" uuid="48cb29a1-9934-4ff9-96bb-a3f1496efa4f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="323" y="402" width="166" height="15" uuid="201ff0eb-0df3-47a2-b8eb-62321c015e9b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Yang Menyerahkan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="387" width="63" height="15" uuid="018cf6f6-d631-484c-a61a-d3a1438c599d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Purwokerto,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="499" width="166" height="15" uuid="517f4559-f7d6-4252-8e45-2b94122db265"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[PT BANK PEMBANGUNAN DAERAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="514" width="166" height="15" uuid="bfd5c026-39e5-4f5a-af57-2c839a5d3dfb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[JAWA TENGAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="529" width="166" height="15" uuid="135a0b78-2558-4f59-be6c-a76c856c1734"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<text><![CDATA[Cabang Koordinator Purwokerto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="591" width="166" height="15" uuid="20ed0d17-1ed0-44f6-a74e-92a5a03aa6ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pejabat_nama_pejabat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="611" width="166" height="15" uuid="c0f64c60-8017-41c7-80dd-12fe94eb1dcb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pejabat_jabatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="466" width="166" height="15" uuid="700c89c2-c3da-4337-9c24-4880ad88e004"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMM YYYY">
+				<reportElement x="386" y="387" width="121" height="15" uuid="5f9790f7-abbc-4443-bb2b-a7270757ee26"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pengarsipan_tanggal_kembali}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

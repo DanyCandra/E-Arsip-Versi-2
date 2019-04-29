@@ -6,6 +6,7 @@
 package com.bpd.arsip.view.dialog;
 
 import com.bpd.arsip.component.CenterFrame;
+import com.bpd.arsip.component.Frame;
 import com.bpd.arsip.controller.LoginController;
 import com.bpd.arsip.model.UserModel;
 import javax.swing.JPasswordField;
@@ -15,20 +16,19 @@ import javax.swing.JTextField;
  *
  * @author Dany
  */
-public class DialogLogin extends javax.swing.JDialog {
+public class DialogLogin extends Frame{
 
-    private UserModel userModel;
+    private final UserModel userModel;
     private final LoginController loginController;
 
     /**
      * Creates new form DialogLogin
      */
     public DialogLogin() {
-        setModal(true);
+        
         userModel = new UserModel();
         loginController = new LoginController();
         loginController.setUserModel(userModel);
-
         initComponents();
         CenterFrame.makeCenter(this);
     }
@@ -62,6 +62,7 @@ public class DialogLogin extends javax.swing.JDialog {
         labelWhite4 = new dany.swing.lib.label.LabelWhite();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -106,7 +107,7 @@ public class DialogLogin extends javax.swing.JDialog {
             }
         });
 
-        labelWhite4.setText("Bank Jateng | 2019");
+        labelWhite4.setText("Bank Jateng | 2016");
 
         javax.swing.GroupLayout panelGradient1Layout = new javax.swing.GroupLayout(panelGradient1);
         panelGradient1.setLayout(panelGradient1Layout);
@@ -118,7 +119,6 @@ public class DialogLogin extends javax.swing.JDialog {
                     .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelGradient1Layout.createSequentialGroup()
                         .addComponent(labelIconReflection1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelGradient1Layout.createSequentialGroup()
                                 .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

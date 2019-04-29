@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DaftarSeluruhBerkas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     debitur.`tempat_lahir` AS debitur_tempat_lahir,
+     debitur.`tanggal_lahir` AS debitur_tanggal_lahir,
+     debitur.`nik` AS debitur_nik,
+     debitur.`alamat` AS debitur_alamat,
+     debitur.`kelurahan` AS debitur_kelurahan,
+     debitur.`kecamatan` AS debitur_kecamatan,
+     debitur.`telepon` AS debitur_telepon,
+     debitur.`sk_cpns` AS debitur_sk_cpns,
+     debitur.`sk_pengangkatan` AS debitur_sk_pengangkatan,
+     debitur.`sk_terakhir` AS debitur_sk_terakhir,
+     debitur.`taspen` AS debitur_taspen,
+     debitur.`sk_pensiun` AS debitur_sk_pensiun,
+     debitur.`karip` AS debitur_karip,
+     debitur.`shm` AS debitur_shm,
+     debitur.`sht` AS debitur_sht,
+     debitur.`ijazah` AS debitur_ijazah,
+     debitur.`lainnya` AS debitur_lainnya,
+     debitur.`id_instansi` AS debitur_id_instansi,
+     pengarsipan.`cif` AS pengarsipan_cif,
+     pengarsipan.`tanggal_terima` AS pengarsipan_tanggal_terima,
+     instansi.`id_instansi` AS instansi_id_instansi,
+     instansi.`nama_instansi` AS instansi_nama_instansi,
+     instansi.`alamat` AS instansi_alamat,
+     instansi.`telepon` AS instansi_telepon,
+     pengarsipan.`id_dus` AS pengarsipan_id_dus
+FROM
+     `debitur` debitur INNER JOIN `pengarsipan` pengarsipan ON debitur.`cif` = pengarsipan.`cif`
+     INNER JOIN `instansi` instansi ON debitur.`id_instansi` = instansi.`id_instansi`]]>
+	</queryString>
+	<field name="debitur_cif" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="debitur_tempat_lahir" class="java.lang.String"/>
+	<field name="debitur_tanggal_lahir" class="java.sql.Date"/>
+	<field name="debitur_nik" class="java.lang.String"/>
+	<field name="debitur_alamat" class="java.lang.String"/>
+	<field name="debitur_kelurahan" class="java.lang.String"/>
+	<field name="debitur_kecamatan" class="java.lang.String"/>
+	<field name="debitur_telepon" class="java.lang.String"/>
+	<field name="debitur_sk_cpns" class="java.lang.String"/>
+	<field name="debitur_sk_pengangkatan" class="java.lang.String"/>
+	<field name="debitur_sk_terakhir" class="java.lang.String"/>
+	<field name="debitur_taspen" class="java.lang.String"/>
+	<field name="debitur_sk_pensiun" class="java.lang.String"/>
+	<field name="debitur_karip" class="java.lang.String"/>
+	<field name="debitur_shm" class="java.lang.String"/>
+	<field name="debitur_sht" class="java.lang.String"/>
+	<field name="debitur_ijazah" class="java.lang.String"/>
+	<field name="debitur_lainnya" class="java.lang.String"/>
+	<field name="debitur_id_instansi" class="java.lang.String"/>
+	<field name="pengarsipan_cif" class="java.lang.String"/>
+	<field name="pengarsipan_tanggal_terima" class="java.sql.Date"/>
+	<field name="instansi_id_instansi" class="java.lang.String"/>
+	<field name="instansi_nama_instansi" class="java.lang.String"/>
+	<field name="instansi_alamat" class="java.lang.String"/>
+	<field name="instansi_telepon" class="java.lang.String"/>
+	<field name="pengarsipan_id_dus" class="java.lang.String"/>
+	<group name="pengarsipan_id_dus">
+		<groupExpression><![CDATA[$F{pengarsipan_id_dus}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="28" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pengarsipan_id_dus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -10,6 +10,7 @@ import com.bpd.arsip.database.DatabaseConnection;
 import com.bpd.arsip.entitas.Debitur;
 import com.bpd.arsip.exception.ArsipException;
 import com.bpd.arsip.helper.render.InstansiRender;
+import com.bpd.arsip.helper.render.TableRenderDefault;
 import com.stripbandunk.jwidget.annotation.TableColumn;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,82 +22,85 @@ import java.util.List;
  */
 public class DebiturModel {
 
-    @TableColumn(name = "CIF", number = 1, size = 10)
+    @TableColumn(name = "CIF", number = 1, size = 10, renderer = TableRenderDefault.class)
     private String cif;
-    @TableColumn(name = "NAMA", number = 2, size = 30)
+    @TableColumn(name = "NAMA", number = 2, size = 30, renderer = TableRenderDefault.class)
     private String nama;
-    @TableColumn(name = "TEMPAT LAHIR", number = 3, size = 20)
+    @TableColumn(name = "TEMPAT LAHIR", number = 3, size = 20, renderer = TableRenderDefault.class)
     private String tempatLahir;
-    @TableColumn(name = "TANGGAL LAHIR", number = 4, size = 20)
+    @TableColumn(name = "TANGGAL LAHIR", number = 4, size = 20, renderer = TableRenderDefault.class)
     private Date tanggalLahir;
-    @TableColumn(name = "NIK", number = 5, size = 20)
+    @TableColumn(name = "NIK", number = 5, size = 20, renderer = TableRenderDefault.class)
     private String nik;
-    @TableColumn(name = "ALAMAT", number = 6, size = 35)
+    @TableColumn(name = "ALAMAT", number = 6, size = 35, renderer = TableRenderDefault.class)
     private String alamat;
     private String kelurahan;
     private String kecamatan;
-    @TableColumn(name = "TELEPON", number = 7, size = 15)
+    @TableColumn(name = "TELEPON", number = 7, size = 15, renderer = TableRenderDefault.class)
     private String telepon;
-    @TableColumn(name = "SK CPNS", number = 8, size = 30)
+    @TableColumn(name = "SK CPNS", number = 8, size = 30, renderer = TableRenderDefault.class)
     private String skCpns;
-    @TableColumn(name = "SK PENGANGKATAN", number = 9, size = 30)
+    @TableColumn(name = "SK PENGANGKATAN", number = 9, size = 30, renderer = TableRenderDefault.class)
     private String skPengangkatan;
-    @TableColumn(name = "SK TERAKHIR", number = 10, size = 30)
+    @TableColumn(name = "SK TERAKHIR", number = 10, size = 30, renderer = TableRenderDefault.class)
     private String skTerakhir;
-    @TableColumn(name = "TASPEN", number = 11, size = 30)
+    @TableColumn(name = "TASPEN", number = 11, size = 30, renderer = TableRenderDefault.class)
     private String taspen;
-    @TableColumn(name = "SK PENSIUN", number = 12, size = 30)
+    @TableColumn(name = "SK PENSIUN", number = 12, size = 30, renderer = TableRenderDefault.class)
     private String skPensiun;
-    @TableColumn(name = "KARIP", number = 13, size = 30)
+    @TableColumn(name = "KARIP", number = 13, size = 30, renderer = TableRenderDefault.class)
     private String karip;
-    @TableColumn(name = "SHM", number = 14, size = 30)
+    @TableColumn(name = "SHM", number = 14, size = 30, renderer = TableRenderDefault.class)
     private String shm;
-    @TableColumn(name = "SHT", number = 15, size = 30)
+    @TableColumn(name = "SHT", number = 15, size = 30, renderer = TableRenderDefault.class)
     private String sht;
-    @TableColumn(name = "IJAZAH", number = 16, size = 30)
+    @TableColumn(name = "IJAZAH", number = 16, size = 30, renderer = TableRenderDefault.class)
     private String ijazah;
-    @TableColumn(name = "SP2K", number = 17, size = 30)
+    @TableColumn(name = "SP2K", number = 17, size = 30, renderer = TableRenderDefault.class)
     private String sp2k;
-    @TableColumn(name = "SURAT PERJANJIAN", number = 18, size = 30)
+    @TableColumn(name = "SURAT PERJANJIAN", number = 18, size = 30, renderer = TableRenderDefault.class)
     private String suratPerjanjian;
-    @TableColumn(name = "SK POTONG TERMIN", number = 19, size = 30)
+    @TableColumn(name = "SK POTONG TERMIN", number = 19, size = 30, renderer = TableRenderDefault.class)
     private String skPotongTermin;
-    @TableColumn(name = "SPK", number = 20, size = 30)
+    @TableColumn(name = "SPK", number = 20, size = 30, renderer = TableRenderDefault.class)
     private String spk;
-    @TableColumn(name = "WARKAT DEPOSITO", number = 21, size = 30)
+    @TableColumn(name = "WARKAT DEPOSITO", number = 21, size = 30, renderer = TableRenderDefault.class)
     private String warkatDeposito;
-    @TableColumn(name = "SK PENCAIRAN DEPOSITO", number = 22, size = 30)
+    @TableColumn(name = "SK PENCAIRAN DEPOSITO", number = 22, size = 30, renderer = TableRenderDefault.class)
     private String skPencairanDeposito;
-    @TableColumn(name = "SHGB", number = 23, size = 30)
+    @TableColumn(name = "SHGB", number = 23, size = 30, renderer = TableRenderDefault.class)
     private String shgb;
-    @TableColumn(name = "IMB", number = 24, size = 30)
+    @TableColumn(name = "IMB", number = 24, size = 30, renderer = TableRenderDefault.class)
     private String imb;
-    @TableColumn(name = "COVER NOTE", number = 25, size = 30)
+    @TableColumn(name = "COVER NOTE", number = 25, size = 30, renderer = TableRenderDefault.class)
     private String coverNote;
-    @TableColumn(name = "AJB", number = 26, size = 30)
+    @TableColumn(name = "AJB", number = 26, size = 30, renderer = TableRenderDefault.class)
     private String ajb;
-    @TableColumn(name = "SKMHT", number = 27, size = 30)
+    @TableColumn(name = "SKMHT", number = 27, size = 30, renderer = TableRenderDefault.class)
     private String skmht;
-    @TableColumn(name = "APHT", number = 28, size = 30)
+    @TableColumn(name = "APHT", number = 28, size = 30, renderer = TableRenderDefault.class)
     private String apht;
-    @TableColumn(name = "BPKB", number = 29, size = 30)
+    @TableColumn(name = "BPKB", number = 29, size = 30, renderer = TableRenderDefault.class)
     private String bpkb;
-    @TableColumn(name = "KWITANSI", number = 30, size = 30)
+    @TableColumn(name = "KWITANSI", number = 30, size = 30, renderer = TableRenderDefault.class)
     private String kwitansi;
-    @TableColumn(name = "FIDUCIA", number = 31, size = 30)
+    @TableColumn(name = "FIDUCIA", number = 31, size = 30, renderer = TableRenderDefault.class)
     private String fiducia;
 
     private String permohonanKredit;
-    @TableColumn(name = "LAINNYA 1", number = 32, size = 30)
+    @TableColumn(name = "LAINNYA 1", number = 32, size = 30, renderer = TableRenderDefault.class)
     private String lainnya;
-    @TableColumn(name = "LAINNYA 2", number = 33, size = 30)
+    @TableColumn(name = "LAINNYA 2", number = 33, size = 30, renderer = TableRenderDefault.class)
     private String lainnya2;
     @TableColumn(name = "INSTANSI", number = 34, size = 25, renderer = InstansiRender.class)
     private InstansiModel instansi;
-
+    @TableColumn(name = "SIUP", number = 35, size = 25, renderer = InstansiRender.class)
     private String siup;
+    @TableColumn(name = "TANGGAL SIUP KADALUWARSA", number = 36, size = 25, renderer = InstansiRender.class)
     private Date tanggalSiup;
+    @TableColumn(name = "TDP", number = 37, size = 25, renderer = InstansiRender.class)
     private String tdp;
+    @TableColumn(name = "TANGGAL TDP KADALUWARSA", number = 38, size = 25, renderer = InstansiRender.class)
     private Date tanggalTdp;
 
     public DebiturModel() {
@@ -720,6 +724,299 @@ public class DebiturModel {
         return debiturModel;
     }
 
+    public String getKelengkapanBerkas(String inputCif) throws ArsipException {
+        String x = "Data Detail Debitur CIF : " + inputCif;
+        DebiturModel tmp = getDebiturModelByCif(inputCif);
+        x = x + "\n>>Nama              : " + tmp.getNama() + "\n>>Alamat            : " + tmp.getAlamat() + "\n>>Nik               : " + tmp.getNik() + "\nKelengkapan Berkas Yang Dijaminkan ";
+        if (!tmp.getSkCpns().trim().isEmpty()) {
+            x = x + "\n>>SK PNS            : " + tmp.getSkCpns();
+        }
+        if (!tmp.getSkPengangkatan().trim().isEmpty()) {
+            x = x + "\n>>SK PENGANGKATAN   : " + tmp.getSkPengangkatan();
+        }
+        if (!tmp.getSkTerakhir().trim().isEmpty()) {
+            x = x + "\n>>SK TERAKHIR       : " + tmp.getSkTerakhir();
+        }
+        if (!tmp.getTaspen().trim().isEmpty()) {
+            x = x + "\n>>NO TASPEN         : " + tmp.getTaspen();
+        }
+        if (!tmp.getSkPensiun().trim().isEmpty()) {
+            x = x + "\n>>SK PENSIUN        : " + tmp.getSkPensiun();
+        }
+        if (!tmp.getKarip().trim().isEmpty()) {
+            x = x + "\n>>NO KARIP          : " + tmp.getKarip();
+        }
+        if (!tmp.getShm().trim().isEmpty()) {
+            x = x + "\n>>SHM               : " + tmp.getShm();
+        }
+        if (!tmp.getSht().trim().isEmpty()) {
+            x = x + "\n>>SHT               : " + tmp.getSht();
+        }
+        if (!tmp.getIjazah().trim().isEmpty()) {
+            x = x + "\n>>IJAZAH            : " + tmp.getIjazah();
+        }
+        if (!tmp.getSp2k().trim().isEmpty()) {
+            x = x + "\n>>SP2K              : " + tmp.getSp2k();
+        }
+        if (!tmp.getSuratPerjanjian().trim().isEmpty()) {
+            x = x + "\n>>SURAT PERJANJIAN  : " + tmp.getSuratPerjanjian();
+        }
+        if (!tmp.getSkPotongTermin().trim().isEmpty()) {
+            x = x + "\n>>SK POTONG TERMIN  : " + tmp.getSkPotongTermin();
+        }
+        if (!tmp.getSpk().trim().isEmpty()) {
+            x = x + "\n>>SPK               : " + tmp.getSpk();
+        }
+        if (!tmp.getWarkatDeposito().trim().isEmpty()) {
+            x = x + "\n>>WARKAT DEPOSITO   : " + tmp.getWarkatDeposito();
+        }
+        if (!tmp.getSkPencairanDeposito().trim().isEmpty()) {
+            x = x + "\n>>SURAT PNC DEPOSITO: " + tmp.getSkPencairanDeposito();
+        }
+        if (!tmp.getShgb().trim().isEmpty()) {
+            x = x + "\n>>SHGB              : " + tmp.getShgb();
+        }
+        if (!tmp.getImb().trim().isEmpty()) {
+            x = x + "\n>>IMB               : " + tmp.getImb();
+        }
+        if (!tmp.getCoverNote().trim().isEmpty()) {
+            x = x + "\n>>COVER NOTE        : " + tmp.getCoverNote();
+        }
+        if (!tmp.getAjb().trim().isEmpty()) {
+            x = x + "\n>>AJB               : " + tmp.getAjb();
+        }
+        if (!tmp.getSkmht().trim().isEmpty()) {
+            x = x + "\n>>SKMHT             : " + tmp.getSkmht();
+        }
+        if (!tmp.getApht().trim().isEmpty()) {
+            x = x + "\n>>APHT              : " + tmp.getApht();
+        }
+        if (!tmp.getBpkb().trim().isEmpty()) {
+            x = x + "\n>>BPKB              : " + tmp.getBpkb();
+        }
+        if (!tmp.getKwitansi().trim().isEmpty()) {
+            x = x + "\n>>KWITANSI          : " + tmp.getKwitansi();
+        }
+        if (!tmp.getFiducia().trim().isEmpty()) {
+            x = x + "\n>>FIDUCIA           : " + tmp.getFiducia();
+        }
+        if (!tmp.getPermohonanKredit().trim().isEmpty()) {
+            x = x + "\n>>PERMOHONAN KRD    : " + tmp.getPermohonanKredit();
+        }
+        if (!tmp.getSiup().trim().isEmpty()) {
+            x = x + "\n>>SIUP              : " + tmp.getSiup() + " TANGGAL KADALUARSA : " + tmp.getTanggalSiup();
+        }
+        if (!tmp.getTdp().trim().isEmpty()) {
+            x = x + "\n>>TDP               : " + tmp.getTdp() + " TANGGAL KADALUARSA : " + tmp.getTanggalTdp();
+        }
+        return x;
+    }
+
+    public List<String> getKelengkapanListBerkas(String inputCif) throws ArsipException {
+        List<String> builder = new ArrayList<>();
+
+        DebiturModel tmp = getDebiturModelByCif(inputCif);
+
+        if (!tmp.getSkCpns().trim().isEmpty()) {
+            builder.add(tmp.getSkCpns());
+        }
+        if (!tmp.getSkPengangkatan().trim().isEmpty()) {
+            builder.add(tmp.getSkPengangkatan());
+        }
+        if (!tmp.getSkTerakhir().trim().isEmpty()) {
+            builder.add(tmp.getSkTerakhir());
+        }
+        if (!tmp.getTaspen().trim().isEmpty()) {
+            builder.add(tmp.getTaspen());
+        }
+        if (!tmp.getSkPensiun().trim().isEmpty()) {
+            builder.add(tmp.getSkPensiun());
+        }
+        if (!tmp.getKarip().trim().isEmpty()) {
+            builder.add(tmp.getKarip());
+        }
+        if (!tmp.getShm().trim().isEmpty()) {
+            builder.add(tmp.getShm());
+        }
+        if (!tmp.getSht().trim().isEmpty()) {
+            builder.add(tmp.getSht());
+        }
+        if (!tmp.getIjazah().trim().isEmpty()) {
+            builder.add(tmp.getIjazah());
+        }
+        if (!tmp.getSp2k().trim().isEmpty()) {
+            builder.add(tmp.getSp2k());
+        }
+        if (!tmp.getSuratPerjanjian().trim().isEmpty()) {
+            builder.add(tmp.getSuratPerjanjian());
+        }
+        if (!tmp.getSkPotongTermin().trim().isEmpty()) {
+            builder.add(tmp.getSkPotongTermin());
+        }
+        if (!tmp.getSpk().trim().isEmpty()) {
+            builder.add(tmp.getSpk());
+        }
+        if (!tmp.getWarkatDeposito().trim().isEmpty()) {
+            builder.add(tmp.getWarkatDeposito());
+        }
+        if (!tmp.getSkPencairanDeposito().trim().isEmpty()) {
+            builder.add(tmp.getSkPencairanDeposito());
+        }
+        if (!tmp.getShgb().trim().isEmpty()) {
+            builder.add(tmp.getShgb());
+        }
+        if (!tmp.getImb().trim().isEmpty()) {
+            builder.add(tmp.getImb());
+        }
+        if (!tmp.getCoverNote().trim().isEmpty()) {
+            builder.add(tmp.getCoverNote());
+        }
+        if (!tmp.getAjb().trim().isEmpty()) {
+            builder.add(tmp.getAjb());
+        }
+        if (!tmp.getSkmht().trim().isEmpty()) {
+            builder.add(tmp.getSkmht());
+        }
+        if (!tmp.getApht().trim().isEmpty()) {
+            builder.add(tmp.getApht());
+        }
+        if (!tmp.getBpkb().trim().isEmpty()) {
+            builder.add(tmp.getBpkb());
+        }
+        if (!tmp.getKwitansi().trim().isEmpty()) {
+            builder.add(tmp.getKwitansi());
+        }
+        if (!tmp.getFiducia().trim().isEmpty()) {
+            builder.add(tmp.getFiducia());
+        }
+        if (!tmp.getPermohonanKredit().trim().isEmpty()) {
+            builder.add(tmp.getPermohonanKredit());
+        }
+        if (!tmp.getSiup().trim().isEmpty()) {
+            builder.add(tmp.getSiup() + " TANGGAL KADALUARSA : " + tmp.getTanggalSiup());
+        }
+        if (!tmp.getTdp().trim().isEmpty()) {
+            builder.add(tmp.getTdp() + " TANGGAL KADALUARSA : " + tmp.getTanggalTdp());
+        }
+        return builder;
+    }
+
+    public List<BerkasModel> getListBerkas(String inputCif) throws ArsipException {
+        List<BerkasModel> builder = new ArrayList<>();
+
+        DebiturModel tmp = getDebiturModelByCif(inputCif);
+
+        if (!tmp.getSkCpns().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK CPNS", tmp.getSkCpns());
+            builder.add(model);
+        }
+        if (!tmp.getSkPengangkatan().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK PENGANGKATAN", tmp.getSkPengangkatan());
+            builder.add(model);
+        }
+        if (!tmp.getSkTerakhir().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK TERKAHIR", tmp.getSkTerakhir());
+            builder.add(model);
+        }
+        if (!tmp.getTaspen().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("TASPEN", tmp.getTaspen());
+            builder.add(model);
+        }
+        if (!tmp.getSkPensiun().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK PENSIUN", tmp.getSkPensiun());
+            builder.add(model);
+        }
+        if (!tmp.getKarip().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("KARIP", tmp.getKarip());
+            builder.add(model);
+        }
+        if (!tmp.getShm().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SHM", tmp.getShm());
+            builder.add(model);
+        }
+        if (!tmp.getSht().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SHT", tmp.getSht());
+            builder.add(model);
+        }
+        if (!tmp.getIjazah().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("IJAZAH", tmp.getIjazah());
+            builder.add(model);
+        }
+        if (!tmp.getSp2k().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SP2K", tmp.getSp2k());
+            builder.add(model);
+        }
+        if (!tmp.getSuratPerjanjian().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SURAT PERJANJIAN", tmp.getSuratPerjanjian());
+            builder.add(model);
+        }
+        if (!tmp.getSkPotongTermin().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK POTONG TERMIN", tmp.getSkPotongTermin());
+            builder.add(model);
+        }
+        if (!tmp.getSpk().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SPK", tmp.getSpk());
+            builder.add(model);
+        }
+        if (!tmp.getWarkatDeposito().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("WARKAT DEPOSITO", tmp.getWarkatDeposito());
+            builder.add(model);
+        }
+        if (!tmp.getSkPencairanDeposito().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SK PENCAIRAN DEPOSITO", tmp.getSkPencairanDeposito());
+            builder.add(model);
+        }
+        if (!tmp.getShgb().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SHGB", tmp.getShgb());
+            builder.add(model);
+        }
+        if (!tmp.getImb().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("IMB", tmp.getImb());
+            builder.add(model);
+        }
+        if (!tmp.getCoverNote().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("COVER NOTE", tmp.getCoverNote());
+            builder.add(model);
+        }
+        if (!tmp.getAjb().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("AJB", tmp.getAjb());
+            builder.add(model);
+        }
+        if (!tmp.getSkmht().trim().isEmpty()) {
+            BerkasModel model = new BerkasModel("SKMHT", tmp.getSkmht());
+            builder.add(model);
+        }
+        if (!tmp.getApht().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("APHT", tmp.getApht());
+            builder.add(model);
+        }
+        if (!tmp.getBpkb().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("BPKB", tmp.getBpkb());
+            builder.add(model);
+        }
+        if (!tmp.getKwitansi().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("KWITANSI", tmp.getKwitansi());
+            builder.add(model);
+        }
+        if (!tmp.getFiducia().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("FIDUCIA", tmp.getFiducia());
+            builder.add(model);
+        }
+        if (!tmp.getPermohonanKredit().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("PERMOHONAN KRD", tmp.getPermohonanKredit());
+            builder.add(model);
+        }
+        if (!tmp.getSiup().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("SIUP", tmp.getSiup()+"TANGGAL BERLAKU : "+tmp.getTanggalSiup());
+            builder.add(model);
+        }
+        if (!tmp.getTdp().trim().isEmpty()) {
+            BerkasModel model=new BerkasModel("TDP", tmp.getTdp()+"TANGGAL BERLAKU : "+tmp.getTanggalTdp());
+            builder.add(model);
+        }
+        return builder;
+    }
+
     public List<DebiturModel> getListDebiturModelByCif(String cif) throws ArsipException {
         List<DebiturModel> list = new ArrayList<>();
         list.add(this.getDebiturModelByCif(cif));
@@ -837,7 +1134,7 @@ public class DebiturModel {
         if (!debitur.getPermohonanKredit().equals("")) {
             dokumen = dokumen + 1;
         }
-        
+
         if (!debitur.getSiup().equals("")) {
             dokumen = dokumen + 1;
         }

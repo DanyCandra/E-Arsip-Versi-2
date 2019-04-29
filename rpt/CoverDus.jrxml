@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CoverDus" pageWidth="283" pageHeight="425" columnWidth="243" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e45dad5f-9a5f-448d-97af-3c6d8751b93d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID_DUS" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     pengarsipan.`cif` AS pengarsipan_cif,
+     debitur.`cif` AS debitur_cif,
+     debitur.`nama` AS debitur_nama,
+     pengarsipan.`status_arsip` AS pengarsipan_status_arsip,
+     pengarsipan.`id_dus` AS pengarsipan_id_dus
+FROM
+     `debitur` debitur INNER JOIN `pengarsipan` pengarsipan ON debitur.`cif` = pengarsipan.`cif`
+WHERE
+     pengarsipan.`status_arsip` = 1
+	AND pengarsipan.`id_dus`= $P{ID_DUS}]]>
+	</queryString>
+	<field name="pengarsipan_cif" class="java.lang.String"/>
+	<field name="debitur_cif" class="java.lang.String"/>
+	<field name="debitur_nama" class="java.lang.String"/>
+	<field name="pengarsipan_status_arsip" class="java.lang.String"/>
+	<field name="pengarsipan_id_dus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="243" height="20" uuid="2873bfe5-9123-4dff-af27-ca5be675a1d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAFTAR ISI DUS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="26" uuid="3ac70120-5f3b-4bef-90d2-c3787e553b30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pengarsipan_id_dus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="74" y="1" width="169" height="20" uuid="16ed8d3b-77d9-40a8-8950-7989c0a55b46"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="1" width="74" height="20" uuid="3f955f09-a377-464b-893b-0a4cfcf5f233"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="74" height="20" uuid="afacb961-15fc-4e12-aa12-82086e49c8cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="1" width="169" height="20" uuid="9a16f2d5-599d-469d-82e2-3346850f4919"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="74" y="0" width="169" height="20" uuid="f4a05fd1-5ee7-4bb9-b0c8-61d419006d19"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="74" height="20" uuid="65552ab0-dd65-4421-8dc4-75e31ae948b2"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="74" height="20" uuid="4935b7a8-20ed-4c9d-979b-ff578c059cb2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{debitur_cif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="0" width="159" height="20" uuid="c4f20dc5-d3c2-4699-b9ac-3e847f4df1bf"/>
+				<textFieldExpression><![CDATA[$F{debitur_nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

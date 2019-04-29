@@ -49,8 +49,8 @@
         <Component class="com.bpd.arsip.view.panel.PanelPenyimpananLantai" name="panelPenyimpananLantai1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Pengaturan Tempat Arsip">
-                <Property name="tabTitle" type="java.lang.String" value="Pengaturan Tempat Arsip"/>
+              <JTabbedPaneConstraints tabName="Daftar Tempat Penyimpanan">
+                <Property name="tabTitle" type="java.lang.String" value="Daftar Tempat Penyimpanan"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -58,8 +58,8 @@
         <Component class="com.bpd.arsip.view.panel.PanelPenyimpananDus" name="panelPenyimpananDus1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Pengaturan Dus Arsip">
-                <Property name="tabTitle" type="java.lang.String" value="Pengaturan Dus Arsip"/>
+              <JTabbedPaneConstraints tabName="Daftar Dus Arsip">
+                <Property name="tabTitle" type="java.lang.String" value="Daftar Dus Arsip"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

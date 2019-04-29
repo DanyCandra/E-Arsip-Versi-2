@@ -3,7 +3,6 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.InstansiController;
 import com.bpd.arsip.model.InstansiModel;
 import com.bpd.arsip.view.MainFrame;
-import com.bpd.arsip.view.Test;
 import com.stripbandunk.jwidget.JDynamicTable;
 import com.stripbandunk.jwidget.model.DynamicTableModel;
 import javax.swing.JButton;

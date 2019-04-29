@@ -3,7 +3,6 @@ package com.bpd.arsip.view.panel;
 import com.bpd.arsip.controller.QuotaController;
 import com.bpd.arsip.model.QuotaModel;
 import com.bpd.arsip.view.MainFrame;
-import com.bpd.arsip.view.Test;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 

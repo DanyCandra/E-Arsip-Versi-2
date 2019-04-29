@@ -17,22 +17,30 @@
     </Container>
     <Container class="com.stripbandunk.jglasspane.component.DialogComponent" name="dialogComponent">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
-        <Property name="horizontalGap" type="int" value="30"/>
-        <Property name="verticalGap" type="int" value="30"/>
-      </Layout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
     </Container>
     <Component class="com.bpd.arsip.view.dialog.PanelLoading" name="panelLoading">
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="12" style="1"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pengaturan"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="meniPenyimpnan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Daftar Penyimpanan Arsip"/>
               </Properties>
               <Events>
@@ -41,6 +49,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuPejabat">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Daftar Pejabat Bank"/>
               </Properties>
               <Events>
@@ -49,6 +60,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuInstansi">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Daftar Instansi"/>
               </Properties>
               <Events>
@@ -57,10 +71,26 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuUser">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Daftar User"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuUserActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuUbahPassword">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ubah Password"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuUbahPasswordActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -68,10 +98,16 @@
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Transaksi"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuPenerimaan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Penerimaan Berkas Kredit Baru"/>
               </Properties>
               <Events>
@@ -80,6 +116,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuPembaruan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pembaruan Berkas Kredit"/>
               </Properties>
               <Events>
@@ -88,10 +127,137 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuPengembalian">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pengembalian Berkas Kredit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPengembalianActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuPenyesuaianBerkas">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Pemindahan Berkas Kredit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPenyesuaianBerkasActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuPenyesuaianCis">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Penyesuaian Data Cis (Pinjaman)"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPenyesuaianCisActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Penyesuian Data Debitur"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuPencarian">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pencairan"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPencarianActionPerformed"/>
+          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuCari">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Pencairan Berkas Kredit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCariActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Laporan"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuLaporanCis">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Laporan Cis"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuLaporanCisActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuLaporanIsiDus">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Laporan Isi Dus"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuLaporanIsiDusActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuLaporanPenerimaanBerkas">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Laporan Penerimaan Berkas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuLaporanPenerimaanBerkasActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuLaporanPengembalian">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Laporan Pengembalian Berkas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuLaporanPengembalianActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuLaporanOpname">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Laporan Opname Berkas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuLaporanOpnameActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -120,10 +286,25 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,12,0,0,5,79"/>
   </AuxValues>
 
-  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="panelBody" max="32767" attributes="0"/>
+          <Component id="panelFooter" pref="1367" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="panelBody" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="panelFooter" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
   <SubComponents>
     <Container class="dany.swing.lib.panel.PanelGradient" name="panelFooter">
       <Properties>
@@ -134,18 +315,13 @@
           <Dimension value="[1086, 20]"/>
         </Property>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-          <BorderConstraints direction="Last"/>
-        </Constraint>
-      </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="labelWhite4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1163" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jProgressBar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -179,13 +355,24 @@
           <Color blue="99" green="33" red="0" type="rgb"/>
         </Property>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-          <BorderConstraints direction="Center"/>
-        </Constraint>
-      </Constraints>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="panelHeader" pref="1367" max="32767" attributes="0"/>
+              <Component id="panelMain" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="panelHeader" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Component id="panelMain" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
       <SubComponents>
         <Container class="dany.swing.lib.panel.PanelImageAlpha" name="panelHeader">
           <Properties>
@@ -197,11 +384,6 @@
               <Dimension value="[1329, 100]"/>
             </Property>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-              <BorderConstraints direction="First"/>
-            </Constraint>
-          </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -212,7 +394,7 @@
                           <Component id="labelWhite1" min="-2" max="-2" attributes="0"/>
                           <Component id="labelHalaman" min="-2" pref="506" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="606" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -305,11 +487,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/com/bpd/arsip/icon/home_24px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Beranda"/>
+                <Property name="text" type="java.lang.String" value="Home"/>
                 <Property name="horizontalAlignment" type="int" value="10"/>
                 <Property name="horizontalTextPosition" type="int" value="10"/>
                 <Property name="verticalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIconGlass1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="dany.swing.lib.label.LabelWhite" name="labelHalaman">
               <Properties>
@@ -328,13 +513,22 @@
             </Property>
             <Property name="alpha" type="float" value="0.0"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-              <BorderConstraints direction="Center"/>
-            </Constraint>
-          </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="scrollPaneMainFrame" pref="1367" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="scrollPaneMainFrame" pref="656" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="scrollPaneMainFrame">
               <Properties>
@@ -348,11 +542,6 @@
                   <ComponentRef name="viewPortContainer"/>
                 </Property>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                  <BorderConstraints direction="Center"/>
-                </Constraint>
-              </Constraints>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
@@ -409,6 +598,104 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                           <CardConstraints cardName="panelPengembalianBerkas"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelPencarianBerkas" name="panelPencarianBerkas">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelPencarianBerkas"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelPenyesuaianBerkas" name="panelPenyesuaianBerkas">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelPenyesuaianBerkas"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelPenyesuaianCis" name="panelPenyesuaianCis">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelPenyesuaianCis"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelUbahPassword" name="panelUbahPassword">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelUbahPassword"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelPenyesuaianDataDebitur" name="panelPenyesuaianDataDebitur">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelPenyesuaianDataDebitur"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelLaporanCis" name="panelLaporanCis">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelLaporanCis"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelLaporanIsiDus" name="panelLaporanIsiDus">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelLaporanIsiDus"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelLaporanPenerimaanBerkas" name="panelLaporanPenerimaanBerkas">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelLaporanPenerimaanBerkas"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelLaporanPengembalianBerkas" name="panelLaporanPengembalianBerkas">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelLaporanPengembalianBerkas"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelLaporanOpname" name="panelLaporanOpname">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelLaporanOpname"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelMenuUser" name="panelMenuUser">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelMenuUser"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelMenuTransaksi" name="panelMenuTransaksi">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelMenuTransaksi"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelMenuPengaturan" name="panelMenuPengaturan">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelMenuPengaturan"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="com.bpd.arsip.view.panel.PanelMenuLaporan" name="panelMenuLaporan">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                          <CardConstraints cardName="panelMenuLaporan"/>
                         </Constraint>
                       </Constraints>
                     </Component>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CoverDusDepan" pageWidth="340" pageHeight="283" columnWidth="300" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID_DUS" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     dus.`id_dus` AS dus_id_dus,
+     rak.`nama_rak` AS rak_nama_rak,
+     lantai.`nama_lantai` AS lantai_nama_lantai
+FROM
+     `rak` rak INNER JOIN `dus` dus ON rak.`id_rak` = dus.`id_rak`
+     INNER JOIN `lantai` lantai ON dus.`id_lantai` = lantai.`id_lantai`
+WHERE
+	dus.`id_dus`=$P{ID_DUS}]]>
+	</queryString>
+	<field name="dus_id_dus" class="java.lang.String"/>
+	<field name="rak_nama_rak" class="java.lang.String"/>
+	<field name="lantai_nama_lantai" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="243" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="300" height="243"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="137" width="146" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="157" width="146" height="86"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="146" y="137" width="154" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="146" y="157" width="154" height="86"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="62" width="300" height="75"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="300" height="62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BERKAS KREDIT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="62" width="300" height="75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dus_id_dus}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="137" width="146" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lokasi Lantai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="137" width="154" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lokasi Rak]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="146" y="157" width="154" height="86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rak_nama_rak}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="157" width="146" height="86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{lantai_nama_lantai}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
