@@ -7,6 +7,7 @@ package com.bpd.arsip.view;
 
 import com.bpd.arsip.component.CenterFrame;
 import com.bpd.arsip.model.UserModel;
+import com.bpd.arsip.view.dialog.DialogLogin;
 import com.stripbandunk.jglasspane.component.DialogBackgroundColor;
 import dany.swing.lib.label.LabelWhite;
 import java.awt.CardLayout;
@@ -76,6 +77,7 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
         labelDate1 = new dany.swing.lib.label.LabelDate();
         buttonIconGlass1 = new dany.swing.lib.button.ButtonIconGlass();
         labelHalaman = new dany.swing.lib.label.LabelWhite();
+        buttonIconGlass2 = new dany.swing.lib.button.ButtonIconGlass();
         panelMain = new dany.swing.lib.panel.PanelAlpha();
         scrollPaneMainFrame = new javax.swing.JScrollPane();
         panelCard = new javax.swing.JPanel();
@@ -186,6 +188,17 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
         labelHalaman.setText("Navigator");
         labelHalaman.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
 
+        buttonIconGlass2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bpd/arsip/icon/logout.png"))); // NOI18N
+        buttonIconGlass2.setText("Keluar");
+        buttonIconGlass2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        buttonIconGlass2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        buttonIconGlass2.setVerticalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonIconGlass2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIconGlass2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
         panelHeaderLayout.setHorizontalGroup(
@@ -195,7 +208,7 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
                 .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelHalaman, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 614, Short.MAX_VALUE)
                 .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
                         .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,6 +224,8 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
                                 .addComponent(labelTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
+                        .addComponent(buttonIconGlass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonIconGlass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -229,7 +244,9 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
                             .addComponent(labelTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonIconGlass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonIconGlass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonIconGlass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelHeaderLayout.createSequentialGroup()
                         .addComponent(labelWhite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -625,6 +642,13 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
         showPanel(panelMenuUser, "panelMenuUser", "Selamat Datang");
     }//GEN-LAST:event_buttonIconGlass1ActionPerformed
 
+    private void buttonIconGlass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIconGlass2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        DialogLogin login = new DialogLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_buttonIconGlass2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -665,6 +689,7 @@ public final class MainFrame extends com.bpd.arsip.component.Frame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private dany.swing.lib.button.ButtonIconGlass buttonIconGlass1;
+    private dany.swing.lib.button.ButtonIconGlass buttonIconGlass2;
     private com.stripbandunk.jglasspane.component.DialogComponent dialogComponent;
     private com.stripbandunk.jglasspane.JGlassPane jGlassPane;
     private javax.swing.JMenu jMenu1;
