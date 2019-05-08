@@ -81,15 +81,17 @@ CREATE TABLE IF NOT EXISTS `debitur` (
   `permohonan_kredit` varchar(50) DEFAULT ' ',
   `siup` varchar(50) DEFAULT ' ',
   `tanggal_siup` date DEFAULT NULL,
-  `tdp` varchar(50) DEFAULT NULL,
+  `tdp` varchar(50) DEFAULT '',
   `tanggal_tdp` date DEFAULT NULL,
-  PRIMARY KEY (`cif`),
-  KEY `id_instansi` (`id_instansi`)
+  PRIMARY KEY (`cif`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table e-arsip.debitur: ~0 rows (approximately)
 DELETE FROM `debitur`;
 /*!40000 ALTER TABLE `debitur` DISABLE KEYS */;
+INSERT INTO `debitur` (`cif`, `nama`, `tempat_lahir`, `tanggal_lahir`, `nik`, `alamat`, `kelurahan`, `kecamatan`, `telepon`, `sk_cpns`, `sk_pengangkatan`, `sk_terakhir`, `taspen`, `sk_pensiun`, `karip`, `shm`, `sht`, `ijazah`, `lainnya`, `id_instansi`, `sp2k`, `surat_perjanjian`, `sk_potong_termin`, `spk`, `warkat_deposito`, `sk_pencairan_deposito`, `shgb`, `imb`, `cover_note`, `ajb`, `skmht`, `apht`, `bpkb`, `kwitansi`, `fiducia`, `lainnya2`, `permohonan_kredit`, `siup`, `tanggal_siup`, `tdp`, `tanggal_tdp`) VALUES
+	('01234567', 'Dany Candra Febrianto', 'Purwokerto', '1991-02-20', '3302242002920001', 'Jl Sarwodadi V No 6', 'Purwokerto Kidul', 'Purwokerto Selatan', '089667194026', '1', '1', '1', '', '', '', '', '', '', '', 'IS-2042019-001-4', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1', '', NULL, '', NULL),
+	('12345678', 'FEBRIANTO CANDRA', 'PURWOKERTO', '1991-04-24', '3302222002920001', 'JL SUDIRMAN 82', 'KRANJI', 'PURWOKERTO TIMUR', '0281 634572', 'SK/CPNS/2017', 'SK/PNS/2019', '', '', '', '', '', '', '', '', 'IS-2042019-002-7', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1-220-02', '', NULL, '', NULL);
 /*!40000 ALTER TABLE `debitur` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.dus
@@ -106,30 +108,9 @@ CREATE TABLE IF NOT EXISTS `dus` (
   CONSTRAINT `tm_lokasi_fk1` FOREIGN KEY (`id_rak`) REFERENCES `rak` (`id_rak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table e-arsip.dus: ~20 rows (approximately)
+-- Dumping data for table e-arsip.dus: ~0 rows (approximately)
 DELETE FROM `dus`;
 /*!40000 ALTER TABLE `dus` DISABLE KEYS */;
-INSERT INTO `dus` (`id_dus`, `id_lantai`, `id_rak`, `quota`) VALUES
-	('3.001.001', '1461493284190', '1461501373083', 10),
-	('3.001.002', '1461493284190', '1461501373083', 10),
-	('3.001.003', '1461493284190', '1461501373083', 10),
-	('3.001.004', '1461493284190', '1461501373083', 10),
-	('3.001.005', '1461493284190', '1461501373083', 10),
-	('3.001.006', '1461493284190', '1461501373083', 10),
-	('3.001.007', '1461493284190', '1461501373083', 10),
-	('3.001.008', '1461493284190', '1461501373083', 10),
-	('3.001.009', '1461493284190', '1461501373083', 10),
-	('3.001.010', '1461493284190', '1461501373083', 10),
-	('3.001.011', '1461493284190', '1461501373083', 10),
-	('3.001.012', '1461493284190', '1461501373083', 10),
-	('3.001.013', '1461493284190', '1461501373083', 10),
-	('3.001.014', '1461493284190', '1461501373083', 10),
-	('3.001.015', '1461493284190', '1461501373083', 10),
-	('3.001.016', '1461493284190', '1461501373083', 10),
-	('3.001.017', '1461493284190', '1461501373083', 10),
-	('3.001.018', '1461493284190', '1461501373083', 10),
-	('3.001.019', '1461493284190', '1461501373083', 10),
-	('3.001.020', '1461493284190', '1461501373083', 10);
 /*!40000 ALTER TABLE `dus` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.instansi
@@ -142,20 +123,16 @@ CREATE TABLE IF NOT EXISTS `instansi` (
   PRIMARY KEY (`id_instansi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table e-arsip.instansi: ~3 rows (approximately)
+-- Dumping data for table e-arsip.instansi: ~2 rows (approximately)
 DELETE FROM `instansi`;
 /*!40000 ALTER TABLE `instansi` DISABLE KEYS */;
-INSERT INTO `instansi` (`id_instansi`, `nama_instansi`, `alamat`, `telepon`) VALUES
-	('IS-2042019-001-4', 'BAPELUH KP KAB BANYUMAS', 'JL PROF SUHARSO NO 45', '0281 631672'),
-	('IS-2042019-002-7', 'SATPOL PP ', 'JL PROF SUHARSO 40', '0281 632871'),
-	('IS-2042019-003-6', 'DINPERINDAG KAB BANYUMAS', 'JL GATOT SUBROTO 100', '0281 674888');
 /*!40000 ALTER TABLE `instansi` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.lantai
 DROP TABLE IF EXISTS `lantai`;
 CREATE TABLE IF NOT EXISTS `lantai` (
   `id_lantai` varchar(20) NOT NULL,
-  `nama_lantai` varchar(2) DEFAULT NULL,
+  `nama_lantai` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`id_lantai`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -163,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `lantai` (
 DELETE FROM `lantai`;
 /*!40000 ALTER TABLE `lantai` DISABLE KEYS */;
 INSERT INTO `lantai` (`id_lantai`, `nama_lantai`) VALUES
-	('1461493284190', '3');
+	('LN-2042019-001-8', '3');
 /*!40000 ALTER TABLE `lantai` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.pejabat
@@ -175,11 +152,9 @@ CREATE TABLE IF NOT EXISTS `pejabat` (
   PRIMARY KEY (`id_pejabat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table e-arsip.pejabat: ~1 rows (approximately)
+-- Dumping data for table e-arsip.pejabat: ~2 rows (approximately)
 DELETE FROM `pejabat`;
 /*!40000 ALTER TABLE `pejabat` DISABLE KEYS */;
-INSERT INTO `pejabat` (`id_pejabat`, `nama_pejabat`, `jabatan`) VALUES
-	('PJ-2042019-001-3', 'YULIANO HENDRI', 'KASIE ADMIN DAN LEGAL KREDIT');
 /*!40000 ALTER TABLE `pejabat` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.pengarsipan
@@ -198,13 +173,11 @@ CREATE TABLE IF NOT EXISTS `pengarsipan` (
   PRIMARY KEY (`cif`),
   KEY `id_user_penerima` (`id_user_penerima`),
   KEY `id_pejabat_penerima` (`id_pejabat_penerima`),
-  KEY `id_dus` (`id_dus`),
   KEY `id_user_pengembali` (`id_user_pengembali`),
   KEY `id_pejabat_pengembali` (`id_pejabat_pengembali`),
   CONSTRAINT `pengarsipan_fk` FOREIGN KEY (`cif`) REFERENCES `debitur` (`cif`),
   CONSTRAINT `pengarsipan_fk1` FOREIGN KEY (`id_user_penerima`) REFERENCES `user` (`id_user`),
   CONSTRAINT `pengarsipan_fk2` FOREIGN KEY (`id_pejabat_penerima`) REFERENCES `pejabat` (`id_pejabat`),
-  CONSTRAINT `pengarsipan_fk3` FOREIGN KEY (`id_dus`) REFERENCES `dus` (`id_dus`),
   CONSTRAINT `pengarsipan_fk4` FOREIGN KEY (`id_user_pengembali`) REFERENCES `user` (`id_user`),
   CONSTRAINT `pengarsipan_fk5` FOREIGN KEY (`id_pejabat_pengembali`) REFERENCES `pejabat` (`id_pejabat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -222,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `quota` (
   `isi_rak` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table e-arsip.quota: ~1 rows (approximately)
+-- Dumping data for table e-arsip.quota: ~0 rows (approximately)
 DELETE FROM `quota`;
 /*!40000 ALTER TABLE `quota` DISABLE KEYS */;
 INSERT INTO `quota` (`id`, `isi_dus`, `isi_rak`) VALUES
@@ -238,11 +211,9 @@ CREATE TABLE IF NOT EXISTS `rak` (
   PRIMARY KEY (`id_rak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table e-arsip.rak: ~1 rows (approximately)
+-- Dumping data for table e-arsip.rak: ~0 rows (approximately)
 DELETE FROM `rak`;
 /*!40000 ALTER TABLE `rak` DISABLE KEYS */;
-INSERT INTO `rak` (`id_rak`, `nama_rak`, `quota`) VALUES
-	('1461501373083', '1', 0);
 /*!40000 ALTER TABLE `rak` ENABLE KEYS */;
 
 -- Dumping structure for table e-arsip.user
@@ -252,16 +223,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   `nama` varchar(50) DEFAULT NULL,
+  `previllage` int(11) DEFAULT '0' COMMENT '0 : User, 1 : Admin',
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table e-arsip.user: ~3 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id_user`, `username`, `password`, `nama`) VALUES
-	('1', 'ADMIN', 'ADMIN', 'CATUR YANDI'),
-	('KELALEN', 'NK.0476', 'KELALEN', 'DANY CANDRA '),
-	('US-2042019-001-6', 'DEV', 'DEV', 'DANY ');
+INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `previllage`) VALUES
+	('US-2042019-001-4', 'ADMIN', 'ADMIN', 'DEFAULT ADMIN', 1),
+	('US-2042019-001-6', 'USER', 'USER', 'DEFAULT USER', 0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
